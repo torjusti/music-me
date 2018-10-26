@@ -1,6 +1,9 @@
 # babel files for server
 server/dist
 
+# database
+database.sqlite
+
 # dependencies
 node_modules/
 
@@ -12,6 +15,7 @@ node_modules/
 
 # misc
 .DS_Store
+.idea
 .env.local
 .env.development.local
 .env.test.local
