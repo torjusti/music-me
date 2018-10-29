@@ -8,58 +8,63 @@ app.use(bodyParser.json());
 
 const port = process.env.PORT || 8000;
 
-app.listen(port, () => {
-  console.log('Started server at port', port);
-});
+const synchronizeDatabase = async () => {
+  await Song.sync();
+};
 
-//Create a song
-app.post('/songs', (req, res) => {
-  Song.sync().then(() =>
-    Song.create({
-      title: req.body.title,
-      artist: req.body.artist,
-      album: req.body.album,
-      genre: req.body.genre,
-    }).then(mod => res.status(201).json(mod.dataValues))
-  );
-});
-
-//Get all songs
-app.get('/songs', (req, res) => {
-  Song.sync().then(() =>
-    Song.findAll().then(songs => res.status(200).json(songs))
-  );
-});
-
-//Get a song by Id
-app.get('/songs/:songId', (req, res) => {
-  Song.sync().then(() =>
-    Song.findById(req.params.songId).then(song => res.status(200).json(song))
-  );
-});
-
-//Update a song by Id
-app.put('/songs/:songId', (req, res) => {
-  Song.sync().then(() =>
-    Song.update(
-      {
-        title: req.body.title,
-        artist: req.body.artist,
-        album: req.body.album,
-        genre: req.body.genre,
-      },
-      {
-        where: { id: req.params.songId },
-      }
-    ).then(row => res.status(200).json())
-  );
-});
-
-//Delete a song by Id
-app.delete('/songs/:songId', (req, res) => {
-  Song.sync().then(() => {
-    Song.destroy({
-      where: { id: req.params.songId },
-    }).then(() => res.status(204).json());
+synchronizeDatabase().then(() => {
+  app.listen(port, () => {
+    console.log('Started server at port', port);
   });
+});
+
+// Create a song
+app.post('/songs', async (req, res) => {
+  const model = await Song.create({
+    title: req.body.title,
+    artist: req.body.artist,
+    album: req.body.album,
+    gnere: req.body.genre,
+  });
+
+  res.status(201).json(model.dataValues);
+});
+
+// Get all songs
+app.get('/songs', async (req, res) => {
+  const songs = await Song.findAll();
+  res.status(200).json(songs);
+});
+
+// Get a specific song
+app.get('/songs/:id', async (req, res) => {
+  const song = await Song.findById(req.params.id);
+  res.status(200).json(song);
+});
+
+// Update a specific song
+app.put('/songs/:id', async (req, res) => {
+  const song = await Song.findById(req.params.id);
+
+  const updated = {
+    title: req.body.title || song.dataValues.title,
+    artist: req.body.artist || song.dataValues.artist,
+    album: req.body.album || song.dataValues.album,
+    genre: req.body.genre || song.dataValues.genre,
+  };
+
+  await Song.update(updated, {
+    where: { id: req.params.id },
+  });
+
+  res.status(200).json();
+});
+
+// Delete a specific song
+app.delete('/songs/:id', async (req, res) => {
+  await Song.destroy({
+    where: { id: req.params.id },
+  });
+
+  res.status(204).json();
 });
