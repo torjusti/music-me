@@ -33,7 +33,7 @@ app.post('/songs', async (req, res) => {
     title: req.body.title,
     artist: req.body.artist,
     album: req.body.album,
-    gnere: req.body.genre,
+    genre: req.body.genre,
   });
 
   res.status(201).json(model.dataValues);
