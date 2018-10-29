@@ -4,14 +4,23 @@ import { Song } from './models';
 
 const app = express();
 
+// Used for parsing JSON data using Express.
 app.use(bodyParser.json());
 
+// Either run on the specified port, or default to 8000.
 const port = process.env.PORT || 8000;
 
+/**
+ * Create database tables on application start
+ * if they do not already exist.
+ */
 const synchronizeDatabase = async () => {
   await Song.sync();
 };
 
+/**
+ * Synchronize the database and start the server.
+ */
 synchronizeDatabase().then(() => {
   app.listen(port, () => {
     console.log('Started server at port', port);
@@ -46,6 +55,7 @@ app.get('/songs/:id', async (req, res) => {
 app.put('/songs/:id', async (req, res) => {
   const song = await Song.findById(req.params.id);
 
+  // Merge the provided data with the old song.
   const updated = {
     title: req.body.title || song.dataValues.title,
     artist: req.body.artist || song.dataValues.artist,
