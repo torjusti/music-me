@@ -11,7 +11,9 @@
     "react-table": "^6.8.6",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
-    "redux-saga": "^0.16.2"
+    "redux-saga": "^0.16.2",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.83.0"
   },
   "devDependencies": {
     "husky": "^1.1.2",

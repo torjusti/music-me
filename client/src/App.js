@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Table from './components/Table/Table';
+import Table from './components/Table/DataTable';
 import SearchField from './components/SearchField/SearchField';
 import SidePanel from './components/SidePanel/SidePanel';
 import Pagination from './components/Pagination';
