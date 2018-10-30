@@ -6,7 +6,7 @@ import styles from './Table.module.css';
 
 class Table extends Component {
   render() {
-    const columns = ['Title', 'Artist', 'Album'].map(Header => ({
+    const columns = ['Title', 'Artist', 'Album', 'Genre'].map(Header => ({
       Header,
       accessor: Header.toLowerCase(),
     }));
