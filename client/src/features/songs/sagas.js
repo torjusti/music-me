@@ -1,7 +1,9 @@
-import { call, put, takeLatest, fork, take } from 'redux-saga/effects';
+import { call, put, takeLatest, select } from 'redux-saga/effects';
 import { requestData } from '../../common/api';
 
-function* fetchSongs(page) {
+function* fetchSongs() {
+  const page = yield select(state => state.page);
+
   const response = yield call(requestData, `/songs?page=${page}`);
 
   if (response.error) {
@@ -14,17 +16,7 @@ function* fetchSongs(page) {
 }
 
 function* songsSaga() {
-  let page = 0;
-
-  yield fork(function*() {
-    while (true) {
-      const action = yield take('SET_PAGE');
-
-      page = action.payload.page;
-    }
-  });
-
-  yield takeLatest(['FETCH_SONGS', 'SET_PAGE'], fetchSongs, page);
+  yield takeLatest(['FETCH_SONGS', 'SET_PAGE'], fetchSongs);
 }
 
 export default songsSaga;
