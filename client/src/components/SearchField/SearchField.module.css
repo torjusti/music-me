@@ -1,3 +1,8 @@
 .searchField {
   width: 80%;
 }
+
+.searchButton {
+  margin: 1rem;
+  display: inline-block;
+}

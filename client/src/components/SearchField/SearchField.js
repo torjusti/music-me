@@ -21,11 +21,13 @@ export default class SearchField extends Component {
           placeholder="Search ..."
           className={styles.searchField}
         />
-        <Button
-          onClick={this.handleChange}>
-          Search
-          <Icon name="angle right"/>
-        </Button>
+        <div className={styles.searchButton}>
+          <Button
+            onClick={this.handleChange}>
+            Search
+            <Icon name="angle right"/>
+          </Button>
+        </div>
       </div>
     );
   }

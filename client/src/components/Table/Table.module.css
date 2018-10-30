@@ -1,3 +1,10 @@
 .container {
   flex: 3;
 }
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}

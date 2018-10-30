@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import Table from './components/Table/DataTable';
 import SearchField from './components/SearchField/SearchField';
 import SidePanel from './components/SidePanel/SidePanel';
-import Pagination from './components/Pagination';
 import styles from './App.module.css';
 
 class App extends Component {
@@ -24,8 +23,6 @@ class App extends Component {
           <Table />
           <SidePanel />
         </div>
-
-        <Pagination />
       </div>
     );
   }
