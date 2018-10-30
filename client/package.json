@@ -9,7 +9,9 @@
     "react-redux": "^5.1.0",
     "react-scripts": "2.0.5",
     "react-table": "^6.8.6",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^0.16.2"
   },
   "devDependencies": {
     "husky": "^1.1.2",
