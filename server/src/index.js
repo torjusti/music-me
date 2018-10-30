@@ -55,13 +55,13 @@ app.get('/songs', async (req, res) => {
 
 // Get a specific song
 app.get('/songs/:id', async (req, res) => {
-  const song = await Song.findById(req.params.id);
+  const song = await Song.findByPk(req.params.id);
   res.status(200).json(song);
 });
 
 // Update a specific song
 app.put('/songs/:id', async (req, res) => {
-  const song = await Song.findById(req.params.id);
+  const song = await Song.findByPk(req.params.id);
 
   // Merge the provided data with the old song.
   const updated = {
