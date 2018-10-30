@@ -20,7 +20,7 @@ const DataTable = ({ data }) => (
 
       <Table.Body>
         {data.map(row => (
-          <Table.Row>
+          <Table.Row key={row.id}>
             <Table.Cell>{row.artist}</Table.Cell>
 
             <Table.Cell>{row.album}</Table.Cell>
