@@ -7,12 +7,11 @@ import styles from './Table.module.css';
 class DataTable extends Component {
 
   handleNextPage = () => {
-    // TODO Replace 1 with total pages + check label in render
-    this.props.setPage(this.props.page + 1);
+    this.props.setPage(this.props.pagination.page + 1);
   };
 
   handlePrevPage = () => {
-    this.props.setPage(this.props.page - 1);
+    this.props.setPage(this.props.pagination.page - 1);
   };
 
   render() {
@@ -20,15 +19,15 @@ class DataTable extends Component {
       <div className={styles.container}>
         <div className={styles.header}>
           <Button onClick={this.handlePrevPage}
-                  disabled={this.props.page === 0}
+                  disabled={this.props.pagination.page === 0}
           >
             <Icon name="angle left"/>
           </Button>
           <Label>
-            {`${this.props.page} of ${1}`}
+            {`${this.props.pagination.page + 1} of ${this.props.pagination.totalPages}`}
           </Label>
           <Button onClick={this.handleNextPage}
-                  disabled={this.props.page === 1}
+                  disabled={this.props.pagination.page === this.props.pagination.totalPages - 1}
           >
             <Icon name="angle right"/>
           </Button>
@@ -70,7 +69,7 @@ class DataTable extends Component {
 
 const mapStateToProps = state => ({
   data: state.songs,
-  page: state.page,
+  pagination: state.pagination,
 });
 
 const mapDispatchToProps = {

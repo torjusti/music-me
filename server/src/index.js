@@ -50,7 +50,10 @@ app.get('/songs', async (req, res) => {
 
   const songs = await Song.findAll();
 
-  res.status(200).json(songs.slice(PAGE_SIZE * page, PAGE_SIZE * (page + 1)));
+  res.status(200).json({
+    pages: Math.floor(songs.length / PAGE_SIZE) + 1,
+    songs: songs.slice(PAGE_SIZE * page, PAGE_SIZE * (page + 1)),
+  });
 });
 
 // Get a specific song
