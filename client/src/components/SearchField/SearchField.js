@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './SearchField.css';
+import styles from './SearchField.module.css';
 
 export default class SearchField extends Component {
   state = {
@@ -15,7 +15,11 @@ export default class SearchField extends Component {
   render() {
     return (
       <div>
-        <input placeholder="Søk ..." onChange={this.handleChange} />
+        <input
+          placeholder="Søk ..."
+          className={styles.searchField}
+          onChange={this.handleChange}
+        />
       </div>
     );
   }

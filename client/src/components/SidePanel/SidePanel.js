@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
-import './SidePanel.css';
+import styles from './SidePanel.module.css';
 
 export default class SidePanel extends Component {
   // FROM https://github.com/react-component/slider
   render() {
     return (
-      <div className="slider-cont">
+      <div className={styles.sliderCont}>
         <Slider
           min={1}
           max={5}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
-import './Table.css';
+import styles from './Table.module.css';
 
 export default class Table extends Component {
   // FROM https://react-table.js.org/#/story/readme
@@ -40,7 +40,7 @@ export default class Table extends Component {
     ];
 
     return (
-      <div className="container">
+      <div className={styles.container}>
         <ReactTable data={data} columns={columns} />
       </div>
     );
