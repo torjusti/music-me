@@ -40,7 +40,7 @@ export default class Table extends Component {
     ];
 
     return (
-      <div className={'container'}>
+      <div className="container">
         <ReactTable data={data} columns={columns} />
       </div>
     );

@@ -7,7 +7,7 @@ export default class SidePanel extends Component {
   // FROM https://github.com/react-component/slider
   render() {
     return (
-      <div className={'slider-cont'}>
+      <div className="slider-cont">
         <Slider
           min={1}
           max={5}

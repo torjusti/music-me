@@ -7,12 +7,13 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className={'app'}>
+      <div className="app">
         <div>
           <h1>Søk gjennom musikklistene våre</h1>
           <SearchField />
         </div>
-        <div className={'sub-cont'}>
+
+        <div className="sub-cont">
           <Table />
           <SidePanel />
         </div>

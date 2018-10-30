@@ -3,20 +3,19 @@ import './SearchField.css';
 
 export default class SearchField extends Component {
   state = {
-    searchInput: '',
+    searchValue: '',
   };
 
-  handleSearchInput = input => {
+  handleChange = input => {
     this.setState({
-      searchInput: input,
+      searchValue: input,
     });
-    console.log('Searchinput state: ' + this.state.searchInput);
   };
 
   render() {
     return (
       <div>
-        <input placeholder={'Søk ...'} onChange={this.handleSearchInput} />
+        <input placeholder="Søk ..." onChange={this.handleChange} />
       </div>
     );
   }
