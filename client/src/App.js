@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div className={styles.app}>
         <div>
-          <h1>Søk gjennom musikklistene våre</h1>
+          <h1>Search in our music database</h1>
           <SearchField />
         </div>
 
