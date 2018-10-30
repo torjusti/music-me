@@ -1,8 +1,13 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 import { Song } from './models';
 
+const PAGE_SIZE = 2;
+
 const app = express();
+
+app.use(cors());
 
 // Used for parsing JSON data using Express.
 app.use(bodyParser.json());
@@ -41,8 +46,11 @@ app.post('/songs', async (req, res) => {
 
 // Get all songs
 app.get('/songs', async (req, res) => {
+  const page = req.query.page;
+
   const songs = await Song.findAll();
-  res.status(200).json(songs);
+
+  res.status(200).json(songs.slice(PAGE_SIZE * page, PAGE_SIZE * (page + 1)));
 });
 
 // Get a specific song
