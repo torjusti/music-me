@@ -18,17 +18,21 @@ class DataTable extends Component {
     return (
       <div className={styles.container}>
         <div className={styles.header}>
-          <Button onClick={this.handlePrevPage}
+          <Button className={styles.noMargin}
+                  onClick={this.handlePrevPage}
                   disabled={this.props.pagination.page === 0}
           >
             <Icon name="angle left"/>
+            Prev
           </Button>
-          <Label>
+          <span className={styles.label}>
             {`${this.props.pagination.page + 1} of ${this.props.pagination.totalPages}`}
-          </Label>
-          <Button onClick={this.handleNextPage}
+          </span>
+          <Button className={styles.noMargin}
+                  onClick={this.handleNextPage}
                   disabled={this.props.pagination.page === this.props.pagination.totalPages - 1}
           >
+            Next
             <Icon name="angle right"/>
           </Button>
         </div>
