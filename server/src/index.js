@@ -65,7 +65,12 @@ app.get('/songs', async (req, res) => {
   let songs;
 
   if (searchQuery) {
-    const result = search(searchQuery).map(result => result.ref);
+    const result = search(
+      // Strip all non-alphanumeric and space characters from the query, as
+      // these are not handled by the search engine correctly.
+      // See https://stackoverflow.com/questions/6053541/regex-every-non-alphanumeric-character-except-white-space-or-colon
+      searchQuery.replace(/[^a-zA-Z\d\s:]/g, ''),
+    ).map(result => result.ref);
 
     songs = await Song.findAll({
       where: {
