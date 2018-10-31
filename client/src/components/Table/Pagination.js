@@ -24,7 +24,10 @@ const Pagination = ({ pagination, setPage }) => (
     <Button
       className={styles.button}
       onClick={() => setPage(pagination.page + 1)}
-      disabled={pagination.page === pagination.totalPages - 1}
+      disabled={
+        pagination.page === pagination.totalPages - 1 ||
+        pagination.totalPages === 0
+      }
     >
       Next
       <Icon name="angle right" />
