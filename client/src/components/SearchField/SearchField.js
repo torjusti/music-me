@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './SearchField.module.css';
+import { Input, Icon, Button } from 'semantic-ui-react';
 
 export default class SearchField extends Component {
   state = {
@@ -15,11 +16,18 @@ export default class SearchField extends Component {
   render() {
     return (
       <div>
-        <input
-          placeholder="Søk ..."
+        <Input
+          icon="search"
+          placeholder="Search ..."
           className={styles.searchField}
-          onChange={this.handleChange}
         />
+        <div className={styles.searchButton}>
+          <Button
+            onClick={this.handleChange}>
+            Search
+            <Icon name="angle right"/>
+          </Button>
+        </div>
       </div>
     );
   }

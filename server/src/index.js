@@ -46,11 +46,16 @@ app.post('/songs', async (req, res) => {
 
 // Get all songs
 app.get('/songs', async (req, res) => {
-  const page = req.query.page;
+  const page = parseInt(req.query.page, 10);
 
   const songs = await Song.findAll();
 
-  res.status(200).json(songs.slice(PAGE_SIZE * page, PAGE_SIZE * (page + 1)));
+  const result = {
+    pages: Math.ceil(songs.length / PAGE_SIZE),
+    songs: songs.slice(PAGE_SIZE * page, PAGE_SIZE * (page + 1)),
+  };
+
+  res.status(200).json(result);
 });
 
 // Get a specific song

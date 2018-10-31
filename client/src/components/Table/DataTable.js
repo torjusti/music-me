@@ -1,37 +1,42 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Table } from 'semantic-ui-react';
-import styles from './Table.module.css';
+import Pagination from './Pagination';
+import styles from './DataTable.module.css';
 
 const DataTable = ({ data }) => (
   <div className={styles.container}>
-    <Table>
-      <Table.Header>
-        <Table.Row>
-          <Table.HeaderCell>Artist</Table.HeaderCell>
+    <Pagination />
 
-          <Table.HeaderCell>Album</Table.HeaderCell>
-
-          <Table.HeaderCell>Song</Table.HeaderCell>
-
-          <Table.HeaderCell>Genre</Table.HeaderCell>
-        </Table.Row>
-      </Table.Header>
-
-      <Table.Body>
-        {data.map(row => (
+    <div>
+      <Table>
+        <Table.Header>
           <Table.Row>
-            <Table.Cell>{row.artist}</Table.Cell>
+            <Table.HeaderCell>Artist</Table.HeaderCell>
 
-            <Table.Cell>{row.album}</Table.Cell>
+            <Table.HeaderCell>Album</Table.HeaderCell>
 
-            <Table.Cell>{row.title}</Table.Cell>
+            <Table.HeaderCell>Song</Table.HeaderCell>
 
-            <Table.Cell>{row.genre}</Table.Cell>
+            <Table.HeaderCell>Genre</Table.HeaderCell>
           </Table.Row>
-        ))}
-      </Table.Body>
-    </Table>
+        </Table.Header>
+
+        <Table.Body>
+          {data.map(row => (
+            <Table.Row key={row.id}>
+              <Table.Cell>{row.artist}</Table.Cell>
+
+              <Table.Cell>{row.album}</Table.Cell>
+
+              <Table.Cell>{row.title}</Table.Cell>
+
+              <Table.Cell>{row.genre}</Table.Cell>
+            </Table.Row>
+          ))}
+        </Table.Body>
+      </Table>
+    </div>
   </div>
 );
 
