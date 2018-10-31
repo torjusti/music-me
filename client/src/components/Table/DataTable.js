@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Table, Icon, Button, Label } from 'semantic-ui-react';
+import { Table, Icon, Button } from 'semantic-ui-react';
 import { setPage } from '../../features/pagination/actions';
 import styles from './Table.module.css';
 
 class DataTable extends Component {
-
   handleNextPage = () => {
     this.props.setPage(this.props.pagination.page + 1);
   };
@@ -18,22 +17,29 @@ class DataTable extends Component {
     return (
       <div className={styles.container}>
         <div className={styles.header}>
-          <Button className={styles.noMargin}
-                  onClick={this.handlePrevPage}
-                  disabled={this.props.pagination.page === 0}
+          <Button
+            className={styles.noMargin}
+            onClick={this.handlePrevPage}
+            disabled={this.props.pagination.page === 0}
           >
-            <Icon name="angle left"/>
+            <Icon name="angle left" />
             Prev
           </Button>
           <span className={styles.label}>
-            {`${this.props.pagination.page + 1} of ${this.props.pagination.totalPages}`}
+            {`${this.props.pagination.page + 1} of ${
+              this.props.pagination.totalPages
+            }`}
           </span>
-          <Button className={styles.noMargin}
-                  onClick={this.handleNextPage}
-                  disabled={this.props.pagination.page === this.props.pagination.totalPages - 1}
+          <Button
+            className={styles.noMargin}
+            onClick={this.handleNextPage}
+            disabled={
+              this.props.pagination.page ===
+              this.props.pagination.totalPages - 1
+            }
           >
             Next
-            <Icon name="angle right"/>
+            <Icon name="angle right" />
           </Button>
         </div>
         <div>
@@ -66,10 +72,9 @@ class DataTable extends Component {
           </Table>
         </div>
       </div>
-    )
+    );
   }
 }
-
 
 const mapStateToProps = state => ({
   data: state.songs,
@@ -82,5 +87,5 @@ const mapDispatchToProps = {
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(DataTable);
