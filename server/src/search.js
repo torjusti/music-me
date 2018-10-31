@@ -12,7 +12,8 @@ export const recomputeIndex = async () => {
     this.field('title');
     this.field('artist');
     this.field('album');
-
+    this.field('genre');
+  
     songs.forEach(song => {
       this.add(song);
     });
