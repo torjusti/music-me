@@ -10,6 +10,7 @@
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
     "express": "^4.16.4",
+    "lunr": "^2.3.5",
     "rimraf": "^2.6.2",
     "sequelize": "^4.41.0",
     "sqlite3": "^4.0.3"
