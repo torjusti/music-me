@@ -1,5 +1,5 @@
-.container {
-  flex: 3;
+.button {
+  margin: 0;
 }
 
 .header {
@@ -7,10 +7,6 @@
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 1rem;
-}
-
-.noMargin {
-  margin: 0;
 }
 
 .label {
