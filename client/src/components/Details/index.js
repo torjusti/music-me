@@ -12,6 +12,8 @@ const ModalBasicExample = ({ open, onClose, song }) => (
       </h1>
 
       <Badge label="Genre" value={song.genre} />
+
+      <p>{song.description}</p>
     </Modal.Content>
 
     <Modal.Actions>
