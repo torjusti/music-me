@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import Slider from 'rc-slider';
+import { connect } from 'react-redux';
 import 'rc-slider/assets/index.css';
 import { Label, Icon, Checkbox } from 'semantic-ui-react';
 import styles from './SidePanel.module.css';
 
-export default class SidePanel extends Component {
+class SidePanel extends Component {
   // FROM https://github.com/react-component/slider
 
-  // TODO find a way to add key pair values for state based on existing genres in the DB.
   state = {
     pop: false,
   };
-
 
   render() {
     return (
@@ -37,10 +36,17 @@ export default class SidePanel extends Component {
           />
         </div>
         <div className={styles.controlsCont}>
-          /* TODO render a checkbox for each genre and sort based on checked */
-          <Checkbox label='Pop' onClick={() => this.setState({pop: !this.state.pop})} />
+          {this.props.data.map(() => (
+            <Checkbox label='Pop' onClick={() => this.setState({pop: !this.state.pop})} />
+          ))}
         </div>
       </div>
     );
   }
 }
+
+const mapStateToProps = state => ({
+  data: state.genre,
+});
+
+export default connect(mapStateToProps)(SidePanel);
