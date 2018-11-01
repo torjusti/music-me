@@ -12,15 +12,13 @@ export default class SidePanel extends Component {
     pop: false,
   };
 
-
   /* TODO render a checkbox for each genre and sort based on checked */
 
   render() {
     return (
-      <div className={styles.sidePanelCont}>
-        <h1 className="ui header">
-          Filtermenu
-        </h1>
+      <div className={styles.controls}>
+        <h1 className="ui header">Filter menu</h1>
+
         <div className={styles.controlsCont}>
           <Label>
             <Icon name="star" />
@@ -39,7 +37,10 @@ export default class SidePanel extends Component {
           />
         </div>
         <div className={styles.controlsCont}>
-          <Checkbox label='Pop' onClick={() => this.setState({pop: !this.state.pop})} />
+          <Checkbox
+            label="Pop"
+            onClick={() => this.setState({ pop: !this.state.pop })}
+          />
         </div>
       </div>
     );

@@ -32,15 +32,17 @@ class SearchField extends Component {
 
   render() {
     return (
-      <div className='searchField'>
-        <Input
-          icon="search"
-          placeholder="Type a value to search for"
-          value={this.state.query}
-          onChange={this.handleChange}
-          onKeyPress={this.handleKeyPress}
-          className={styles.searchField}
-        />
+      <div className={styles.container} data-component="SearchField">
+        <div className={styles.searchContainer}>
+          <Input
+            icon="search"
+            placeholder="Type a value to search for"
+            value={this.state.query}
+            onChange={this.handleChange}
+            onKeyPress={this.handleKeyPress}
+            className={styles.searchField}
+          />
+        </div>
 
         <div className={styles.searchButton}>
           <Button onClick={this.handleClick}>
@@ -60,5 +62,5 @@ const mapDispatchToProps = {
 
 export default connect(
   undefined,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(SearchField);

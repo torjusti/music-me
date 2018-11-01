@@ -48,6 +48,7 @@ app.post('/songs', async (req, res) => {
     artist: req.body.artist,
     album: req.body.album,
     genre: req.body.genre,
+    description: req.body.description,
   });
 
   // Recompute the search index in the background.
@@ -105,6 +106,7 @@ app.put('/songs/:id', async (req, res) => {
     artist: req.body.artist || song.dataValues.artist,
     album: req.body.album || song.dataValues.album,
     genre: req.body.genre || song.dataValues.genre,
+    description: req.body.description || song.dataValues.description,
   };
 
   await Song.update(updated, {
