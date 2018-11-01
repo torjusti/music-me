@@ -32,7 +32,7 @@ class SearchField extends Component {
 
   render() {
     return (
-      <div className={styles.container}>
+      <div className={styles.container} data-component="SearchField">
         <div className={styles.searchContainer}>
           <Input
             icon="search"

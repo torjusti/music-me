@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import { Song } from './models';
-import { recomputeIndex, search } from './search';
+import { recomputeIndex, search } from './search';
 
 const PAGE_SIZE = 2;
 
@@ -76,7 +76,7 @@ app.get('/songs', async (req, res) => {
     songs = await Song.findAll({
       where: {
         id: result,
-      }
+      },
     });
   } else {
     songs = await Song.findAll();
