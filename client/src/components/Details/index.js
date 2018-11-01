@@ -8,7 +8,7 @@ const ModalBasicExample = ({ open, onClose, song }) => (
 
     <Modal.Content>
       <h1>
-        {song.artist} - {song.title}
+        {song.artist} - {song.album} - {song.title}
       </h1>
 
       <Badge label="Genre" value={song.genre} />
