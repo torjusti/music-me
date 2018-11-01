@@ -1,0 +1,27 @@
+image: cypress/base:10
+
+stages:
+- build
+- test
+
+Build:
+  stage: build
+  before_script:
+  - cd client
+  - npm ci
+  script:
+  - npm run build
+
+Test:
+  stage: test
+  before_script:
+  - cd server
+  - npm ci
+  - npm start &
+  - cd ..
+  - cd client
+  - npm ci
+  - npm start &
+  script:
+  - npm run test
+  - npm run cytest

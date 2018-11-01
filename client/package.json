@@ -17,6 +17,9 @@
     "semantic-ui-react": "^0.83.0"
   },
   "devDependencies": {
+    "cypress": "^3.1.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
     "husky": "^1.1.2",
     "lint-staged": "^7.3.0",
     "prettier": "1.14.3"
@@ -25,7 +28,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cy": "./node_modules/.bin/cypress open",
+    "cytest": "./node_modules/.bin/cypress run"
   },
   "eslintConfig": {
     "extends": "react-app"

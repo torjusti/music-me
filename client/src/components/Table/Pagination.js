@@ -4,7 +4,7 @@ import { setPage } from '../../features/pagination/actions';
 import { Icon, Button } from 'semantic-ui-react';
 import styles from './Pagination.module.css';
 
-const Pagination = ({ pagination, setPage }) => (
+export const Pagination = ({ pagination, setPage }) => (
   <div className={styles.header}>
     <Button
       className={styles.button}
