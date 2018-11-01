@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import { Song } from './models';
+import { Song, Genre } from './models';
 
 const PAGE_SIZE = 2;
 
@@ -21,6 +21,7 @@ const port = process.env.PORT || 8000;
  */
 const synchronizeDatabase = async () => {
   await Song.sync();
+  await Genre.sync();
 };
 
 /**
@@ -40,6 +41,8 @@ app.post('/songs', async (req, res) => {
     album: req.body.album,
     genre: req.body.genre,
   });
+
+  Genre.findOrCreate({ where: { genre: req.body.genre } });
 
   res.status(201).json(model.dataValues);
 });
@@ -71,6 +74,21 @@ app.put('/songs/:id', async (req, res) => {
     genre: req.body.genre || song.dataValues.genre,
   };
 
+  if (song) {
+    const countGenre = await Song.count({
+      where: { genre: song.dataValues.genre },
+    });
+
+    // If it only exists one song instance with the genre
+    if (countGenre === 1) {
+      // remove the old genre if this was the only song with this genre
+      await Genre.destroy({ where: { genre: song.dataValues.genre } });
+    }
+
+    // add the new genre if not already existing
+    Genre.findOrCreate({ where: { genre: req.body.genre } });
+  }
+
   await Song.update(updated, {
     where: { id: req.params.id },
   });
@@ -80,9 +98,29 @@ app.put('/songs/:id', async (req, res) => {
 
 // Delete a specific song
 app.delete('/songs/:id', async (req, res) => {
+  const song = await Song.findByPk(req.params.id);
+
+  if (song) {
+    const countGenre = await Song.count({
+      where: { genre: song.dataValues.genre },
+    });
+
+    // If it only exists one song instance with the genre
+    if (countGenre === 1) {
+      // remove the genre
+      await Genre.destroy({ where: { genre: song.dataValues.genre } });
+    }
+  }
+
   await Song.destroy({
     where: { id: req.params.id },
   });
 
   res.status(204).json();
+});
+
+// Get all genres
+app.get('/genres', async (req, res) => {
+  const genres = await Genre.findAll();
+  res.status(200).json(genres);
 });
