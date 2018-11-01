@@ -48,7 +48,7 @@ class SidePanel extends Component {
 }
 
 const mapStateToProps = state => ({
-  data: state.genre,
+  data: state.genres,
 });
 
 export default connect(mapStateToProps)(SidePanel);

@@ -14,7 +14,7 @@ function* fetchGenres() {
 }
 
 function* genresSaga() {
-  yield takeLatest(['FETCH_GENRES', 'SET_GENRES'], fetchGenres);
+  yield takeLatest(['FETCH_GENRES'], fetchGenres);
 }
 
 export default genresSaga;

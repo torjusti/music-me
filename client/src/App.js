@@ -10,6 +10,8 @@ class App extends Component {
   componentDidMount() {
     // Initial loading of first page of songs.
     this.props.dispatch({ type: 'FETCH_SONGS' });
+    this.props.dispatch({ type: 'FETCH_GENRES' });
+
   }
 
   render() {
