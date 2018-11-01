@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import { Song, Genre } from './models';
-
+import { recomputeIndex, search } from './search';
 const PAGE_SIZE = 2;
 
 const app = express();
@@ -24,10 +24,18 @@ const synchronizeDatabase = async () => {
   await Genre.sync();
 };
 
+const initialize = async () => {
+  // Create tables in the database.
+  await synchronizeDatabase();
+
+  // Create a search index from the database contents.
+  await recomputeIndex();
+};
+
 /**
- * Synchronize the database and start the server.
+ * Initialize all dependencies and start the server.
  */
-synchronizeDatabase().then(() => {
+initialize().then(() => {
   app.listen(port, () => {
     console.log('Started server at port', port);
   });
@@ -40,20 +48,48 @@ app.post('/songs', async (req, res) => {
     artist: req.body.artist,
     album: req.body.album,
     genre: req.body.genre,
+    description: req.body.description,
   });
 
   Genre.findOrCreate({ where: { genre: req.body.genre } });
+
+  // Recompute the search index in the background.
+  recomputeIndex();
 
   res.status(201).json(model.dataValues);
 });
 
 // Get all songs
 app.get('/songs', async (req, res) => {
-  const page = req.query.page;
+  const page = parseInt(req.query.page, 10);
 
-  const songs = await Song.findAll();
+  const searchQuery = req.query.search;
 
-  res.status(200).json(songs.slice(PAGE_SIZE * page, PAGE_SIZE * (page + 1)));
+  let songs;
+
+  if (searchQuery) {
+    const result = search(
+      // Strip all non-alphanumeric and space characters from the query, as
+      // these are not handled by the search engine correctly.
+      // See https://stackoverflow.com/questions/6053541/regex-every-non-alphanumeric-character-except-white-space-or-colon
+      searchQuery.replace(/[^a-zA-Z\d\s]/g, ''),
+    ).map(result => result.ref);
+
+    songs = await Song.findAll({
+      where: {
+        id: result,
+      },
+    });
+  } else {
+    songs = await Song.findAll();
+  }
+
+  const result = {
+    pages: Math.ceil(songs.length / PAGE_SIZE),
+    songs: songs.slice(PAGE_SIZE * page, PAGE_SIZE * (page + 1)),
+  };
+
+  res.status(200).json(result);
 });
 
 // Get a specific song
@@ -72,6 +108,7 @@ app.put('/songs/:id', async (req, res) => {
     artist: req.body.artist || song.dataValues.artist,
     album: req.body.album || song.dataValues.album,
     genre: req.body.genre || song.dataValues.genre,
+    description: req.body.description || song.dataValues.description,
   };
 
   if (song) {
@@ -92,6 +129,9 @@ app.put('/songs/:id', async (req, res) => {
   await Song.update(updated, {
     where: { id: req.params.id },
   });
+
+  // Recompute the index in the background.
+  recomputeIndex();
 
   res.status(200).json();
 });
@@ -115,6 +155,9 @@ app.delete('/songs/:id', async (req, res) => {
   await Song.destroy({
     where: { id: req.params.id },
   });
+
+  // Recompute the index in the background.
+  recomputeIndex();
 
   res.status(204).json();
 });

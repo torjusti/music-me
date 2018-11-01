@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "query-string": "^6.2.0",
     "rc-slider": "^8.6.3",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
@@ -16,6 +17,9 @@
     "semantic-ui-react": "^0.83.0"
   },
   "devDependencies": {
+    "cypress": "^3.1.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
     "husky": "^1.1.2",
     "lint-staged": "^7.3.0",
     "prettier": "1.14.3"
@@ -24,7 +28,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cy": "./node_modules/.bin/cypress open",
+    "cytest": "./node_modules/.bin/cypress run"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -42,7 +48,7 @@
   },
   "lint-staged": {
     "*.{js,json,css,md}": [
-      "prettier --single-quote --trailing-comma --write",
+      "prettier --single-quote --trailing-comma all --write",
       "git add"
     ]
   }

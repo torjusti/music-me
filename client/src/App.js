@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Header from './components/Header';
 import Table from './components/Table/DataTable';
 import SearchField from './components/SearchField/SearchField';
 import SidePanel from './components/SidePanel/SidePanel';
-import Pagination from './components/Pagination';
 import styles from './App.module.css';
 
 class App extends Component {
@@ -14,18 +14,20 @@ class App extends Component {
 
   render() {
     return (
-      <div className={styles.app}>
-        <div>
-          <h1>Search in our music database</h1>
-          <SearchField />
-        </div>
+      <div>
+        <Header />
 
-        <div className={styles.subCont}>
-          <Table />
-          <SidePanel />
-        </div>
+        <main className={styles.main}>
+          <div>
+            <h1>Search in our music database</h1>
+            <SearchField />
+          </div>
 
-        <Pagination />
+          <div className={styles.content}>
+            <Table />
+            <SidePanel />
+          </div>
+        </main>
       </div>
     );
   }

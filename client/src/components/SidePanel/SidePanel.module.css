@@ -1,4 +1,9 @@
-.sidePanelCont {
+.controls {
+  order: 0;
+  background: #f9fafb;
+  border: 1px solid rgba(34, 36, 38, 0.1);
+  border-radius: 5px;
+  padding: 1rem;
   flex: 1;
 }
 
@@ -8,4 +13,10 @@
 
 .text {
   background-color: #ff0;
+}
+
+@media (min-width: 1024px) {
+  .controls {
+    order: 1;
+  }
 }

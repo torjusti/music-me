@@ -9,6 +9,7 @@ node_modules/
 
 # testing
 /client/coverage
+/client/cypress
 
 # production
 /client/build

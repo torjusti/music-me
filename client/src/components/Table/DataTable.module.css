@@ -1,0 +1,21 @@
+.container {
+  margin-top: 2rem;
+  order: 1;
+  flex: 3;
+}
+
+.row {
+  cursor: pointer;
+}
+
+.row:hover {
+  background: #fbfbfb;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    margin-right: 2rem;
+    margin-top: 0;
+    order: 0;
+  }
+}

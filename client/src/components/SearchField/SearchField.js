@@ -1,32 +1,66 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Input, Icon, Button } from 'semantic-ui-react';
 import styles from './SearchField.module.css';
-import { Input, Icon, Button } from 'semantic-ui-react';
+import { setQuery, clearQuery } from '../../features/search/actions';
 
-export default class SearchField extends Component {
+class SearchField extends Component {
   state = {
-    searchValue: '',
+    query: '',
   };
 
-  handleChange = input => {
+  handleKeyPress = event => {
+    // If the enter key was pressed, treat it as a click.
+    if (event.key === 'Enter') {
+      this.handleClick();
+    }
+  };
+
+  handleChange = event => {
     this.setState({
-      searchValue: input,
+      query: event.target.value,
     });
+  };
+
+  handleClick = () => {
+    if (this.state.query) {
+      this.props.setQuery(this.state.query);
+    } else {
+      this.props.clearQuery();
+    }
   };
 
   render() {
     return (
-      <div>
-        <Input
-          icon="search"
-          placeholder="Search ..."
-          className={styles.searchField}
-        />
-        <Button
-          onClick={this.handleChange}>
-          Search
-          <Icon name="angle right"/>
-        </Button>
+      <div className={styles.container} data-component="SearchField">
+        <div className={styles.searchContainer}>
+          <Input
+            icon="search"
+            placeholder="Type a value to search for"
+            value={this.state.query}
+            onChange={this.handleChange}
+            onKeyPress={this.handleKeyPress}
+            className={styles.searchField}
+          />
+        </div>
+
+        <div className={styles.searchButton}>
+          <Button onClick={this.handleClick}>
+            Search
+            <Icon name="angle right" />
+          </Button>
+        </div>
       </div>
     );
   }
 }
+
+const mapDispatchToProps = {
+  setQuery,
+  clearQuery,
+};
+
+export default connect(
+  undefined,
+  mapDispatchToProps,
+)(SearchField);
