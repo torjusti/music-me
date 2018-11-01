@@ -1,0 +1,15 @@
+.badge {
+  display: inline-flex;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.label {
+  padding: 0.3rem 0.5rem;
+  border-right: 1px solid #ccc;
+  background: #efefef;
+}
+
+.value {
+  padding: 0.3rem 0.5rem;
+}

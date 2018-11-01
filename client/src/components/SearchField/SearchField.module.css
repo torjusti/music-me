@@ -1,8 +1,16 @@
+.container {
+  display: flex;
+}
+
 .searchField {
-  width: 80%;
+  width: 100%;
+}
+
+.searchContainer {
+  flex: 1;
 }
 
 .searchButton {
-  margin: 1rem;
+  margin-left: 1rem;
   display: inline-block;
 }
