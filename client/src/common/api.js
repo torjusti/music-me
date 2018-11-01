@@ -1,3 +1,5 @@
+import queryString from 'query-string';
+
 // The domain on which the server runs.
 export const DOMAIN = process.env.DOMAIN || 'http://localhost:8000';
 
@@ -23,4 +25,17 @@ export const requestData = async path => {
     // Return any errors which occurred.
     return { error };
   }
+};
+
+/**
+ * Request songs from the server.
+ */
+export const requestSongs = (page, search) => {
+  return requestData(
+    '/songs?' +
+      queryString.stringify({
+        page,
+        search,
+      }),
+  );
 };

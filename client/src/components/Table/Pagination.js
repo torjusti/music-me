@@ -16,13 +16,18 @@ const Pagination = ({ pagination, setPage }) => (
     </Button>
 
     <span className={styles.label}>
-      {pagination.page + 1} of {pagination.totalPages}
+      {pagination.totalPages === 0
+        ? 'No results'
+        : `${pagination.page + 1} of ${pagination.totalPages}`}
     </span>
 
     <Button
       className={styles.button}
       onClick={() => setPage(pagination.page + 1)}
-      disabled={pagination.page === pagination.totalPages - 1}
+      disabled={
+        pagination.page === pagination.totalPages - 1 ||
+        pagination.totalPages === 0
+      }
     >
       Next
       <Icon name="angle right" />
@@ -40,5 +45,5 @@ const mapDispatchToProps = {
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Pagination);
