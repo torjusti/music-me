@@ -32,7 +32,7 @@ class SearchField extends Component {
 
   render() {
     return (
-      <div>
+      <div className='searchField'>
         <Input
           icon="search"
           placeholder="Type a value to search for"
