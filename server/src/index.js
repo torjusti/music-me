@@ -16,6 +16,13 @@ app.use(cors());
 // Used for parsing JSON data using Express.
 app.use(bodyParser.json());
 
+// Handle errors. This is a middleware which needs to
+// be added last, after all other middlewares.
+app.use(function (err, req, res) {
+  console.error(err.stack);
+  res.status(500).json();
+})
+
 // Either run on the specified port, or default to 8000.
 const port = process.env.PORT || 8000;
 
@@ -51,19 +58,25 @@ app.post('/songs', [
   check('album').isString(),
   check('genre').isString(),
   check('description').isString(),
-], async (req, res) => {
+], async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(422).json({ errors: errors.array() });
   }
 
-  const model = await Song.create({
-    title: req.body.title,
-    artist: req.body.artist,
-    album: req.body.album,
-    genre: req.body.genre,
-    description: req.body.description,
-  });
+  let model;
+
+  try {
+    model = await Song.create({
+      title: req.body.title,
+      artist: req.body.artist,
+      album: req.body.album,
+      genre: req.body.genre,
+      description: req.body.description,
+    });
+  } catch (error) {
+    next(error);
+  }
 
   // Recompute the search index in the background.
   recomputeIndex();
@@ -78,7 +91,7 @@ app.get('/songs', [
     allow_leading_zeroes: false,
   }),
   check('search').isString().optional(),
-], async (req, res) => {
+], async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(422).json({ errors: errors.array() });
@@ -90,21 +103,25 @@ app.get('/songs', [
 
   let songs;
 
-  if (searchQuery) {
-    const result = search(
-      // Strip all non-alphanumeric and space characters from the query, as
-      // these are not handled by the search engine correctly.
-      // See https://stackoverflow.com/questions/6053541/regex-every-non-alphanumeric-character-except-white-space-or-colon
-      searchQuery.replace(/[^a-zA-Z\d\s]/g, ''),
-    ).map(result => result.ref);
+  try {
+    if (searchQuery) {
+      const result = search(
+        // Strip all non-alphanumeric and space characters from the query, as
+        // these are not handled by the search engine correctly.
+        // See https://stackoverflow.com/questions/6053541/regex-every-non-alphanumeric-character-except-white-space-or-colon
+        searchQuery.replace(/[^a-zA-Z\d\s]/g, ''),
+      ).map(result => result.ref);
 
-    songs = await Song.findAll({
-      where: {
-        id: result,
-      },
-    });
-  } else {
-    songs = await Song.findAll();
+      songs = await Song.findAll({
+        where: {
+          id: result,
+        },
+      });
+    } else {
+      songs = await Song.findAll();
+    }
+  } catch (error) {
+    next(error);
   }
 
   const result = {
@@ -121,14 +138,25 @@ app.get('/songs/:id', [
     min: 0,
     allow_leading_zeroes: false,
   }),
-], async (req, res) => {
+], async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(422).json({ errors: errors.array() });
   }
 
-  const song = await Song.findByPk(req.params.id);
-  res.status(200).json(song);
+  let song;
+
+  try {
+    song = await Song.findByPk(req.params.id);
+  } catch (error) {
+    next(error);
+  }
+
+  if (song) {
+    res.status(200).json(song);
+  } else {
+    res.status(404).json();
+  }
 });
 
 // Update a specific song
@@ -142,13 +170,23 @@ app.put('/songs/:id', [
   check('album').isString().optional(),
   check('genre').isString().optional(),
   check('description').isString().optional(),
-], async (req, res) => {
+], async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(422).json({ errors: errors.array() });
   }
 
-  const song = await Song.findByPk(req.params.id);
+  let song;
+  
+  try {
+    song = await Song.findByPk(req.params.id);
+  } catch (error) {
+    next(error);
+  }
+  
+  if (!song) {
+    return res.status(422).json();
+  }
 
   // Merge the provided data with the old song.
   const updated = {
@@ -159,9 +197,13 @@ app.put('/songs/:id', [
     description: req.body.description || song.dataValues.description,
   };
 
-  await Song.update(updated, {
-    where: { id: req.params.id },
-  });
+  try {
+    await Song.update(updated, {
+      where: { id: req.params.id },
+    });
+  } catch (error) {
+    next(error);
+  }
 
   // Recompute the index in the background.
   recomputeIndex();
@@ -175,15 +217,19 @@ app.delete('/songs/:id', [
     min: 0,
     allow_leading_zeroes: false,
   }),
-], async (req, res) => {
+], async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(422).json({ errors: errors.array() });
   }
 
-  await Song.destroy({
-    where: { id: req.params.id },
-  });
+  try {
+    await Song.destroy({
+      where: { id: req.params.id },
+    });
+  } catch (error) {
+    next(error);
+  }
 
   // Recompute the index in the background.
   recomputeIndex();
