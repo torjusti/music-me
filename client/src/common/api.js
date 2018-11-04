@@ -19,11 +19,13 @@ export const requestData = async path => {
     // Attempt converting the repsonse into JSON.
     const data = await response.json();
 
-    // Return the data if successful.
-    return { data };
+    if (response.ok) {
+      return { data };
+    } else {
+      return { error: true };
+    }
   } catch (error) {
-    // Return any errors which occurred.
-    return { error };
+    return { error: true };
   }
 };
 
