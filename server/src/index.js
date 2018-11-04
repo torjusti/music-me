@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 
 // Handle errors. This is a middleware which needs to
 // be added last, after all other middlewares.
-app.use(function (err, req, res) {
+app.use(function (err, req, res, next) {
   console.error(err.stack);
   res.status(500).json();
 })
