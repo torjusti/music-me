@@ -1,13 +1,16 @@
 import express from 'express';
+import { check, validationResult } from 'express-validator/check';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import { Song } from './models';
 import { recomputeIndex, search } from './search';
 
+// The number of songs to show on a single page.
 const PAGE_SIZE = 2;
 
 const app = express();
 
+// Allow cross-origin resource sharing.
 app.use(cors());
 
 // Used for parsing JSON data using Express.
@@ -42,7 +45,18 @@ initialize().then(() => {
 });
 
 // Create a song
-app.post('/songs', async (req, res) => {
+app.post('/songs', [
+  check('title').isString(),
+  check('artist').isString(),
+  check('album').isString(),
+  check('genre').isString(),
+  check('description').isString(),
+], async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(422).json({ errors: errors.array() });
+  }
+
   const model = await Song.create({
     title: req.body.title,
     artist: req.body.artist,
@@ -58,7 +72,18 @@ app.post('/songs', async (req, res) => {
 });
 
 // Get all songs
-app.get('/songs', async (req, res) => {
+app.get('/songs', [
+  check('page').isInt({
+    min: 0,
+    allow_leading_zeroes: false,
+  }),
+  check('search').isString().optional(),
+], async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(422).json({ errors: errors.array() });
+  }
+
   const page = parseInt(req.query.page, 10);
 
   const searchQuery = req.query.search;
@@ -91,13 +116,38 @@ app.get('/songs', async (req, res) => {
 });
 
 // Get a specific song
-app.get('/songs/:id', async (req, res) => {
+app.get('/songs/:id', [
+  check('id').isInt({
+    min: 0,
+    allow_leading_zeroes: false,
+  }),
+], async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(422).json({ errors: errors.array() });
+  }
+
   const song = await Song.findByPk(req.params.id);
   res.status(200).json(song);
 });
 
 // Update a specific song
-app.put('/songs/:id', async (req, res) => {
+app.put('/songs/:id', [
+  check('id').isInt({
+    min: 0,
+    allow_leading_zeroes: false,
+  }),
+  check('title').isString().optional(),
+  check('artist').isString().optional(),
+  check('album').isString().optional(),
+  check('genre').isString().optional(),
+  check('description').isString().optional(),
+], async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(422).json({ errors: errors.array() });
+  }
+
   const song = await Song.findByPk(req.params.id);
 
   // Merge the provided data with the old song.
@@ -120,7 +170,17 @@ app.put('/songs/:id', async (req, res) => {
 });
 
 // Delete a specific song
-app.delete('/songs/:id', async (req, res) => {
+app.delete('/songs/:id', [
+  check('id').isInt({
+    min: 0,
+    allow_leading_zeroes: false,
+  }),
+], async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(422).json({ errors: errors.array() });
+  }
+
   await Song.destroy({
     where: { id: req.params.id },
   });
