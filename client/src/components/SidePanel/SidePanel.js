@@ -6,7 +6,7 @@ import { Label, Icon } from 'semantic-ui-react';
 import styles from './SidePanel.module.css';
 
 class SidePanel extends Component {
-  // FROM https://github.com/react-component/slider
+  // rc-slider is from https://github.com/react-component/slider
 
   state = {
     genres: []
@@ -55,17 +55,25 @@ class SidePanel extends Component {
           />
         </div>
         <div className={styles.controlsCont}>
-          {this.props.data.map(elem => (
-            <div className="ui checkbox" key={elem.genre}>
-              <input
-                type="checkbox"
-                onClick={((e) => this.handleCheckboxState(e, elem.genre))}
-              />
-              <label>
-                {elem.genre}
-              </label>
-            </div>
-          ))}
+          <Label>
+            <Icon name="music" />
+            Filter by genre
+          </Label>
+          <ul className={styles.noDecoration}>
+            {this.props.data.map(elem => (
+              <li key={elem.genre}>
+                <div className="ui checkbox">
+                  <input
+                    type="checkbox"
+                    onClick={((e) => this.handleCheckboxState(e, elem.genre))}
+                  />
+                  <label>
+                    {elem.genre}
+                  </label>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     );

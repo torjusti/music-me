@@ -9,10 +9,22 @@
 
 .controlsCont {
   margin: 2rem 1rem 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.controlsCont > div:nth-child(2) {
+  margin: 0.5rem 1rem 0.5rem 1rem;
+  width: inherit;
 }
 
 .text {
   background-color: #ff0;
+}
+
+.noDecoration {
+  list-style-type: none;
+  padding: 0;
 }
 
 @media (min-width: 1024px) {
