@@ -2,14 +2,34 @@ import React, { Component } from 'react';
 import Slider from 'rc-slider';
 import { connect } from 'react-redux';
 import 'rc-slider/assets/index.css';
-import { Label, Icon, Checkbox } from 'semantic-ui-react';
+import { Label, Icon } from 'semantic-ui-react';
 import styles from './SidePanel.module.css';
 
 class SidePanel extends Component {
   // FROM https://github.com/react-component/slider
 
   state = {
-    pop: false,
+    genres: []
+  };
+
+  /**
+   * When a checkbox changes it's state from user input,
+   * updates the genres that the server should filter
+   * The state contains an array of all genres that
+   * should be included.
+   * @param elem   (Object)   The pressed checkbox element
+   * @param genre  (string)   The genre that should either be removed or included
+   */
+  handleCheckboxState = (elem, genre) => {
+    if (elem.target.checked) {
+      this.setState({
+        genres: [...this.state.genres, genre]
+      });
+    } else {
+      let temp = [...this.state.genres];
+      temp.splice(temp.indexOf(genre), 1);
+      this.setState({ genres: temp });
+    }
   };
 
   render() {
@@ -35,11 +55,16 @@ class SidePanel extends Component {
           />
         </div>
         <div className={styles.controlsCont}>
-          {this.props.data.map(() => (
-            <Checkbox
-              label="Pop"
-              onClick={() => this.setState({ pop: !this.state.pop })}
-            />
+          {this.props.data.map(elem => (
+            <div className="ui checkbox" key={elem.genre}>
+              <input
+                type="checkbox"
+                onClick={((e) => this.handleCheckboxState(e, elem.genre))}
+              />
+              <label>
+                {elem.genre}
+              </label>
+            </div>
           ))}
         </div>
       </div>
