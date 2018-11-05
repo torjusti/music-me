@@ -1,5 +1,5 @@
 export const setGenreSelected = (genre, selected) => ({
-  type: 'SET_GENRE_SELECTED',
+  type: 'SET_SELECTED_GENRE',
   payload: {
     genre,
     selected,

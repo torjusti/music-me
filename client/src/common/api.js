@@ -32,13 +32,14 @@ export const requestData = async path => {
 /**
  * Request songs from the server.
  */
-export const requestSongs = (page, search, selectedGenres) => {
+export const requestSongs = (page, search, selectedGenres, selectedRating) => {
   return requestData(
     '/songs?' +
       queryString.stringify({
         page,
         search,
         selectedGenres,
+        selectedRating
       }),
   );
 };

@@ -8,7 +8,7 @@ const genres = (state = initialState, action) => {
     case 'SET_GENRES':
       return { ...state, availableGenres: action.payload.genres };
 
-    case 'SET_GENRE_SELECTED':
+    case 'SET_SELECTED_GENRE':
       return {
         ...state,
         selectedGenres: action.payload.selected ?

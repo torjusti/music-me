@@ -64,6 +64,7 @@ app.post(
     check('album').isString(),
     check('genre').isString(),
     check('description').isString(),
+    check('rating').isInt(),
   ],
   async (req, res, next) => {
     const errors = validationResult(req);
@@ -80,6 +81,7 @@ app.post(
         album: req.body.album,
         genre: req.body.genre,
         description: req.body.description,
+        rating: req.body.rating,
       });
     } catch (error) {
       next(error);
@@ -114,6 +116,9 @@ app.get(
         );
       })
       .optional(),
+    check('selectedRating')
+      .isInt()
+      .optional(),
   ],
   async (req, res, next) => {
     const errors = validationResult(req);
@@ -138,6 +143,12 @@ app.get(
       if (selectedGenres.length) {
         where.genre = {
           [Op.in]: selectedGenres,
+        };
+      }
+
+      if (req.query.selectedRating) {
+        where.rating = {
+          [Op.gte]: req.query.selectedRating,
         };
       }
 
@@ -220,6 +231,9 @@ app.put(
     check('description')
       .isString()
       .optional(),
+    check('rating')
+      .isInt()
+      .optional(),
   ],
   async (req, res, next) => {
     const errors = validationResult(req);
@@ -246,6 +260,7 @@ app.put(
       album: req.body.album || song.dataValues.album,
       genre: req.body.genre || song.dataValues.genre,
       description: req.body.description || song.dataValues.description,
+      rating: req.body.rating || song.dataValues.rating,
     };
 
     try {

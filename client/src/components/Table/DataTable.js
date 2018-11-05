@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { Table } from 'semantic-ui-react';
+import { Icon, Table } from "semantic-ui-react";
 import Pagination from './Pagination';
 import Details from '../Details';
 import styles from './DataTable.module.css';
@@ -38,6 +38,8 @@ class DataTable extends Component {
                 <Table.HeaderCell>Song</Table.HeaderCell>
 
                 <Table.HeaderCell>Genre</Table.HeaderCell>
+
+                <Table.HeaderCell>Rating</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
 
@@ -55,6 +57,7 @@ class DataTable extends Component {
                     <Table.Cell>{row.album}</Table.Cell>
                     <Table.Cell>{row.title}</Table.Cell>
                     <Table.Cell>{row.genre}</Table.Cell>
+                    <Table.Cell><Icon name="star" />{row.rating}</Table.Cell>
                   </Table.Row>
                 </Fragment>
               ))}

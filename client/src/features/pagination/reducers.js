@@ -13,6 +13,8 @@ const page = (state = initialState, action) => {
 
     case 'SET_QUERY':
     case 'CLEAR_QUERY':
+    case 'SET_SELECTED_GENRE':
+    case 'SET_SELECTED_RATING':
       return { ...state, page: 0 };
 
     default:

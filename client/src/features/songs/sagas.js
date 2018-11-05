@@ -5,8 +5,9 @@ function* fetchSongs() {
   const page = yield select(state => state.pagination.page);
   const search = yield select(state => state.search);
   const selectedGenres = yield select(state => state.genres.selectedGenres);
+  const selectedRating = yield select(state => state.selectedRating);
 
-  const response = yield call(requestSongs, page, search, selectedGenres);
+  const response = yield call(requestSongs, page, search, selectedGenres, selectedRating);
 
   if (response.error) {
     yield put({ type: 'FETCH_ERROR' });
@@ -24,7 +25,7 @@ function* fetchSongs() {
 
 function* songsSaga() {
   yield takeLatest(
-    ['FETCH_SONGS', 'SET_PAGE', 'SET_QUERY', 'CLEAR_QUERY', 'SET_GENRE_SELECTED'],
+    ['FETCH_SONGS', 'SET_PAGE', 'SET_QUERY', 'CLEAR_QUERY', 'SET_SELECTED_GENRE', 'SET_SELECTED_RATING'],
     fetchSongs,
   );
 }
