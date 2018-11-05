@@ -4,8 +4,9 @@ import { requestSongs } from '../../common/api';
 function* fetchSongs() {
   const page = yield select(state => state.pagination.page);
   const search = yield select(state => state.search);
+  const selectedGenres = yield select(state => state.genres.selectedGenres);
 
-  const response = yield call(requestSongs, page, search);
+  const response = yield call(requestSongs, page, search, selectedGenres);
 
   if (response.error) {
     yield put({ type: 'FETCH_ERROR' });
@@ -13,6 +14,7 @@ function* fetchSongs() {
 
   if (response.data) {
     yield put({ type: 'SET_SONGS', payload: { songs: response.data.songs } });
+
     yield put({
       type: 'SET_TOTAL_PAGES',
       payload: { totalPages: response.data.pages },
@@ -22,7 +24,7 @@ function* fetchSongs() {
 
 function* songsSaga() {
   yield takeLatest(
-    ['FETCH_SONGS', 'SET_PAGE', 'SET_QUERY', 'CLEAR_QUERY'],
+    ['FETCH_SONGS', 'SET_PAGE', 'SET_QUERY', 'CLEAR_QUERY', 'SET_GENRE_SELECTED'],
     fetchSongs,
   );
 }

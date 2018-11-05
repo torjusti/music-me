@@ -4,6 +4,9 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import { Song, Genre } from './models';
 import { recomputeIndex, search } from './search';
+import Sequelize from 'sequelize';
+
+const Op = Sequelize.Op;
 
 // The number of songs to show on a single page.
 const PAGE_SIZE = 2;
@@ -102,6 +105,15 @@ app.get(
     check('search')
       .isString()
       .optional(),
+    check('selectedGenres')
+      .custom(value => {
+        return (
+          typeof value === 'string' ||
+          (Array.isArray(value) &&
+            value.every(entry => typeof entry === 'string'))
+        );
+      })
+      .optional(),
   ],
   async (req, res, next) => {
     const errors = validationResult(req);
@@ -110,12 +122,25 @@ app.get(
     }
 
     const page = parseInt(req.query.page, 10);
-
     const searchQuery = req.query.search;
+    let selectedGenres = req.query.selectedGenres;
+    selectedGenres = selectedGenres
+      ? Array.isArray(selectedGenres)
+        ? selectedGenres
+        : [selectedGenres]
+      : [];
 
     let songs;
 
     try {
+      const where = {};
+
+      if (selectedGenres.length) {
+        where.genre = {
+          [Op.in]: selectedGenres,
+        };
+      }
+
       if (searchQuery) {
         const result = search(
           // Strip all non-alphanumeric and space characters from the query, as
@@ -124,14 +149,10 @@ app.get(
           searchQuery.replace(/[^a-zA-Z\d\s]/g, ''),
         ).map(result => result.ref);
 
-        songs = await Song.findAll({
-          where: {
-            id: result,
-          },
-        });
-      } else {
-        songs = await Song.findAll();
+        where.id = result;
       }
+
+      songs = await Song.findAll({ where });
     } catch (error) {
       next(error);
     }
