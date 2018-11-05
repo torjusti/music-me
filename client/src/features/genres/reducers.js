@@ -1,7 +1,20 @@
-const genres = (state = [], action) => {
+const initialState = {
+  availableGenres: [],
+  selectedGenres: [],
+};
+
+const genres = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_GENRES':
-      return action.payload.genres;
+      return { ...state, availableGenres: action.payload.genres };
+
+    case 'SET_GENRE_SELECTED':
+      return {
+        ...state,
+        selectedGenres: action.payload.selected ?
+          [...state.selectedGenres, action.payload.genre] :
+          state.selectedGenres.filter(genre => genre !== action.payload.genre),
+      };
 
     default:
       return state;

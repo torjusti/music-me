@@ -1,4 +1,7 @@
-const setGenres = genres => ({
-  type: 'SET_GENRES',
-  payload: { genres },
+export const setGenreSelected = (genre, selected) => ({
+  type: 'SET_GENRE_SELECTED',
+  payload: {
+    genre,
+    selected,
+  },
 });

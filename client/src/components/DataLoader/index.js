@@ -5,6 +5,7 @@ import ErrorMessage from './ErrorMessage';
 class DataLoader extends Component {
   loadData = () => {
     this.props.dispatch({ type: 'FETCH_SONGS' });
+    this.props.dispatch({type: 'FETCH_GENRES'});
   };
 
   componentDidMount() {
