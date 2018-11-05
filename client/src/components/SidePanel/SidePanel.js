@@ -1,18 +1,28 @@
 import React, { Component } from 'react';
 import Slider from 'rc-slider';
+import { connect } from 'react-redux';
 import 'rc-slider/assets/index.css';
-import { Label, Icon, Checkbox } from 'semantic-ui-react';
+import { Label, Icon } from 'semantic-ui-react';
 import styles from './SidePanel.module.css';
+import { setGenreSelected } from '../../features/genres/actions';
+import { setRatingSelected } from "../../features/rating/actions";
 
-export default class SidePanel extends Component {
-  // FROM https://github.com/react-component/slider
+class SidePanel extends Component {
 
-  // TODO find a way to add key pair values for state based on existing genres in the DB.
-  state = {
-    pop: false,
+  constructor(props) {
+    super(props);
+    const { state } = this.props;
+    this.state = { state };
+  }
+
+  setValue = rating => {
+    this.setState({ selectedRating: rating });
   };
 
-  /* TODO render a checkbox for each genre and sort based on checked */
+  update = () => {
+    this.props.setRatingSelected(this.state.selectedRating);
+  };
+
 
   render() {
     return (
@@ -27,6 +37,9 @@ export default class SidePanel extends Component {
           <Slider
             min={1}
             max={5}
+            value={this.state.selectedRating}
+            onChange={this.setValue}
+            onAfterChange={this.update}
             marks={{
               1: '1',
               2: '2',
@@ -36,13 +49,49 @@ export default class SidePanel extends Component {
             }}
           />
         </div>
+
         <div className={styles.controlsCont}>
-          <Checkbox
-            label="Pop"
-            onClick={() => this.setState({ pop: !this.state.pop })}
-          />
+          <Label>
+            <Icon name="music" />
+            Filter by genre
+          </Label>
+
+          <ul className={styles.noDecoration}>
+            {this.props.genres.availableGenres.map(elem => {
+              const selected = this.props.genres.selectedGenres.includes(elem.genre);
+
+              return (
+                <li key={elem.genre}>
+                  <div className="ui checkbox">
+                    <input
+                      type="checkbox"
+                      checked={selected}
+                      onChange={() => this.props.setGenreSelected(elem.genre, !selected)}
+                    />
+
+                    <label>{elem.genre}</label>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
-    );
+    )
   }
 }
+
+const mapStateToProps = state => ({
+  genres: state.genres,
+  selectedRating: state.selectedRating
+});
+
+const mapDispatchToProps = {
+  setGenreSelected,
+  setRatingSelected,
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(SidePanel);

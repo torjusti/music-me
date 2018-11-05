@@ -7,4 +7,9 @@ export const Song = sequelize.define('song', {
   album: Sequelize.STRING,
   genre: Sequelize.STRING,
   description: Sequelize.STRING,
+  rating: Sequelize.INTEGER,
+});
+
+export const Genre = sequelize.define('genre', {
+  genre: Sequelize.STRING,
 });

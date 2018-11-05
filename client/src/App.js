@@ -9,7 +9,6 @@ import styles from './App.module.css';
 const App = () => (
   <div>
     <Header />
-
     <main className={styles.main}>
       <DataLoader />
 
