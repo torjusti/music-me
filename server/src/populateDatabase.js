@@ -19,6 +19,7 @@ const songs = [
     genre: 'Pop',
     description:
       'A song by the french psysco-punk rock group La Femme about Vietnam and some other things.',
+    rating: 2,
   },
 
   {
@@ -37,6 +38,7 @@ const songs = [
     genre: 'Pop',
     description:
       'Another song from this album. I hate writing long descriptions.',
+    rating: 2,
   },
 
   {
@@ -55,6 +57,7 @@ const songs = [
     genre: 'Pop',
     description:
       'Yet another song from this album. I guess they have been sleeping for 10 years now, or something.',
+    rating: 5,
   },
 
   {
@@ -73,6 +76,7 @@ const songs = [
     genre: 'RnB',
     description:
       'A really chill and nice song from Mr .Paak here. Cool guy, this dude. Album coming soon.',
+    rating: 3,
   },
 
   {
@@ -91,6 +95,7 @@ const songs = [
     genre: 'Soft rock',
     description:
       "A song for if you're coming to San Fransisco - be sure to wear flowers in your hair!",
+    rating: 1,
   },
 
   {
@@ -109,6 +114,7 @@ const songs = [
     genre: 'Hip-Hop',
     description:
       'Thugger is an incredibly loveable guy, and when paired with Elton John, this song is simply genius. Really brings you back.',
+    rating: 5,
   },
 
   {
@@ -127,6 +133,7 @@ const songs = [
     genre: 'Jazz',
     description:
       'Some really nice jazz by Pharoah Sanders, about love and how love is everywhere, probably.',
+    rating: 5,
   },
 
   {
@@ -136,6 +143,7 @@ const songs = [
     genre: 'Electro',
     description:
       'Nice christmas electro, from the Norwegian elecro group Casiokids. This is the original, only better!',
+    rating: 4,
   },
 
   {
@@ -154,6 +162,7 @@ const songs = [
     genre: 'ElectroPop',
     description:
       'Ellie Goulding continues to impress with one of her greatest hits in Halcyon Days',
+    rating: 1,
   },
 
   {
@@ -172,6 +181,7 @@ const songs = [
     genre: 'Blues Rock',
     description:
       'One of Jimmy Reeds greatest hits. This was originally released in 1976',
+    rating: 3,
   },
 
   {
@@ -190,6 +200,7 @@ const songs = [
     genre: 'Housemusic',
     description:
       'This was published in 2014 with Sonny Alven as the originated artist.',
+    rating: 4,
   },
 ];
 
