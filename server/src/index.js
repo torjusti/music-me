@@ -64,7 +64,7 @@ app.post(
     check('album').isString(),
     check('genre').isString(),
     check('description').isString(),
-    check('rating').isInt(),
+    check('rating').isInt().optional(),
   ],
   async (req, res, next) => {
     const errors = validationResult(req);
@@ -95,6 +95,46 @@ app.post(
     res.status(201).json(model.dataValues);
   },
 );
+
+app.post('/songs/rate', [
+  check('id').isInt({
+    min: 0,
+    allow_leading_zeroes: false,
+  }),
+  check('rating').isInt({
+    min: 1,
+    max: 5,
+    allow_leading_zeroes: false,
+  }),
+], async (req, res, next) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(422).json({ errors: errors.array() });
+  }
+
+  let song;
+  try {
+    song = await Song.findByPk(req.body.id);
+  } catch (error) {
+    next(error);
+  }
+
+  if (!song) {
+    return res.status(422).json();
+  }
+
+  try {
+    await Song.update({
+      rating: parseInt(req.body.rating, 10),
+    }, {
+      where: { id: req.body.id },
+    });
+  } catch (error) {
+    next(error);
+  }
+
+  res.status(200).json();
+});
 
 // Get all songs
 app.get(
