@@ -134,7 +134,17 @@ const songs = [
 
 
 // Create database tables if they do not already exist, then populate the database.
-synchronizeDatabase().then(() => {
+synchronizeDatabase().then(async () => {
+  await Song.destroy({
+    where: {},
+    truncate: true,
+  });
+
+  await Genre.destroy({
+    where: {},
+    truncate: true,
+  });
+
   songs.forEach(song => {
     Song.create(song);
   });
