@@ -9,7 +9,7 @@ import Sequelize from 'sequelize';
 const Op = Sequelize.Op;
 
 // The number of songs to show on a single page.
-const PAGE_SIZE = 2;
+const PAGE_SIZE = 5;
 
 const app = express();
 
