@@ -8,7 +8,8 @@ const songs = [
     album: 'Psycho Tropical Berlin',
     artist: 'La Femme',
     genre: 'Pop',
-    description: 'A song by the french psycho-punk rock group La Femme about taking the bus instead of taxies.',
+    description:
+      'A song by the french psycho-punk rock group La Femme about taking the bus instead of taxies.',
   },
 
   {
@@ -16,7 +17,8 @@ const songs = [
     album: 'Psycho Tropical Berlin',
     artist: 'La Femme',
     genre: 'Pop',
-    description: 'A song by the french psysco-punk rock group La Femme about Vietnam and some other things.',
+    description:
+      'A song by the french psysco-punk rock group La Femme about Vietnam and some other things.',
   },
 
   {
@@ -24,7 +26,8 @@ const songs = [
     album: 'Psycho Tropical Berlin',
     artist: 'La Femme',
     genre: 'Pop',
-    description: 'A song by the french psysco-punk rock group La Femme about something. Quite hard to understand when the songs are in french.',
+    description:
+      'A song by the french psysco-punk rock group La Femme about something. Quite hard to understand when the songs are in french.',
   },
 
   {
@@ -32,7 +35,8 @@ const songs = [
     album: 'Psycho Tropical Berlin',
     artist: 'La Femme',
     genre: 'Pop',
-    description: 'Another song from this album. I hate writing long descriptions.',
+    description:
+      'Another song from this album. I hate writing long descriptions.',
   },
 
   {
@@ -40,15 +44,17 @@ const songs = [
     album: 'Psycho Tropical Berlin',
     artist: 'La Femme',
     genre: 'Pop',
-    description: 'A quite colorful song, by french psyco-punk rock group La Femme.',
+    description:
+      'A quite colorful song, by french psyco-punk rock group La Femme.',
   },
 
   {
-    title: 'It\'s time to wake up 2023',
+    title: "It's time to wake up 2023",
     album: 'Psycho Tropical Berlin',
     artist: 'La Femme',
     genre: 'Pop',
-    description: 'Yet another song from this album. I guess they have been sleeping for 10 years now, or something.',
+    description:
+      'Yet another song from this album. I guess they have been sleeping for 10 years now, or something.',
   },
 
   {
@@ -56,7 +62,8 @@ const songs = [
     album: 'Jungelknugen',
     artist: 'Todd Terje',
     genre: 'Electro',
-    description: 'A song which never really ends, instead it just has drop after drop. Sounds quite trippy.',
+    description:
+      'A song which never really ends, instead it just has drop after drop. Sounds quite trippy.',
   },
 
   {
@@ -64,7 +71,8 @@ const songs = [
     album: 'Malibu',
     artist: 'Anderson .Paak',
     genre: 'RnB',
-    description: 'A really chill and nice song from Mr .Paak here. Cool guy, this dude. Album coming soon.',
+    description:
+      'A really chill and nice song from Mr .Paak here. Cool guy, this dude. Album coming soon.',
   },
 
   {
@@ -72,7 +80,8 @@ const songs = [
     album: 'San Fransisco',
     artist: 'Scott McKenzie',
     genre: 'Soft rock',
-    description: 'A really chill and nice song from Mr .Paak here. Cool guy, this dude. Album coming soon.',
+    description:
+      'A really chill and nice song from Mr .Paak here. Cool guy, this dude. Album coming soon.',
   },
 
   {
@@ -80,7 +89,8 @@ const songs = [
     album: 'San Fransisco',
     artist: 'Scott McKenzie',
     genre: 'Soft rock',
-    description: 'A song for if you\'re coming to San Fransisco - be sure to wear flowers in your hair!',
+    description:
+      "A song for if you're coming to San Fransisco - be sure to wear flowers in your hair!",
   },
 
   {
@@ -88,7 +98,8 @@ const songs = [
     album: 'Hot Rats',
     artist: 'Frank Zappa',
     genre: 'Progressive rock',
-    description: 'Super funky instrumental from Frank Zappa himself. I like Frank Zappa, though he probably doesn\'t like me.',
+    description:
+      "Super funky instrumental from Frank Zappa himself. I like Frank Zappa, though he probably doesn't like me.",
   },
 
   {
@@ -96,7 +107,8 @@ const songs = [
     album: 'On The Rvn',
     artist: 'Young Thug',
     genre: 'Hip-Hop',
-    description: 'Thugger is an incredibly loveable guy, and when paired with Elton John, this song is simply genius. Really brings you back.',
+    description:
+      'Thugger is an incredibly loveable guy, and when paired with Elton John, this song is simply genius. Really brings you back.',
   },
 
   {
@@ -104,7 +116,8 @@ const songs = [
     album: 'Livet er for kjipt',
     artist: 'Lars Kilevold',
     genre: 'Music for kids',
-    description: 'Music for kids, and students alike. This is the most relatable song we know, by far.',
+    description:
+      'Music for kids, and students alike. This is the most relatable song we know, by far.',
   },
 
   {
@@ -112,7 +125,8 @@ const songs = [
     album: 'Village of the Pharoahs',
     artist: 'Pharoah Sanders',
     genre: 'Jazz',
-    description: 'Some really nice jazz by Pharoah Sanders, about love and how love is everywhere, probably.',
+    description:
+      'Some really nice jazz by Pharoah Sanders, about love and how love is everywhere, probably.',
   },
 
   {
@@ -120,7 +134,8 @@ const songs = [
     album: 'All I Want For Christmas',
     artist: 'Casiokids',
     genre: 'Electro',
-    description: 'Nice christmas electro, from the Norwegian elecro group Casiokids. This is the original, only better!',
+    description:
+      'Nice christmas electro, from the Norwegian elecro group Casiokids. This is the original, only better!',
   },
 
   {
@@ -128,10 +143,55 @@ const songs = [
     album: 'Aquimini',
     artist: 'OutKast',
     genre: 'Hip-Hop',
-    description: 'One of the best tracks by the world-renown hip-hop group OutKast. The verse by Andre 3000 here is fantastic.',
+    description:
+      'One of the best tracks by the world-renown hip-hop group OutKast. The verse by Andre 3000 here is fantastic.',
+  },
+
+  {
+    title: 'Burn',
+    album: 'Halcyon Days',
+    artist: 'Ellie Goulding',
+    genre: 'ElectroPop',
+    description:
+      'Ellie Goulding continues to impress with one of her greatest hits in Halcyon Days',
+  },
+
+  {
+    title: 'The City',
+    album: 'Adventure (Deluxe)',
+    artist: 'Madeon',
+    genre: 'DanceElectro',
+    description:
+      'This was an extended play by Madeon. This was released on 27 August 2012. It contains uncredited vocals from Zak Waters and Cass Lowe.',
+  },
+
+  {
+    title: 'Shame, Shame, Shame',
+    album: 'The Very Best of Jimmy Reed',
+    artist: 'Jimmy Reed',
+    genre: 'Blues Rock',
+    description:
+      'One of Jimmy Reeds greatest hits. This was originally released in 1976',
+  },
+
+  {
+    title: 'Fly By Night',
+    album: 'Fly By Night',
+    artist: 'Broiler',
+    genre: 'Housemusic',
+    description:
+      'This debuted together with the album and was also the most popular among the songs in the album.',
+  },
+
+  {
+    title: 'Shallow Waters',
+    album: 'Shallow Waters',
+    artist: 'Sonny Alven & Jarand',
+    genre: 'Housemusic',
+    description:
+      'This was published in 2014 with Sonny Alven as the originated artist.',
   },
 ];
-
 
 // Create database tables if they do not already exist, then populate the database.
 synchronizeDatabase().then(async () => {
@@ -148,7 +208,7 @@ synchronizeDatabase().then(async () => {
   songs.forEach(song => {
     Song.create(song);
   });
-  
+
   unique(songs.map(song => song.genre)).forEach(genre => {
     Genre.create({
       genre,
