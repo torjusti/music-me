@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Header, Modal } from 'semantic-ui-react';
+import styles from './details.module.css';
 import Badge from './Badge';
 
 const ModalBasicExample = ({ open, onClose, song }) => (
@@ -12,8 +13,9 @@ const ModalBasicExample = ({ open, onClose, song }) => (
       </h1>
 
       <Badge label="Genre" value={song.genre} />
+      <Badge label="Rating" value={song.rating} />
 
-      <p>{song.description}</p>
+      <p className={styles.content}>{song.description}</p>
     </Modal.Content>
 
     <Modal.Actions>
