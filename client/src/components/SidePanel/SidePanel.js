@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 import Slider from 'rc-slider';
 import { connect } from 'react-redux';
 import 'rc-slider/assets/index.css';
-import { Label, Icon } from 'semantic-ui-react';
+import { Icon, Button } from 'semantic-ui-react';
 import styles from './SidePanel.module.css';
 import { setGenreSelected } from '../../features/genres/actions';
-import { setRatingSelected } from "../../features/rating/actions";
+import {
+  setRatingSelected,
+  toggleRatingEnabled,
+} from '../../features/rating/actions';
 
 class SidePanel extends Component {
-
-  constructor(props) {
-    super(props);
-    const { state } = this.props;
-    this.state = { state };
-  }
+  state = {
+    selectedRating: 1,
+  };
 
   setValue = rating => {
     this.setState({ selectedRating: rating });
@@ -23,23 +23,31 @@ class SidePanel extends Component {
     this.props.setRatingSelected(this.state.selectedRating);
   };
 
-
   render() {
     return (
       <div className={styles.controls}>
         <h1 className="ui header">Filter menu</h1>
 
         <div className={styles.controlsCont}>
-          <Label>
+          <h3 className={styles.filterHeader}>Filter by rating</h3>
+
+          <Button
+            toggle
+            active={this.props.rating.ratingEnabled}
+            onClick={this.props.toggleRatingEnabled}
+          >
             <Icon name="star" />
-            Filter by rating
-          </Label>
+            Enable filter by rating
+          </Button>
+
           <Slider
             min={1}
             max={5}
+            className={styles.slider}
             value={this.state.selectedRating}
             onChange={this.setValue}
             onAfterChange={this.update}
+            disabled={!this.props.rating.ratingEnabled}
             marks={{
               1: '1',
               2: '2',
@@ -51,14 +59,13 @@ class SidePanel extends Component {
         </div>
 
         <div className={styles.controlsCont}>
-          <Label>
-            <Icon name="music" />
-            Filter by genre
-          </Label>
+          <h3 className={styles.filterHeader}>Filter by genre</h3>
 
           <ul className={styles.noDecoration}>
             {this.props.genres.availableGenres.map(elem => {
-              const selected = this.props.genres.selectedGenres.includes(elem.genre);
+              const selected = this.props.genres.selectedGenres.includes(
+                elem.genre,
+              );
 
               return (
                 <li key={elem.genre}>
@@ -66,7 +73,9 @@ class SidePanel extends Component {
                     <input
                       type="checkbox"
                       checked={selected}
-                      onChange={() => this.props.setGenreSelected(elem.genre, !selected)}
+                      onChange={() =>
+                        this.props.setGenreSelected(elem.genre, !selected)
+                      }
                     />
 
                     <label>{elem.genre}</label>
@@ -77,18 +86,19 @@ class SidePanel extends Component {
           </ul>
         </div>
       </div>
-    )
+    );
   }
 }
 
 const mapStateToProps = state => ({
   genres: state.genres,
-  selectedRating: state.selectedRating
+  rating: state.rating,
 });
 
 const mapDispatchToProps = {
   setGenreSelected,
   setRatingSelected,
+  toggleRatingEnabled,
 };
 
 export default connect(
