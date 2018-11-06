@@ -2,7 +2,7 @@ import express from 'express';
 import { check, validationResult } from 'express-validator/check';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import { Genre, Song } from './models';
+import { Genre, Song, synchronizeDatabase } from './models';
 import { recomputeIndex, search } from './search';
 import Sequelize from 'sequelize';
 
@@ -28,15 +28,6 @@ app.use(function(err, req, res, next) {
 
 // Either run on the specified port, or default to 8000.
 const port = process.env.PORT || 8000;
-
-/**
- * Create database tables on application start
- * if they do not already exist.
- */
-const synchronizeDatabase = async () => {
-  await Song.sync();
-  await Genre.sync();
-};
 
 const initialize = async () => {
   // Create tables in the database.
