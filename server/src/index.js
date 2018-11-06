@@ -2,7 +2,7 @@ import express from 'express';
 import { check, validationResult } from 'express-validator/check';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import { Song, Genre } from './models';
+import { Genre, Song } from './models';
 import { recomputeIndex, search } from './search';
 import Sequelize from 'sequelize';
 
@@ -153,14 +153,12 @@ app.get(
       }
 
       if (searchQuery) {
-        const result = search(
+        where.id = search(
           // Strip all non-alphanumeric and space characters from the query, as
           // these are not handled by the search engine correctly.
           // See https://stackoverflow.com/questions/6053541/regex-every-non-alphanumeric-character-except-white-space-or-colon
           searchQuery.replace(/[^a-zA-Z\d\s]/g, ''),
         ).map(result => result.ref);
-
-        where.id = result;
       }
 
       songs = await Song.findAll({ where });
