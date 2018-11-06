@@ -5,7 +5,7 @@ import Pagination from './Pagination';
 import Details from '../Details';
 import styles from './DataTable.module.css';
 
-class DataTable extends Component {
+export class DataTable extends Component {
   state = {
     detailsOpen: false,
   };
