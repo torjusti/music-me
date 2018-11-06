@@ -15,6 +15,7 @@ const page = (state = initialState, action) => {
     case 'CLEAR_QUERY':
     case 'SET_SELECTED_GENRE':
     case 'SET_SELECTED_RATING':
+    case 'TOGGLE_RATING_ENABLED':
       return { ...state, page: 0 };
 
     default:

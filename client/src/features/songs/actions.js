@@ -1,4 +1,4 @@
-const setSongs = songs => ({
-  type: 'SET_SONGS',
-  payload: { songs },
+export const sendSongRating = (id, rating) => ({
+  type: 'SEND_SONG_RATING',
+  payload: { id, rating },
 });
