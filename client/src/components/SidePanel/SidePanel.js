@@ -7,7 +7,7 @@ import styles from './SidePanel.module.css';
 import { setGenreSelected } from '../../features/genres/actions';
 import { setRatingSelected } from "../../features/rating/actions";
 
-class SidePanel extends Component {
+export class SidePanel extends Component {
 
   constructor(props) {
     super(props);
@@ -57,6 +57,7 @@ class SidePanel extends Component {
           </Label>
 
           <ul className={styles.noDecoration}>
+            {console.log(this.props.genres)}
             {this.props.genres.availableGenres.map(elem => {
               const selected = this.props.genres.selectedGenres.includes(elem.genre);
 
