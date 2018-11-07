@@ -26,7 +26,7 @@ const songs = (state = initialState, action) => {
       };
 
     case 'RATE_SONG':
-      return { ...state, data: state.map(entry => song(entry, action)) };
+      return { ...state, data: state.data.map(entry => song(entry, action)) };
 
     // Show the loading icon when loading new data. The actions here
     // are the ones which cause data to get loaded again.
