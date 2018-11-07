@@ -17,6 +17,7 @@ const DetailsModal = ({ open, onClose, song, sendSongRating }) => (
 
       <Badge label="Genre" value={song.genre} />
 
+      <label className={styles.rate}>Rate:</label>
       <Rate
         className={styles.rate}
         rating={song.rating}

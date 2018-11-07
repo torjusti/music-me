@@ -19,6 +19,7 @@ const songs = [
     genre: 'Pop',
     description:
       'A song by the french psysco-punk rock group La Femme about Vietnam and some other things.',
+    rating: 2,
   },
 
   {
@@ -37,6 +38,7 @@ const songs = [
     genre: 'Pop',
     description:
       'Another song from this album. I hate writing long descriptions.',
+    rating: 2,
   },
 
   {
@@ -55,6 +57,7 @@ const songs = [
     genre: 'Pop',
     description:
       'Yet another song from this album. I guess they have been sleeping for 10 years now, or something.',
+    rating: 5,
   },
 
   {
@@ -73,6 +76,7 @@ const songs = [
     genre: 'RnB',
     description:
       'A really chill and nice song from Mr .Paak here. Cool guy, this dude. Album coming soon.',
+    rating: 3,
   },
 
   {
@@ -91,6 +95,7 @@ const songs = [
     genre: 'Soft rock',
     description:
       "A song for if you're coming to San Fransisco - be sure to wear flowers in your hair!",
+    rating: 1,
   },
 
   {
@@ -109,6 +114,7 @@ const songs = [
     genre: 'Hip-Hop',
     description:
       'Thugger is an incredibly loveable guy, and when paired with Elton John, this song is simply genius. Really brings you back.',
+    rating: 5,
   },
 
   {
@@ -127,6 +133,7 @@ const songs = [
     genre: 'Jazz',
     description:
       'Some really nice jazz by Pharoah Sanders, about love and how love is everywhere, probably.',
+    rating: 5,
   },
 
   {
@@ -136,20 +143,115 @@ const songs = [
     genre: 'Electro',
     description:
       'Nice christmas electro, from the Norwegian elecro group Casiokids. This is the original, only better!',
+    rating: 4,
   },
 
   {
-    title: 'Aquimini',
-    album: 'Aquimini',
+    title: 'Aquemini',
+    album: 'Aquemini',
     artist: 'OutKast',
     genre: 'Hip-Hop',
     description:
       'One of the best tracks by the world-renown hip-hop group OutKast. The verse by Andre 3000 here is fantastic.',
   },
+
+  {
+    title: 'Burn',
+    album: 'Halcyon Days',
+    artist: 'Ellie Goulding',
+    genre: 'Electro',
+    description:
+      'Ellie Goulding continues to impress with one of her greatest hits in Halcyon Days.',
+    rating: 1,
+  },
+
+  {
+    title: 'The City',
+    album: 'Adventure (Deluxe)',
+    artist: 'Madeon',
+    genre: 'Electro',
+    description:
+      'This was an extended play by Madeon. This was released on 27 August 2012. It contains uncredited vocals from Zak Waters and Cass Lowe.',
+  },
+
+  {
+    title: 'Shame, Shame, Shame',
+    album: 'The Very Best of Jimmy Reed',
+    artist: 'Jimmy Reed',
+    genre: 'Blues Rock',
+    description:
+      'One of Jimmy Reeds greatest hits. This was originally released in 1976',
+    rating: 3,
+  },
+
+  {
+    title: 'Fly By Night',
+    album: 'Fly By Night',
+    artist: 'Broiler',
+    genre: 'House',
+    description:
+      'This debuted together with the album and was also the most popular among the songs in the album.',
+  },
+  {
+    title: 'Ocean Man',
+    album: 'The Mollusk',
+    artist: 'Ween',
+    genre: 'Indie',
+    description:
+      'Ocean man, take me by the hand, lead me to the land that you understand. \n Ocean man, the voyage to the corner of the globe is a real trip.',
+  },
+  {
+    title: 'All Star',
+    album: 'Astro Lounge',
+    artist: 'Smash Mouth',
+    genre: 'Indie',
+    description: 'Grammy Award for best pop-performance by duo or group',
+  },
+  {
+    title: 'All Star',
+    album: 'Astro Lounge',
+    artist: 'Smash Mouth',
+    genre: 'Indie',
+    description: 'Grammy Award for best pop-performance by duo or group',
+  },
+  {
+    title: 'Tri Poloski',
+    album: 'Tri Poloski',
+    artist: 'Davay',
+    genre: 'Electro',
+    description: 'The official Adidas anthem.',
+  },
+  {
+    title: "Running in the 90's",
+    album: 'Inital D',
+    artist: 'Alan Ford',
+    genre: 'Electro',
+    description:
+      "Gas gas gas! I'm gonna step on the gas! Tonight I'll fly! And be your lover! Yeah yeah yeah! I'll be so quick as a flash! And I'll be your hero!",
+  },
+  {
+    title: 'Shallow Waters',
+    album: 'Shallow Waters',
+    artist: 'Sonny Alven & Jarand',
+    genre: 'House',
+    description:
+      'This was published in 2014 with Sonny Alven as the original artist.',
+    rating: 4,
+  },
 ];
 
 // Create database tables if they do not already exist, then populate the database.
-synchronizeDatabase().then(() => {
+synchronizeDatabase().then(async () => {
+  await Song.destroy({
+    where: {},
+    truncate: true,
+  });
+
+  await Genre.destroy({
+    where: {},
+    truncate: true,
+  });
+
   songs.forEach(song => {
     Song.create(song);
   });
