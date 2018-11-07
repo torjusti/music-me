@@ -147,8 +147,8 @@ const songs = [
   },
 
   {
-    title: 'Aquimini',
-    album: 'Aquimini',
+    title: 'Aquemini',
+    album: 'Aquemini',
     artist: 'OutKast',
     genre: 'Hip-Hop',
     description:
@@ -159,9 +159,9 @@ const songs = [
     title: 'Burn',
     album: 'Halcyon Days',
     artist: 'Ellie Goulding',
-    genre: 'ElectroPop',
+    genre: 'Electro',
     description:
-      'Ellie Goulding continues to impress with one of her greatest hits in Halcyon Days',
+      'Ellie Goulding continues to impress with one of her greatest hits in Halcyon Days.',
     rating: 1,
   },
 
@@ -169,7 +169,7 @@ const songs = [
     title: 'The City',
     album: 'Adventure (Deluxe)',
     artist: 'Madeon',
-    genre: 'DanceElectro',
+    genre: 'Electro',
     description:
       'This was an extended play by Madeon. This was released on 27 August 2012. It contains uncredited vocals from Zak Waters and Cass Lowe.',
   },
@@ -188,7 +188,7 @@ const songs = [
     title: 'Fly By Night',
     album: 'Fly By Night',
     artist: 'Broiler',
-    genre: 'Housemusic',
+    genre: 'House',
     description:
       'This debuted together with the album and was also the most popular among the songs in the album.',
   },
@@ -233,9 +233,9 @@ const songs = [
     title: 'Shallow Waters',
     album: 'Shallow Waters',
     artist: 'Sonny Alven & Jarand',
-    genre: 'Housemusic',
+    genre: 'House',
     description:
-      'This was published in 2014 with Sonny Alven as the originated artist.',
+      'This was published in 2014 with Sonny Alven as the original artist.',
     rating: 4,
   },
 ];
