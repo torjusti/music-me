@@ -192,7 +192,43 @@ const songs = [
     description:
       'This debuted together with the album and was also the most popular among the songs in the album.',
   },
-
+  {
+    title: 'Ocean Man',
+    album: 'The Mollusk',
+    artist: 'Ween',
+    genre: 'Indie',
+    description:
+      'Ocean man, take me by the hand, lead me to the land that you understand. \n Ocean man, the voyage to the corner of the globe is a real trip.',
+  },
+  {
+    title: 'All Star',
+    album: 'Astro Lounge',
+    artist: 'Smash Mouth',
+    genre: 'Indie',
+    description: 'Grammy Award for best pop-performance by duo or group',
+  },
+  {
+    title: 'All Star',
+    album: 'Astro Lounge',
+    artist: 'Smash Mouth',
+    genre: 'Indie',
+    description: 'Grammy Award for best pop-performance by duo or group',
+  },
+  {
+    title: 'Tri Poloski',
+    album: 'Tri Poloski',
+    artist: 'Davay',
+    genre: 'Electro',
+    description: 'The official Adidas anthem.',
+  },
+  {
+    title: "Running in the 90's",
+    album: 'Inital D',
+    artist: 'Alan Ford',
+    genre: 'Electro',
+    description:
+      "Gas gas gas! I'm gonna step on the gas! Tonight I'll fly! And be your lover! Yeah yeah yeah! I'll be so quick as a flash! And I'll be your hero!",
+  },
   {
     title: 'Shallow Waters',
     album: 'Shallow Waters',
