@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { Table } from 'semantic-ui-react';
+import { Table, Loader, Dimmer } from 'semantic-ui-react';
+import styles from './DataTable.module.css';
 import Pagination from './Pagination';
 import Details from '../Details';
-import styles from './DataTable.module.css';
 
 class DataTable extends Component {
   state = {
@@ -29,24 +29,24 @@ class DataTable extends Component {
       <div className={styles.container}>
         <Pagination />
 
-        <div>
+        <Dimmer.Dimmable>
+          <Dimmer inverted active={this.props.songs.loading}>
+            <Loader />
+          </Dimmer>
+
           <Table>
-            <Table.Header>
+            <Table.Header className={styles.tableHeader}>
               <Table.Row>
                 <Table.HeaderCell>Artist</Table.HeaderCell>
-
                 <Table.HeaderCell>Album</Table.HeaderCell>
-
                 <Table.HeaderCell>Song</Table.HeaderCell>
-
                 <Table.HeaderCell>Genre</Table.HeaderCell>
-
                 <Table.HeaderCell>Rating</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
 
             <Table.Body>
-              {this.props.data.map(row => (
+              {this.props.songs.data.map(row => (
                 <Fragment key={row.id}>
                   <Details
                     open={this.state.detailsOpen}
@@ -65,14 +65,14 @@ class DataTable extends Component {
               ))}
             </Table.Body>
           </Table>
-        </div>
+        </Dimmer.Dimmable>
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  data: state.songs,
+  songs: state.songs,
 });
 
 export default connect(mapStateToProps)(DataTable);

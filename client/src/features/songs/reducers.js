@@ -11,16 +11,36 @@ const song = (state = {}, action) => {
   }
 };
 
-const songs = (state = [], action) => {
+const initialState = {
+  loading: true,
+  data: [],
+};
+
+const songs = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_SONGS':
-      return action.payload.songs;
+      return {
+        ...state,
+        loading: false,
+        data: action.payload.songs,
+      };
 
     case 'RATE_SONG':
-      return state.map(entry => song(entry, action));
+      return { ...state, data: state.map(entry => song(entry, action)) };
 
+    // Show the loading icon when loading new data. The actions here
+    // are the ones which cause data to get loaded again.
+    case 'FETCH_SONGS':
     case 'SET_PAGE':
-      return [];
+    case 'SET_QUERY':
+    case 'CLEAR_QUERY':
+    case 'SET_SELECTED_GENRE':
+    case 'SET_SELECTED_RATING':
+    case 'TOGGLE_RATING_ENABLED':
+      return {
+        ...state,
+        loading: true,
+      };
 
     default:
       return state;
