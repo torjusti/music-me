@@ -72,13 +72,14 @@ class SidePanel extends Component {
                   <div className="ui checkbox">
                     <input
                       type="checkbox"
+                      id={elem.genre}
                       checked={selected}
                       onChange={() =>
                         this.props.setGenreSelected(elem.genre, !selected)
                       }
                     />
 
-                    <label>{elem.genre}</label>
+                    <label htmlFor={elem.genre}>{elem.genre}</label>
                   </div>
                 </li>
               );
