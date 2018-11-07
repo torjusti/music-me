@@ -125,7 +125,7 @@ app.post(
           rating: parseInt(req.body.rating, 10),
         },
         {
-          where: { 
+          where: {
             id: {
               [Op.eq]: req.body.id,
             },
@@ -204,7 +204,7 @@ app.get(
             // See https://stackoverflow.com/questions/6053541/regex-every-non-alphanumeric-character-except-white-space-or-colon
             searchQuery.replace(/[^a-zA-Z\d\s]/g, ''),
           ).map(result => result.ref),
-        }
+        };
       }
 
       songs = await Song.findAll({ where });
@@ -312,15 +312,17 @@ app.put(
         const countGenre = await Song.count({
           where: {
             genre: {
-              [Op.eq]: song.dataValues.genre
-           },
+              [Op.eq]: song.dataValues.genre,
+            },
           },
         });
 
         // If it only exists one song instance with the genre
         if (countGenre === 1) {
           // remove the old genre if this was the only song with this genre
-          await Genre.destroy({ where: { genre: { [Op.eq]: song.dataValues.genre } }} );
+          await Genre.destroy({
+            where: { genre: { [Op.eq]: song.dataValues.genre } },
+          });
         }
 
         // add the new genre if not already existing
@@ -367,12 +369,14 @@ app.delete(
         // If it only exists one song instance with the genre
         if (countGenre === 1) {
           // remove the genre
-          await Genre.destroy({ where: { genre: { [Op.eq]: song.dataValues.genre } } });
+          await Genre.destroy({
+            where: { genre: { [Op.eq]: song.dataValues.genre } },
+          });
         }
       }
 
       await Song.destroy({
-        where: { id: { [Op.eq]: req.params.id  } },
+        where: { id: { [Op.eq]: req.params.id } },
       });
     } catch (error) {
       next(error);
