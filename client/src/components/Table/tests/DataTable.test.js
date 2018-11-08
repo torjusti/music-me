@@ -54,4 +54,28 @@ describe('<DataTable />', () => {
     // test that the state values were correctly passed as props
     expect(wrapper.props().store.getState().loading).toBe(false);
   });
+
+  it('should have two songs', () => {
+    // test that the state values were correctly passed as props
+    expect(wrapper.props().store.getState().data).toEqual([
+      {
+        id: 1,
+        title: "test title",
+        artist: "test artist",
+        album: "test album",
+        genre: "test genre",
+        description: "test description",
+        rating: 4,
+      },
+      {
+        id: 2,
+        title: "test title2",
+        artist: "test artist2",
+        album: "test album2",
+        genre: "test genre2",
+        description: "test description2",
+        rating: 2,
+      },
+    ]);
+  });
 });
