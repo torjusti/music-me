@@ -7,18 +7,18 @@ import styles from './DataTable.module.css';
 
 class DataTable extends Component {
   state = {
-    detailsOpen: false,
+    openModal: null,
   };
 
-  handleOpen = () => {
+  handleOpen = id => {
     this.setState({
-      detailsOpen: true,
+      openModal: id,
     });
   };
 
   handleClose = () => {
     this.setState({
-      detailsOpen: false,
+      openModal: null,
     });
 
     this.props.dispatch({ type: 'CLOSE_MODAL' });
@@ -49,12 +49,15 @@ class DataTable extends Component {
               {this.props.data.map(row => (
                 <Fragment key={row.id}>
                   <Details
-                    open={this.state.detailsOpen}
+                    open={this.state.openModal === row.id}
                     onClose={this.handleClose}
                     song={row}
                   />
 
-                  <Table.Row className={styles.row} onClick={this.handleOpen}>
+                  <Table.Row
+                    className={styles.row}
+                    onClick={() => this.handleOpen(row.id)}
+                  >
                     <Table.Cell>{row.artist}</Table.Cell>
                     <Table.Cell>{row.album}</Table.Cell>
                     <Table.Cell>{row.title}</Table.Cell>
