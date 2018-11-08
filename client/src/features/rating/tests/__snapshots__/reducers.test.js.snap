@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rating reducer should set a new rating 1`] = `
+Object {
+  "ratingEnabled": false,
+  "selectedRating": 2,
+}
+`;
+
+exports[`rating reducer should toggle rating 1`] = `
+Object {
+  "ratingEnabled": true,
+  "selectedRating": 1,
+}
+`;
