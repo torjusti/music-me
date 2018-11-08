@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pagination reducer should set a page 1`] = `
+Object {
+  "page": 1,
+  "totalPages": 0,
+}
+`;
