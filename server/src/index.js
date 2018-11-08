@@ -163,6 +163,12 @@ app.get(
     check('selectedRating')
       .isInt()
       .optional(),
+    check('orderBy')
+      .isString()
+      .optional(),
+    check('isAsc')
+      .isBoolean()
+      .optional(),
   ],
   async (req, res, next) => {
     const errors = validationResult(req);
@@ -178,11 +184,14 @@ app.get(
         ? selectedGenres
         : [selectedGenres]
       : [];
+    const orderBy = req.query.orderBy;
+    const isAsc = req.query.isAsc === 'true';
 
     let songs;
 
     try {
       const where = {};
+      const order = [];
 
       if (selectedGenres.length) {
         where.genre = {
@@ -207,7 +216,11 @@ app.get(
         };
       }
 
-      songs = await Song.findAll({ where });
+      if (orderBy) {
+        order.push([orderBy, isAsc ? 'ASC' : 'DESC']);
+      }
+
+      songs = await Song.findAll({ where, order });
     } catch (error) {
       next(error);
     }
