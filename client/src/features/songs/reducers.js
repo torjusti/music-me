@@ -8,6 +8,7 @@ const song = (state = {}, action) => {
       return { ...state, rating: action.payload.rating };
 
     default:
+      return state;
   }
 };
 
