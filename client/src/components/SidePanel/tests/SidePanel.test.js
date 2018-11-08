@@ -1,34 +1,61 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { SidePanel } from '../SidePanel';
-
-
+import { SidePanel, mapStateToProps, mapDispatchToProps } from '../SidePanel';
+import configureMockStore from 'redux-mock-store'
 
 describe('<SidePanel />', () => {
 
-  const rating = 3;const genreList = {
-    availableGenres: ["test1", "test2"],
-    selectedGenres: ["test1"],
-  };
+  // Create the mock store
+  const mockStore = configureMockStore();
+
+  let component, store, initialState;
+
+  beforeEach(()=>{
+    initialState = {
+      genres: {
+        availableGenres: ["test1", "test2"],
+        selectedGenres: ["test1"],
+      },
+      selectedRating: 3,
+    };
+
+    store = mockStore(initialState);
+    // Shallow render the container passing in the mock store
+    component = shallow(
+      <SidePanel store={store} />
+    );
+  });
 
   it('should render SidePanel correctly', () => {
-    const component = shallow(<SidePanel genres={genreList} selectedRating={rating}/>);
+    expect(component.length).toEqual(1);
+  });
+
+
+  it('sidepanel snapshot should be equal', () => {
     expect(component).toMatchSnapshot();
   });
 
+  it('', () => {
+    expect(mapStateToProps(initialState).selectedRating).toEqual(3);
+  });
+
+  /*
   it('should update rating only by sidepanels update()', () => {
-    const genreList = {
-      availableGenres: ["test1", "test2"],
-      selectedGenres: ["test1"],
-    };
 
-    const rating = 3;
     const newRating = 4;
-
-    const wrapper = shallow(<SidePanel genres={genreList} selectedRating={rating}/>);
     const instance = wrapper.instance();
     instance.setValue(newRating);
     instance.update();
   })
+
+
+  it('', () => {
+    // test that the component events dispatch the expected actions
+    wrapper.simulate('rollDice');
+
+    const actions = store.getActions();
+    expect(actions).toEqual([ { type: 'ROLL_DICE' } ]);
+  });
+  */
 
 });

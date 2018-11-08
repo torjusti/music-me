@@ -62,12 +62,10 @@ class SidePanel extends Component {
           <h3 className={styles.filterHeader}>Filter by genre</h3>
 
           <ul className={styles.noDecoration}>
-            {console.log(this.props.genres)}
             {this.props.genres.availableGenres.map(elem => {
               const selected = this.props.genres.selectedGenres.includes(
                 elem.genre,
               );
-
               return (
                 <li key={elem.genre}>
                   <div className="ui checkbox">
