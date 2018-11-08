@@ -6,6 +6,8 @@ function* fetchSongsSaga() {
   const search = yield select(state => state.search);
   const selectedGenres = yield select(state => state.genres.selectedGenres);
   const rating = yield select(state => state.rating);
+  const orderBy = yield select(state => state.order.orderBy);
+  const isAsc = yield  select(state => state.order.isAsc);
 
   const response = yield call(
     requestSongs,
@@ -13,6 +15,8 @@ function* fetchSongsSaga() {
     search,
     selectedGenres,
     rating,
+    orderBy,
+    isAsc
   );
 
   if (response.error) {
@@ -94,6 +98,9 @@ function* songsSaga() {
         'SET_SELECTED_GENRE',
         'SET_SELECTED_RATING',
         'TOGGLE_RATING_ENABLED',
+        'SET_COLUMN',
+        'TOGGLE_DIRECTION',
+        'CLEAR_ORDER'
       ],
 
       fetchSongsSaga,
