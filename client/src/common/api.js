@@ -66,11 +66,13 @@ export const rateSong = async (id, rating) => {
 /**
  * Request songs from the server.
  */
-export const requestSongs = (page, search, selectedGenres, rating) => {
+export const requestSongs = (page, search, selectedGenres, rating, orderBy, isAsc) => {
   const data = {
     page,
     search,
     selectedGenres,
+    orderBy,
+    isAsc
   };
 
   if (rating.ratingEnabled) {

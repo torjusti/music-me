@@ -38,6 +38,9 @@ const songs = (state = initialState, action) => {
     case 'SET_SELECTED_GENRE':
     case 'SET_SELECTED_RATING':
     case 'TOGGLE_RATING_ENABLED':
+      case 'SET_COLUMN':
+      case 'TOGGLE_DIRECTION':
+      case 'CLEAR_ORDER':
       return {
         ...state,
         loading: true,
