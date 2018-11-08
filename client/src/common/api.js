@@ -8,7 +8,6 @@ export const DOMAIN = process.env.DOMAIN || 'http://localhost:8000';
  */
 export const requestData = async path => {
   // Create the Request object.
-    console.log(path);
   const request = new Request(DOMAIN + path, {
     method: 'GET',
   });
