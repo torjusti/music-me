@@ -31,7 +31,8 @@ function* fetchSongsSaga() {
 
 function* rateSongSaga(action) {
   const previousRating = yield select(
-    state => state.songs.filter(song => song.id === action.payload.id).rating,
+    state =>
+      state.songs.data.filter(song => song.id === action.payload.id).rating,
   );
 
   yield put({ type: 'RATE_SONG', payload: action.payload });
