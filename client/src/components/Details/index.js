@@ -1,8 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Button, Header, Modal } from 'semantic-ui-react';
+import styles from './details.module.css';
+import { sendSongRating } from '../../features/songs/actions';
 import Badge from './Badge';
+import Rate from './Rate';
 
-const ModalBasicExample = ({ open, onClose, song }) => (
+const DetailsModal = ({ open, onClose, song, sendSongRating }) => (
   <Modal open={open} onClose={onClose}>
     <Header content="Detailed song information" />
 
@@ -13,7 +17,14 @@ const ModalBasicExample = ({ open, onClose, song }) => (
 
       <Badge label="Genre" value={song.genre} />
 
-      <p>{song.description}</p>
+      <label className={styles.rate}>Rate:</label>
+      <Rate
+        className={styles.rate}
+        rating={song.rating}
+        onClick={rating => sendSongRating(song.id, rating)}
+      />
+
+      <p className={styles.content}>{song.description}</p>
     </Modal.Content>
 
     <Modal.Actions>
@@ -24,4 +35,11 @@ const ModalBasicExample = ({ open, onClose, song }) => (
   </Modal>
 );
 
-export default ModalBasicExample;
+const mapDispatchToProps = {
+  sendSongRating,
+};
+
+export default connect(
+  undefined,
+  mapDispatchToProps,
+)(DetailsModal);

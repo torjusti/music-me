@@ -1,25 +1,27 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { Icon, Table } from "semantic-ui-react";
+import { Table, Loader, Dimmer } from 'semantic-ui-react';
+import styles from './DataTable.module.css';
 import Pagination from './Pagination';
 import Details from '../Details';
-import styles from './DataTable.module.css';
 
 export class DataTable extends Component {
   state = {
-    detailsOpen: false,
+    openModal: null,
   };
 
-  handleOpen = () => {
+  handleOpen = id => {
     this.setState({
-      detailsOpen: true,
+      openModal: id,
     });
   };
 
   handleClose = () => {
     this.setState({
-      detailsOpen: false,
+      openModal: null,
     });
+
+    this.props.dispatch({ type: 'CLOSE_MODAL' });
   };
 
   render() {
@@ -27,50 +29,53 @@ export class DataTable extends Component {
       <div className={styles.container}>
         <Pagination />
 
-        <div>
+        <Dimmer.Dimmable>
+          <Dimmer inverted active={this.props.songs.loading}>
+            <Loader />
+          </Dimmer>
+
           <Table>
-            <Table.Header>
+            <Table.Header className={styles.tableHeader}>
               <Table.Row>
                 <Table.HeaderCell>Artist</Table.HeaderCell>
-
                 <Table.HeaderCell>Album</Table.HeaderCell>
-
                 <Table.HeaderCell>Song</Table.HeaderCell>
-
                 <Table.HeaderCell>Genre</Table.HeaderCell>
-
                 <Table.HeaderCell>Rating</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
 
             <Table.Body>
-              {this.props.data.map(row => (
+              {this.props.songs.data.map(row => (
                 <Fragment key={row.id}>
                   <Details
-                    open={this.state.detailsOpen}
+                    open={this.state.openModal === row.id}
                     onClose={this.handleClose}
                     song={row}
                   />
 
-                  <Table.Row className={styles.row} onClick={this.handleOpen}>
+                  <Table.Row
+                    className={styles.row}
+                    onClick={() => this.handleOpen(row.id)}
+                  >
                     <Table.Cell>{row.artist}</Table.Cell>
                     <Table.Cell>{row.album}</Table.Cell>
                     <Table.Cell>{row.title}</Table.Cell>
                     <Table.Cell>{row.genre}</Table.Cell>
-                    <Table.Cell><Icon name="star" />{row.rating}</Table.Cell>
+                    <Table.Cell>{row.rating}</Table.Cell>
                   </Table.Row>
                 </Fragment>
               ))}
             </Table.Body>
           </Table>
-        </div>
+        </Dimmer.Dimmable>
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  data: state.songs,
+  songs: state.songs,
 });
 
 export default connect(mapStateToProps)(DataTable);

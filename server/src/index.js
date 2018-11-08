@@ -2,14 +2,14 @@ import express from 'express';
 import { check, validationResult } from 'express-validator/check';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import { Genre, Song } from './models';
+import { Genre, Song, synchronizeDatabase } from './models';
 import { recomputeIndex, search } from './search';
 import Sequelize from 'sequelize';
 
 const Op = Sequelize.Op;
 
 // The number of songs to show on a single page.
-const PAGE_SIZE = 2;
+const PAGE_SIZE = 5;
 
 const app = express();
 
@@ -28,15 +28,6 @@ app.use(function(err, req, res, next) {
 
 // Either run on the specified port, or default to 8000.
 const port = process.env.PORT || 8000;
-
-/**
- * Create database tables on application start
- * if they do not already exist.
- */
-const synchronizeDatabase = async () => {
-  await Song.sync();
-  await Genre.sync();
-};
 
 const initialize = async () => {
   // Create tables in the database.
@@ -64,7 +55,9 @@ app.post(
     check('album').isString(),
     check('genre').isString(),
     check('description').isString(),
-    check('rating').isInt(),
+    check('rating')
+      .isInt()
+      .optional(),
   ],
   async (req, res, next) => {
     const errors = validationResult(req);
@@ -87,12 +80,63 @@ app.post(
       next(error);
     }
 
-    Genre.findOrCreate({ where: { genre: req.body.genre } });
+    Genre.findOrCreate({ where: { genre: { [Op.eq]: req.body.genre } } });
 
     // Recompute the search index in the background.
     recomputeIndex();
 
     res.status(201).json(model.dataValues);
+  },
+);
+
+app.post(
+  '/songs/rate',
+  [
+    check('id').isInt({
+      min: 0,
+      allow_leading_zeroes: false,
+    }),
+    check('rating').isInt({
+      min: 1,
+      max: 5,
+      allow_leading_zeroes: false,
+    }),
+  ],
+  async (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(422).json({ errors: errors.array() });
+    }
+
+    let song;
+    try {
+      song = await Song.findByPk(req.body.id);
+    } catch (error) {
+      next(error);
+    }
+
+    if (!song) {
+      return res.status(422).json();
+    }
+
+    try {
+      await Song.update(
+        {
+          rating: parseInt(req.body.rating, 10),
+        },
+        {
+          where: {
+            id: {
+              [Op.eq]: req.body.id,
+            },
+          },
+        },
+      );
+    } catch (error) {
+      next(error);
+    }
+
+    res.status(200).json();
   },
 );
 
@@ -153,12 +197,14 @@ app.get(
       }
 
       if (searchQuery) {
-        where.id = search(
-          // Strip all non-alphanumeric and space characters from the query, as
-          // these are not handled by the search engine correctly.
-          // See https://stackoverflow.com/questions/6053541/regex-every-non-alphanumeric-character-except-white-space-or-colon
-          searchQuery.replace(/[^a-zA-Z\d\s]/g, ''),
-        ).map(result => result.ref);
+        where.id = {
+          [Op.in]: search(
+            // Strip all non-alphanumeric and space characters from the query, as
+            // these are not handled by the search engine correctly.
+            // See https://stackoverflow.com/questions/6053541/regex-every-non-alphanumeric-character-except-white-space-or-colon
+            searchQuery.replace(/[^a-zA-Z\d\s]/g, ''),
+          ).map(result => result.ref),
+        };
       }
 
       songs = await Song.findAll({ where });
@@ -264,21 +310,27 @@ app.put(
     try {
       if (song) {
         const countGenre = await Song.count({
-          where: { genre: song.dataValues.genre },
+          where: {
+            genre: {
+              [Op.eq]: song.dataValues.genre,
+            },
+          },
         });
 
         // If it only exists one song instance with the genre
         if (countGenre === 1) {
           // remove the old genre if this was the only song with this genre
-          await Genre.destroy({ where: { genre: song.dataValues.genre } });
+          await Genre.destroy({
+            where: { genre: { [Op.eq]: song.dataValues.genre } },
+          });
         }
 
         // add the new genre if not already existing
-        Genre.findOrCreate({ where: { genre: req.body.genre } });
+        Genre.findOrCreate({ where: { genre: { [Op.eq]: req.body.genre } } });
       }
 
       await Song.update(updated, {
-        where: { id: req.params.id },
+        where: { id: { [Op.eq]: req.params.id } },
       });
     } catch (error) {
       next(error);
@@ -311,18 +363,20 @@ app.delete(
 
       if (song) {
         const countGenre = await Song.count({
-          where: { genre: song.dataValues.genre },
+          where: { genre: { [Op.eq]: song.dataValues.genre } },
         });
 
         // If it only exists one song instance with the genre
         if (countGenre === 1) {
           // remove the genre
-          await Genre.destroy({ where: { genre: song.dataValues.genre } });
+          await Genre.destroy({
+            where: { genre: { [Op.eq]: song.dataValues.genre } },
+          });
         }
       }
 
       await Song.destroy({
-        where: { id: req.params.id },
+        where: { id: { [Op.eq]: req.params.id } },
       });
     } catch (error) {
       next(error);

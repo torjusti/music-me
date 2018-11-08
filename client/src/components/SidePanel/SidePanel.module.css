@@ -8,9 +8,12 @@
 }
 
 .controlsCont {
-  margin: 2rem 1rem 2rem 1rem;
   display: flex;
   flex-direction: column;
+}
+
+.controlsCont + .controlsCont {
+  margin-top: 3rem;
 }
 
 .controlsCont > div:nth-child(2) {
@@ -25,6 +28,15 @@
 .noDecoration {
   list-style-type: none;
   padding: 0;
+}
+
+.slider {
+  margin: 1rem auto 0 auto;
+  width: 85%;
+}
+
+.filterHeader {
+  margin: 1rem 0;
 }
 
 @media (min-width: 1024px) {

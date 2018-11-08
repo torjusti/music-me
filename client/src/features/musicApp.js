@@ -4,7 +4,7 @@ import pagination from './pagination/reducers';
 import search from './search/reducers';
 import genres from './genres/reducers';
 import loadingError from './loadingError/reducers';
-import selectedRating from './rating/reducers';
+import rating from './rating/reducers';
 
 const musicApp = combineReducers({
   songs,
@@ -12,7 +12,7 @@ const musicApp = combineReducers({
   search,
   genres,
   loadingError,
-  selectedRating,
+  rating,
 });
 
 export default musicApp;

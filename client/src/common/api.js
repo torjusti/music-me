@@ -30,16 +30,52 @@ export const requestData = async path => {
 };
 
 /**
+ * Send a request which provides a new rating to
+ * a specific song.
+ */
+export const rateSong = async (id, rating) => {
+  // Create the request object.
+  const request = new Request(DOMAIN + '/songs/rate/', {
+    method: 'POST',
+
+    headers: {
+      // Needs to be added in order for the server
+      // to parse the request correctly as JSON.
+      'Content-Type': 'application/json',
+    },
+
+    body: JSON.stringify({
+      id,
+      rating,
+    }),
+  });
+
+  try {
+    const response = await fetch(request);
+
+    if (response.ok) {
+      return { error: false };
+    } else {
+      return { error: true };
+    }
+  } catch (error) {
+    return { error: true };
+  }
+};
+
+/**
  * Request songs from the server.
  */
-export const requestSongs = (page, search, selectedGenres, selectedRating) => {
-  return requestData(
-    '/songs?' +
-      queryString.stringify({
-        page,
-        search,
-        selectedGenres,
-        selectedRating
-      }),
-  );
+export const requestSongs = (page, search, selectedGenres, rating) => {
+  const data = {
+    page,
+    search,
+    selectedGenres,
+  };
+
+  if (rating.ratingEnabled) {
+    data.selectedRating = rating.selectedRating;
+  }
+
+  return requestData('/songs?' + queryString.stringify(data));
 };

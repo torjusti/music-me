@@ -13,3 +13,12 @@ export const Song = sequelize.define('song', {
 export const Genre = sequelize.define('genre', {
   genre: Sequelize.STRING,
 });
+
+/**
+ * Create database tables on application start
+ * if they do not already exist.
+ */
+export const synchronizeDatabase = async () => {
+  await Song.sync();
+  await Genre.sync();
+};
