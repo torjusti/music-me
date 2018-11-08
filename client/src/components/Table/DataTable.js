@@ -37,9 +37,9 @@ class DataTable extends Component {
           <Table>
             <Table.Header className={styles.tableHeader}>
               <Table.Row>
+                <Table.HeaderCell>Song</Table.HeaderCell>
                 <Table.HeaderCell>Artist</Table.HeaderCell>
                 <Table.HeaderCell>Album</Table.HeaderCell>
-                <Table.HeaderCell>Song</Table.HeaderCell>
                 <Table.HeaderCell>Genre</Table.HeaderCell>
                 <Table.HeaderCell>Rating</Table.HeaderCell>
               </Table.Row>
@@ -58,9 +58,9 @@ class DataTable extends Component {
                     className={styles.row}
                     onClick={() => this.handleOpen(row.id)}
                   >
+                    <Table.Cell>{row.title}</Table.Cell>
                     <Table.Cell>{row.artist}</Table.Cell>
                     <Table.Cell>{row.album}</Table.Cell>
-                    <Table.Cell>{row.title}</Table.Cell>
                     <Table.Cell>{row.genre}</Table.Cell>
                     <Table.Cell>{row.rating}</Table.Cell>
                   </Table.Row>
