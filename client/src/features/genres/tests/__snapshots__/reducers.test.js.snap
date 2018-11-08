@@ -1,5 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`genres reducer should select none genre 1`] = `
+Object {
+  "availableGenres": Array [],
+  "selectedGenres": Array [],
+}
+`;
+
 exports[`genres reducer should set a genre 1`] = `
 Object {
   "availableGenres": Array [],

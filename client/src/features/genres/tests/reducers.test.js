@@ -41,4 +41,16 @@ describe('genres reducer', () => {
       ),
     ).toMatchSnapshot();
   });
+
+  it('should select none genre', () => {
+    expect(
+      genres(
+        undefined,
+        actions.setGenreSelected(
+          ['setGenreSelected', 'genre'],
+          null,
+        ),
+      ),
+    ).toMatchSnapshot();
+  });
 });
