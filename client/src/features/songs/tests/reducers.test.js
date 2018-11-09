@@ -9,7 +9,7 @@ describe('songs reducer', () => {
     });
   });
 
-  it('', () => {
+  it('should rate a song', () => {
     expect(
       songs(
         undefined,

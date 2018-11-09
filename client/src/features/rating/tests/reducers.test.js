@@ -2,7 +2,7 @@ import rating from '../reducers';
 import * as actions from '../actions';
 
 describe('rating reducer', () => {
-  it('should have 1 selectedrating and ratingenabled equal to false', () => {
+  it('should have 1 selectedRating and ratingEnabled equal to false', () => {
     expect(rating(undefined, {})).toEqual({
       ratingEnabled: false,
       selectedRating: 1,
