@@ -140,7 +140,9 @@ export class DataTable extends Component {
           </Table>
         </Dimmer.Dimmable>
 
-        <AddSong />
+        <div className={styles.addSong}>
+          <AddSong />
+        </div>
       </div>
     );
   }
