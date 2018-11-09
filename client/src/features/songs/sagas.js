@@ -1,5 +1,6 @@
 import { call, put, takeLatest, select, all, take } from 'redux-saga/effects';
-import { requestSongs, rateSong } from '../../common/api';
+import { requestSongs, rateSong, postSong, putSong } from '../../common/api';
+import { showToast } from '../toasts/actions';
 
 function* fetchSongsSaga() {
   const page = yield select(state => state.pagination.page);
@@ -7,7 +8,7 @@ function* fetchSongsSaga() {
   const selectedGenres = yield select(state => state.genres.selectedGenres);
   const rating = yield select(state => state.rating);
   const orderBy = yield select(state => state.order.orderBy);
-  const isAsc = yield  select(state => state.order.isAsc);
+  const isAsc = yield select(state => state.order.isAsc);
 
   const response = yield call(
     requestSongs,
@@ -16,7 +17,7 @@ function* fetchSongsSaga() {
     selectedGenres,
     rating,
     orderBy,
-    isAsc
+    isAsc,
   );
 
   if (response.error) {
@@ -33,27 +34,7 @@ function* fetchSongsSaga() {
   }
 }
 
-function* rateSongSaga(action) {
-  const previousRating = yield select(
-    state =>
-      state.songs.data.filter(song => song.id === action.payload.id).rating,
-  );
-
-  yield put({ type: 'RATE_SONG', payload: action.payload });
-
-  const response = yield call(
-    rateSong,
-    action.payload.id,
-    action.payload.rating,
-  );
-
-  if (response.error) {
-    yield put({
-      type: 'RATE_SONG',
-      payload: { id: action.payload.id, rating: previousRating },
-    });
-  }
-
+function* refreshOnCloseModal() {
   // You might ask, what happened here. Why do we need to wait until the modal
   // is closed? Well, the problem boils down to the rating of songs. The rating
   // of songs could cause the song to disappear for the list, and it can change
@@ -87,6 +68,74 @@ function* rateSongSaga(action) {
   }
 }
 
+function* rateSongSaga(action) {
+  const previousRating = yield select(
+    state =>
+      state.songs.data.filter(song => song.id === action.payload.id).rating,
+  );
+
+  yield put(showToast('Starting to rate song'));
+
+  yield put({ type: 'RATE_SONG', payload: action.payload });
+
+  const response = yield call(
+    rateSong,
+    action.payload.id,
+    action.payload.rating,
+  );
+
+  if (response.error) {
+    yield put({
+      type: 'RATE_SONG',
+      payload: { id: action.payload.id, rating: previousRating },
+    });
+
+    yield put(showToast('An error occurred rating the song'));
+  }
+
+  yield put(showToast('Successfully rated song'));
+
+  yield refreshOnCloseModal();
+}
+
+function* addSongSaga(action) {
+  yield put(showToast('Adding new song to the database'));
+
+  const response = yield call(postSong, action.payload.song);
+
+  if (response.error) {
+    yield put(showToast('An error occurred while sending song information.'));
+  } else {
+    yield put(showToast('Song added to database'));
+    yield refreshOnCloseModal();
+  }
+}
+
+function* updateSongSaga(action) {
+  const { id, song } = action.payload;
+
+  const previousSong = yield select(state =>
+    state.songs.data.filter(song => song.id === id),
+  );
+
+  yield put(showToast('Starting to update song'));
+
+  const response = yield call(putSong, id, song);
+
+  yield put({ type: 'UPDATE_SONG_LOCALLY', payload: action.payload });
+
+  if (response.error) {
+    yield put(showToast('An error occurred while sending song information.'));
+    yield put({
+      type: 'UPDATE_SONG_LOCALLY',
+      payload: { id, song: previousSong },
+    });
+  } else {
+    yield put(showToast('Song successfully updated'));
+    yield refreshOnCloseModal();
+  }
+}
+
 function* songsSaga() {
   yield all([
     takeLatest(
@@ -100,13 +149,17 @@ function* songsSaga() {
         'TOGGLE_RATING_ENABLED',
         'SET_COLUMN',
         'TOGGLE_DIRECTION',
-        'CLEAR_ORDER'
+        'CLEAR_ORDER',
       ],
 
       fetchSongsSaga,
     ),
 
     takeLatest('SEND_SONG_RATING', rateSongSaga),
+
+    takeLatest('ADD_SONG', addSongSaga),
+
+    takeLatest('UPDATE_SONG', updateSongSaga),
   ]);
 }
 

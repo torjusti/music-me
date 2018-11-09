@@ -66,13 +66,20 @@ export const rateSong = async (id, rating) => {
 /**
  * Request songs from the server.
  */
-export const requestSongs = (page, search, selectedGenres, rating, orderBy, isAsc) => {
+export const requestSongs = (
+  page,
+  search,
+  selectedGenres,
+  rating,
+  orderBy,
+  isAsc,
+) => {
   const data = {
     page,
     search,
     selectedGenres,
     orderBy,
-    isAsc
+    isAsc,
   };
 
   if (rating.ratingEnabled) {
@@ -80,4 +87,65 @@ export const requestSongs = (page, search, selectedGenres, rating, orderBy, isAs
   }
 
   return requestData('/songs?' + queryString.stringify(data));
+};
+
+/**
+ * Attempt posting a new song to the server.
+ */
+export const postSong = async song => {
+  const request = new Request(DOMAIN + '/songs', {
+    method: 'POST',
+
+    headers: {
+      // Needs to be added in order for the server
+      // to parse the request correctly as JSON.
+      'Content-Type': 'application/json',
+    },
+
+    body: JSON.stringify(song),
+  });
+
+  try {
+    // Wait for the response from the server.
+    const response = await fetch(request);
+
+    // Attempt converting the repsonse into JSON.
+    const data = await response.json();
+
+    if (response.ok) {
+      return { data };
+    } else {
+      return { error: true };
+    }
+  } catch (error) {
+    return { error: true };
+  }
+};
+
+/**
+ * Attempt updating an existing song.
+ */
+export const putSong = async (id, song) => {
+  const request = new Request(DOMAIN + `/songs/${id}`, {
+    method: 'PUT',
+
+    headers: {
+      // Needs to be added in order for the server
+      // to parse the request correctly as JSON.
+      'Content-Type': 'application/json',
+    },
+
+    body: JSON.stringify(song),
+  });
+
+  try {
+    // Wait for the response from the server.
+    const response = await fetch(request);
+
+    if (response.ok) {
+      return { success: true };
+    }
+  } catch (error) {
+    return { error: true };
+  }
 };

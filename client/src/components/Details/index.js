@@ -5,6 +5,7 @@ import styles from './details.module.css';
 import { sendSongRating } from '../../features/songs/actions';
 import Badge from './Badge';
 import Rate from './Rate';
+import AddSong from '../AddSong';
 
 const DetailsModal = ({ open, onClose, song, sendSongRating }) => (
   <Modal open={open} onClose={onClose}>
@@ -18,6 +19,7 @@ const DetailsModal = ({ open, onClose, song, sendSongRating }) => (
       <Badge label="Genre" value={song.genre} />
 
       <label className={styles.rate}>Rate:</label>
+
       <Rate
         className={styles.rate}
         rating={song.rating}
@@ -28,8 +30,10 @@ const DetailsModal = ({ open, onClose, song, sendSongRating }) => (
     </Modal.Content>
 
     <Modal.Actions>
+      <AddSong song={song} inverted />
+
       <Button onClick={onClose} color="blue" inverted>
-        Close
+        Close and save
       </Button>
     </Modal.Actions>
   </Modal>

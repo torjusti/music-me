@@ -7,6 +7,13 @@ const song = (state = {}, action) => {
 
       return { ...state, rating: action.payload.rating };
 
+    case 'UPDATE_SONG_LOCALLY':
+      if (state.id !== action.payload.id) {
+        return state;
+      }
+
+      return { ...state, ...action.payload.song };
+
     default:
       return state;
   }
@@ -27,6 +34,7 @@ const songs = (state = initialState, action) => {
       };
 
     case 'RATE_SONG':
+    case 'UPDATE_SONG_LOCALLY':
       return { ...state, data: state.data.map(entry => song(entry, action)) };
 
     // Show the loading icon when loading new data. The actions here
@@ -38,9 +46,9 @@ const songs = (state = initialState, action) => {
     case 'SET_SELECTED_GENRE':
     case 'SET_SELECTED_RATING':
     case 'TOGGLE_RATING_ENABLED':
-      case 'SET_COLUMN':
-      case 'TOGGLE_DIRECTION':
-      case 'CLEAR_ORDER':
+    case 'SET_COLUMN':
+    case 'TOGGLE_DIRECTION':
+    case 'CLEAR_ORDER':
       return {
         ...state,
         loading: true,
