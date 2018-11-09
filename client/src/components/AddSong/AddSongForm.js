@@ -28,20 +28,9 @@ const initialState = {
 };
 
 class AddSongForm extends Component {
-  constructor(props) {
-    super(props);
+  state = initialState;
 
-    this.state = initialState;
-
-    if (props.song) {
-      this.state = {
-        ...this.state,
-        ...props.song,
-      };
-    }
-  }
-
-  clearForm = () => {
+  initializeForm = () => {
     if (this.props.song) {
       return this.setState({
         ...initialState,
@@ -51,6 +40,16 @@ class AddSongForm extends Component {
 
     this.setState(initialState);
   };
+
+  componentDidMount() {
+    this.initializeForm();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props !== prevProps) {
+      this.initializeForm();
+    }
+  }
 
   handleSubmit = () => {
     const { title, artist, album, genre, description } = this.state;
@@ -73,8 +72,6 @@ class AddSongForm extends Component {
         id: this.state.id,
       });
 
-      this.clearForm();
-
       return;
     }
 
@@ -84,14 +81,9 @@ class AddSongForm extends Component {
     });
   };
 
-  handleCancel = () => {
-    this.clearForm();
-    this.props.onClose();
-  };
-
   render() {
     return (
-      <Modal open={this.props.open} onClose={this.handleCancel}>
+      <Modal open={this.props.open} onClose={this.props.onClose}>
         <Header content={this.props.song ? 'Edit song' : 'Add song'} />
 
         <Modal.Content>
@@ -161,7 +153,7 @@ class AddSongForm extends Component {
         </Modal.Content>
 
         <Modal.Actions>
-          <Button color="red" onClick={this.handleCancel} content="Cancel" />
+          <Button color="red" onClick={this.props.onClose} content="Cancel" />
 
           <Button
             color="blue"
