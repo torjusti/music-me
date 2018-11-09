@@ -34,24 +34,15 @@ function* fetchSongsSaga() {
   }
 }
 
-function* refreshOnCloseModal() {
-  // You might ask, what happened here. Why do we need to wait until the modal
-  // is closed? Well, the problem boils down to the rating of songs. The rating
-  // of songs could cause the song to disappear for the list, and it can change
-  // the order of songs. The simplest fix for this is to reload the list of songs
-  // after rating a song. However, refreshing when the modal is open can cause the
-  // modal to disappear, because the song can disappear from the list which will
-  // kill the tree containing the Modal node. Therefore, as a hack, we wait here
-  // until the dialog is closed before refreshing the data.
-  yield take('CLOSE_MODAL');
+function* fetchCurrentPage() {
   yield put({ type: 'FETCH_SONGS' });
 
   // Many actions reset the pagination, because the data has changed.
   // However, the FETCH_SONGS action does not trigger this. This is
   // another hack, due to the fact that we do not want to reset the
-  // pagination after songs aare refreshed due to the user rating a
-  // from the details modal. It would be weird for the user to jump
-  // back to page 0 after this. However, this could create weird edge
+  // pagination after songs are refreshed for example due to the user
+  // rating a from the details modal. It would be weird for the user to
+  // jump back to page 0 after this. However, this could create weird edge
   // ases for example where the song being rated is the only one on
   // the page, and the rating causes the song to disappear. The best
   // fix I found for this is to set the page to the last possible page
@@ -66,6 +57,19 @@ function* refreshOnCloseModal() {
       payload: { page: Math.max(totalPages - 1, 0) },
     });
   }
+}
+
+function* refreshOnCloseModal() {
+  // You might ask, what happened here. Why do we need to wait until the modal
+  // is closed? Well, the problem boils down to the rating of songs. The rating
+  // of songs could cause the song to disappear for the list, and it can change
+  // the order of songs. The simplest fix for this is to reload the list of songs
+  // after rating a song. However, refreshing when the modal is open can cause the
+  // modal to disappear, because the song can disappear from the list which will
+  // kill the tree containing the Modal node. Therefore, as a hack, we wait here
+  // until the dialog is closed before refreshing the data.
+  yield take('CLOSE_MODAL');
+  yield fetchCurrentPage();
 }
 
 function* rateSongSaga(action) {
@@ -154,6 +158,8 @@ function* songsSaga() {
 
       fetchSongsSaga,
     ),
+
+    takeLatest('FETCH_CURRENT_PAGE', fetchCurrentPage),
 
     takeLatest('SEND_SONG_RATING', rateSongSaga),
 

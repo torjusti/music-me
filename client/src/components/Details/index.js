@@ -6,6 +6,7 @@ import { sendSongRating } from '../../features/songs/actions';
 import Badge from './Badge';
 import Rate from './Rate';
 import AddSong from '../AddSong';
+import DeleteButton from './DeleteButton';
 
 const DetailsModal = ({ open, onClose, song, sendSongRating }) => (
   <Modal open={open} onClose={onClose}>
@@ -30,6 +31,8 @@ const DetailsModal = ({ open, onClose, song, sendSongRating }) => (
     </Modal.Content>
 
     <Modal.Actions>
+      <DeleteButton song={song} onClose={onClose} />
+
       <AddSong song={song} inverted />
 
       <Button onClick={onClose} color="blue" inverted>

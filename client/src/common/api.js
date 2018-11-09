@@ -149,3 +149,22 @@ export const putSong = async (id, song) => {
     return { error: true };
   }
 };
+
+/**
+ * Attempt deleting an existing song.
+ */
+export const deleteSong = async id => {
+  const request = new Request(DOMAIN + `/songs/${id}`, {
+    method: 'DELETE',
+  });
+
+  try {
+    const response = await fetch(request);
+
+    if (response.ok) {
+      return { success: true };
+    }
+  } catch (error) {
+    return { error: true };
+  }
+};
