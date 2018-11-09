@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import DataTable from '../DataTable';
 import configureMockStore from 'redux-mock-store'
 
@@ -78,4 +78,11 @@ describe('<DataTable />', () => {
       },
     ]);
   });
+
+  it('should have two songs', () => {
+    const component = mount(<DataTable store={store}/>).debug();
+    // test that the state values were correctly passed as props
+    expect(component.find('Table.Body').children().length).toBe(2);
+  });
+
 });
