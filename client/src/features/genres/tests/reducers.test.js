@@ -11,44 +11,44 @@ describe('genres reducer', () => {
       genres(
         undefined,
         actions.setGenreSelected(
-          ['setGenreSelected', 'genre'],
           ['setGenreSelected'],
+          true,
         ),
       ),
     ).toMatchSnapshot();
   });
 
-  it('should set no genre selected', () => {
+  it('should set no genre', () => {
     expect(
       genres(
         undefined,
         actions.setGenreSelected(
-          ['setGenreSelected', 'genre'],
+          ['setGenreSelected'],
+          false
+        ),
+      ),
+    ).toMatchSnapshot();
+  });
+
+  it('should set none genre selected', () => {
+    expect(
+      genres(
+        undefined,
+        actions.setGenreSelected(
           [],
+          true,
         ),
       ),
     ).toMatchSnapshot();
   });
 
-  it('should set all genre selected', () => {
+  it('should select all genre', () => {
     expect(
       genres(
         undefined,
         actions.setGenreSelected(
           ['setGenreSelected', 'genre'],
-          ['setGenreSelected', 'genre'],
-        ),
-      ),
-    ).toMatchSnapshot();
-  });
-
-  it('should select none genre', () => {
-    expect(
-      genres(
-        undefined,
-        actions.setGenreSelected(
-          ['setGenreSelected', 'genre'],
-          null,
+          true,
         ),
       ),
     ).toMatchSnapshot();

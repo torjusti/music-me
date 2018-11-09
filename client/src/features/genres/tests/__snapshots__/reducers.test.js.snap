@@ -1,9 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`genres reducer should select none genre 1`] = `
+exports[`genres reducer should select all genre 1`] = `
 Object {
   "availableGenres": Array [],
-  "selectedGenres": Array [],
+  "selectedGenres": Array [
+    Array [
+      "setGenreSelected",
+      "genre",
+    ],
+  ],
 }
 `;
 
@@ -13,32 +18,23 @@ Object {
   "selectedGenres": Array [
     Array [
       "setGenreSelected",
-      "genre",
     ],
   ],
 }
 `;
 
-exports[`genres reducer should set all genre selected 1`] = `
+exports[`genres reducer should set no genre 1`] = `
 Object {
   "availableGenres": Array [],
-  "selectedGenres": Array [
-    Array [
-      "setGenreSelected",
-      "genre",
-    ],
-  ],
+  "selectedGenres": Array [],
 }
 `;
 
-exports[`genres reducer should set no genre selected 1`] = `
+exports[`genres reducer should set none genre selected 1`] = `
 Object {
   "availableGenres": Array [],
   "selectedGenres": Array [
-    Array [
-      "setGenreSelected",
-      "genre",
-    ],
+    Array [],
   ],
 }
 `;
