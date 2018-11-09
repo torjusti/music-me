@@ -1,88 +1,73 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import { shallow, mount } from 'enzyme';
 import DataTable from '../DataTable';
-import configureMockStore from 'redux-mock-store'
+import configureMockStore from 'redux-mock-store';
 
 describe('<DataTable />', () => {
-
-  // Create the mock store
+  // Create the mock store.
   const mockStore = configureMockStore();
 
   let wrapper, store;
 
   beforeEach(() => {
     const initialState = {
-      loading: false,
-      data: [
-        {
-          id: 1,
-          title: "test title",
-          artist: "test artist",
-          album: "test album",
-          genre: "test genre",
-          description: "test description",
-          rating: 4,
-        },
-        {
-          id: 2,
-          title: "test title2",
-          artist: "test artist2",
-          album: "test album2",
-          genre: "test genre2",
-          description: "test description2",
-          rating: 2,
-        },
-      ],
+      songs: {
+        loading: false,
+
+        data: [
+          {
+            id: 1,
+            title: 'Test title',
+            artist: 'Test artist',
+            album: 'Test album',
+            genre: 'Test genre',
+            description: 'Test description',
+            rating: 4,
+          },
+
+          {
+            id: 2,
+            title: 'Test title 2',
+            artist: 'Test artist 2',
+            album: 'Test album 2',
+            genre: 'Test genre 2',
+            description: 'Test description 2',
+            rating: 2,
+          },
+        ],
+      },
+
+      pagination: {
+        page: 0,
+        totalPages: 1,
+      },
     };
 
     store = mockStore(initialState);
-    // Shallow render the container passing in the mock store
-    wrapper = shallow(
-      <DataTable store={store} />
+
+    wrapper = mount(
+      <Provider store={store}>
+        <DataTable />
+      </Provider>,
     );
   });
 
-  it('should render DataTable snapshot correctly', () => {
-    expect(wrapper).toMatchSnapshot();
-  });
-
   it('should render DataTable correctly', () => {
-    expect(wrapper.length).toEqual(1);
+    const wrapper = shallow(<DataTable store={store} />);
+
+    expect(wrapper.dive()).toMatchSnapshot();
   });
 
-  it('should have loading to be false', () => {
-    // test that the state values were correctly passed as props
-    expect(wrapper.props().store.getState().loading).toBe(false);
-  });
-
-  it('should have two songs', () => {
-    // test that the state values were correctly passed as props
-    expect(wrapper.props().store.getState().data).toEqual([
-      {
-        id: 1,
-        title: "test title",
-        artist: "test artist",
-        album: "test album",
-        genre: "test genre",
-        description: "test description",
-        rating: 4,
-      },
-      {
-        id: 2,
-        title: "test title2",
-        artist: "test artist2",
-        album: "test album2",
-        genre: "test genre2",
-        description: "test description2",
-        rating: 2,
-      },
-    ]);
+  it('should have one table rendered', () => {
+    expect(wrapper.find('TableBody').length).toBe(1);
   });
 
   it('should have two songs', () => {
-    const component = mount(<DataTable store={store}/>).debug();
-    // test that the state values were correctly passed as props
-    expect(component.find('Table.Body').children().length).toBe(2);
+    expect(wrapper.find('TableBody TableRow').length).toBe(2);
   });
 
+  it('should not be loading', () => {
+    expect(wrapper.find('DataTable').props().songs.loading).toBe(false);
+  });
 });

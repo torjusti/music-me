@@ -1,9 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<DataTable /> should render DataTable snapshot correctly 1`] = `
+exports[`<DataTable /> should render DataTable correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Connect(DataTable)
+  Symbol(enzyme.__unrendered__): <DataTable
+    dispatch={[Function]}
+    songs={
+      Object {
+        "data": Array [
+          Object {
+            "album": "Test album",
+            "artist": "Test artist",
+            "description": "Test description",
+            "genre": "Test genre",
+            "id": 1,
+            "rating": 4,
+            "title": "Test title",
+          },
+          Object {
+            "album": "Test album 2",
+            "artist": "Test artist 2",
+            "description": "Test description 2",
+            "genre": "Test genre 2",
+            "id": 2,
+            "rating": 2,
+            "title": "Test title 2",
+          },
+        ],
+        "loading": false,
+      }
+    }
     store={
       Object {
         "clearActions": [Function],
@@ -14,31 +40,8 @@ ShallowWrapper {
         "subscribe": [Function],
       }
     }
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "class",
-    "props": Object {
-      "dispatch": [Function],
-      "songs": undefined,
-      "store": Object {
-        "clearActions": [Function],
-        "dispatch": [Function],
-        "getActions": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-      },
-      "storeSubscription": Subscription {
+    storeSubscription={
+      Subscription {
         "listeners": Object {
           "clear": [Function],
           "get": [Function],
@@ -56,51 +59,2391 @@ ShallowWrapper {
           "subscribe": [Function],
         },
         "unsubscribe": [Function],
-      },
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Connect(Pagination) />,
+        <DimmerDimmable>
+          <Dimmer
+            active={false}
+            inverted={true}
+          >
+            <Loader />
+          </Dimmer>
+          <Table
+            as="table"
+            sortable={true}
+          >
+            <TableHeader
+              as="thead"
+              className="tableHeader"
+            >
+              <TableRow
+                as="tr"
+                cellAs="td"
+              >
+                <TableHeaderCell
+                  as="th"
+                  onClick={[Function]}
+                  sorted={null}
+                >
+                  Song
+                </TableHeaderCell>
+                <TableHeaderCell
+                  as="th"
+                  onClick={[Function]}
+                  sorted={null}
+                >
+                  Artist
+                </TableHeaderCell>
+                <TableHeaderCell
+                  as="th"
+                  onClick={[Function]}
+                  sorted={null}
+                >
+                  Album
+                </TableHeaderCell>
+                <TableHeaderCell
+                  as="th"
+                  onClick={[Function]}
+                  sorted={null}
+                >
+                  Genre
+                </TableHeaderCell>
+                <TableHeaderCell
+                  as="th"
+                  onClick={[Function]}
+                  sorted={null}
+                >
+                  Rating
+                </TableHeaderCell>
+              </TableRow>
+            </TableHeader>
+            <TableBody
+              as="tbody"
+            >
+              <React.Fragment>
+                <Connect(DetailsModal)
+                  onClose={[Function]}
+                  open={false}
+                  song={
+                    Object {
+                      "album": "Test album",
+                      "artist": "Test artist",
+                      "description": "Test description",
+                      "genre": "Test genre",
+                      "id": 1,
+                      "rating": 4,
+                      "title": "Test title",
+                    }
+                  }
+                />
+                <TableRow
+                  as="tr"
+                  cellAs="td"
+                  className="row"
+                  onClick={[Function]}
+                >
+                  <TableCell
+                    as="td"
+                  >
+                    Test title
+                  </TableCell>
+                  <TableCell
+                    as="td"
+                  >
+                    Test artist
+                  </TableCell>
+                  <TableCell
+                    as="td"
+                  >
+                    Test album
+                  </TableCell>
+                  <TableCell
+                    as="td"
+                  >
+                    Test genre
+                  </TableCell>
+                  <TableCell
+                    as="td"
+                  >
+                    4
+                  </TableCell>
+                </TableRow>
+              </React.Fragment>
+              <React.Fragment>
+                <Connect(DetailsModal)
+                  onClose={[Function]}
+                  open={false}
+                  song={
+                    Object {
+                      "album": "Test album 2",
+                      "artist": "Test artist 2",
+                      "description": "Test description 2",
+                      "genre": "Test genre 2",
+                      "id": 2,
+                      "rating": 2,
+                      "title": "Test title 2",
+                    }
+                  }
+                />
+                <TableRow
+                  as="tr"
+                  cellAs="td"
+                  className="row"
+                  onClick={[Function]}
+                >
+                  <TableCell
+                    as="td"
+                  >
+                    Test title 2
+                  </TableCell>
+                  <TableCell
+                    as="td"
+                  >
+                    Test artist 2
+                  </TableCell>
+                  <TableCell
+                    as="td"
+                  >
+                    Test album 2
+                  </TableCell>
+                  <TableCell
+                    as="td"
+                  >
+                    Test genre 2
+                  </TableCell>
+                  <TableCell
+                    as="td"
+                  >
+                    2
+                  </TableCell>
+                </TableRow>
+              </React.Fragment>
+            </TableBody>
+          </Table>
+        </DimmerDimmable>,
+      ],
+      "className": "container",
     },
     "ref": null,
-    "rendered": null,
-    "type": [Function],
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": Array [
+            <Dimmer
+              active={false}
+              inverted={true}
+            >
+              <Loader />
+            </Dimmer>,
+            <Table
+              as="table"
+              sortable={true}
+            >
+              <TableHeader
+                as="thead"
+                className="tableHeader"
+              >
+                <TableRow
+                  as="tr"
+                  cellAs="td"
+                >
+                  <TableHeaderCell
+                    as="th"
+                    onClick={[Function]}
+                    sorted={null}
+                  >
+                    Song
+                  </TableHeaderCell>
+                  <TableHeaderCell
+                    as="th"
+                    onClick={[Function]}
+                    sorted={null}
+                  >
+                    Artist
+                  </TableHeaderCell>
+                  <TableHeaderCell
+                    as="th"
+                    onClick={[Function]}
+                    sorted={null}
+                  >
+                    Album
+                  </TableHeaderCell>
+                  <TableHeaderCell
+                    as="th"
+                    onClick={[Function]}
+                    sorted={null}
+                  >
+                    Genre
+                  </TableHeaderCell>
+                  <TableHeaderCell
+                    as="th"
+                    onClick={[Function]}
+                    sorted={null}
+                  >
+                    Rating
+                  </TableHeaderCell>
+                </TableRow>
+              </TableHeader>
+              <TableBody
+                as="tbody"
+              >
+                <React.Fragment>
+                  <Connect(DetailsModal)
+                    onClose={[Function]}
+                    open={false}
+                    song={
+                      Object {
+                        "album": "Test album",
+                        "artist": "Test artist",
+                        "description": "Test description",
+                        "genre": "Test genre",
+                        "id": 1,
+                        "rating": 4,
+                        "title": "Test title",
+                      }
+                    }
+                  />
+                  <TableRow
+                    as="tr"
+                    cellAs="td"
+                    className="row"
+                    onClick={[Function]}
+                  >
+                    <TableCell
+                      as="td"
+                    >
+                      Test title
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                    >
+                      Test artist
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                    >
+                      Test album
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                    >
+                      Test genre
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                    >
+                      4
+                    </TableCell>
+                  </TableRow>
+                </React.Fragment>
+                <React.Fragment>
+                  <Connect(DetailsModal)
+                    onClose={[Function]}
+                    open={false}
+                    song={
+                      Object {
+                        "album": "Test album 2",
+                        "artist": "Test artist 2",
+                        "description": "Test description 2",
+                        "genre": "Test genre 2",
+                        "id": 2,
+                        "rating": 2,
+                        "title": "Test title 2",
+                      }
+                    }
+                  />
+                  <TableRow
+                    as="tr"
+                    cellAs="td"
+                    className="row"
+                    onClick={[Function]}
+                  >
+                    <TableCell
+                      as="td"
+                    >
+                      Test title 2
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                    >
+                      Test artist 2
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                    >
+                      Test album 2
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                    >
+                      Test genre 2
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                    >
+                      2
+                    </TableCell>
+                  </TableRow>
+                </React.Fragment>
+              </TableBody>
+            </Table>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "active": false,
+              "children": <Loader />,
+              "inverted": true,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "as": "table",
+              "children": Array [
+                <TableHeader
+                  as="thead"
+                  className="tableHeader"
+                >
+                  <TableRow
+                    as="tr"
+                    cellAs="td"
+                  >
+                    <TableHeaderCell
+                      as="th"
+                      onClick={[Function]}
+                      sorted={null}
+                    >
+                      Song
+                    </TableHeaderCell>
+                    <TableHeaderCell
+                      as="th"
+                      onClick={[Function]}
+                      sorted={null}
+                    >
+                      Artist
+                    </TableHeaderCell>
+                    <TableHeaderCell
+                      as="th"
+                      onClick={[Function]}
+                      sorted={null}
+                    >
+                      Album
+                    </TableHeaderCell>
+                    <TableHeaderCell
+                      as="th"
+                      onClick={[Function]}
+                      sorted={null}
+                    >
+                      Genre
+                    </TableHeaderCell>
+                    <TableHeaderCell
+                      as="th"
+                      onClick={[Function]}
+                      sorted={null}
+                    >
+                      Rating
+                    </TableHeaderCell>
+                  </TableRow>
+                </TableHeader>,
+                <TableBody
+                  as="tbody"
+                >
+                  <React.Fragment>
+                    <Connect(DetailsModal)
+                      onClose={[Function]}
+                      open={false}
+                      song={
+                        Object {
+                          "album": "Test album",
+                          "artist": "Test artist",
+                          "description": "Test description",
+                          "genre": "Test genre",
+                          "id": 1,
+                          "rating": 4,
+                          "title": "Test title",
+                        }
+                      }
+                    />
+                    <TableRow
+                      as="tr"
+                      cellAs="td"
+                      className="row"
+                      onClick={[Function]}
+                    >
+                      <TableCell
+                        as="td"
+                      >
+                        Test title
+                      </TableCell>
+                      <TableCell
+                        as="td"
+                      >
+                        Test artist
+                      </TableCell>
+                      <TableCell
+                        as="td"
+                      >
+                        Test album
+                      </TableCell>
+                      <TableCell
+                        as="td"
+                      >
+                        Test genre
+                      </TableCell>
+                      <TableCell
+                        as="td"
+                      >
+                        4
+                      </TableCell>
+                    </TableRow>
+                  </React.Fragment>
+                  <React.Fragment>
+                    <Connect(DetailsModal)
+                      onClose={[Function]}
+                      open={false}
+                      song={
+                        Object {
+                          "album": "Test album 2",
+                          "artist": "Test artist 2",
+                          "description": "Test description 2",
+                          "genre": "Test genre 2",
+                          "id": 2,
+                          "rating": 2,
+                          "title": "Test title 2",
+                        }
+                      }
+                    />
+                    <TableRow
+                      as="tr"
+                      cellAs="td"
+                      className="row"
+                      onClick={[Function]}
+                    >
+                      <TableCell
+                        as="td"
+                      >
+                        Test title 2
+                      </TableCell>
+                      <TableCell
+                        as="td"
+                      >
+                        Test artist 2
+                      </TableCell>
+                      <TableCell
+                        as="td"
+                      >
+                        Test album 2
+                      </TableCell>
+                      <TableCell
+                        as="td"
+                      >
+                        Test genre 2
+                      </TableCell>
+                      <TableCell
+                        as="td"
+                      >
+                        2
+                      </TableCell>
+                    </TableRow>
+                  </React.Fragment>
+                </TableBody>,
+              ],
+              "sortable": true,
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "as": "thead",
+                  "children": <TableRow
+                    as="tr"
+                    cellAs="td"
+                  >
+                    <TableHeaderCell
+                      as="th"
+                      onClick={[Function]}
+                      sorted={null}
+                    >
+                      Song
+                    </TableHeaderCell>
+                    <TableHeaderCell
+                      as="th"
+                      onClick={[Function]}
+                      sorted={null}
+                    >
+                      Artist
+                    </TableHeaderCell>
+                    <TableHeaderCell
+                      as="th"
+                      onClick={[Function]}
+                      sorted={null}
+                    >
+                      Album
+                    </TableHeaderCell>
+                    <TableHeaderCell
+                      as="th"
+                      onClick={[Function]}
+                      sorted={null}
+                    >
+                      Genre
+                    </TableHeaderCell>
+                    <TableHeaderCell
+                      as="th"
+                      onClick={[Function]}
+                      sorted={null}
+                    >
+                      Rating
+                    </TableHeaderCell>
+                  </TableRow>,
+                  "className": "tableHeader",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "as": "tr",
+                    "cellAs": "td",
+                    "children": Array [
+                      <TableHeaderCell
+                        as="th"
+                        onClick={[Function]}
+                        sorted={null}
+                      >
+                        Song
+                      </TableHeaderCell>,
+                      <TableHeaderCell
+                        as="th"
+                        onClick={[Function]}
+                        sorted={null}
+                      >
+                        Artist
+                      </TableHeaderCell>,
+                      <TableHeaderCell
+                        as="th"
+                        onClick={[Function]}
+                        sorted={null}
+                      >
+                        Album
+                      </TableHeaderCell>,
+                      <TableHeaderCell
+                        as="th"
+                        onClick={[Function]}
+                        sorted={null}
+                      >
+                        Genre
+                      </TableHeaderCell>,
+                      <TableHeaderCell
+                        as="th"
+                        onClick={[Function]}
+                        sorted={null}
+                      >
+                        Rating
+                      </TableHeaderCell>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "as": "th",
+                        "children": "Song",
+                        "onClick": [Function],
+                        "sorted": null,
+                      },
+                      "ref": null,
+                      "rendered": "Song",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "as": "th",
+                        "children": "Artist",
+                        "onClick": [Function],
+                        "sorted": null,
+                      },
+                      "ref": null,
+                      "rendered": "Artist",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "as": "th",
+                        "children": "Album",
+                        "onClick": [Function],
+                        "sorted": null,
+                      },
+                      "ref": null,
+                      "rendered": "Album",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "as": "th",
+                        "children": "Genre",
+                        "onClick": [Function],
+                        "sorted": null,
+                      },
+                      "ref": null,
+                      "rendered": "Genre",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "as": "th",
+                        "children": "Rating",
+                        "onClick": [Function],
+                        "sorted": null,
+                      },
+                      "ref": null,
+                      "rendered": "Rating",
+                      "type": [Function],
+                    },
+                  ],
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "as": "tbody",
+                  "children": Array [
+                    <React.Fragment>
+                      <Connect(DetailsModal)
+                        onClose={[Function]}
+                        open={false}
+                        song={
+                          Object {
+                            "album": "Test album",
+                            "artist": "Test artist",
+                            "description": "Test description",
+                            "genre": "Test genre",
+                            "id": 1,
+                            "rating": 4,
+                            "title": "Test title",
+                          }
+                        }
+                      />
+                      <TableRow
+                        as="tr"
+                        cellAs="td"
+                        className="row"
+                        onClick={[Function]}
+                      >
+                        <TableCell
+                          as="td"
+                        >
+                          Test title
+                        </TableCell>
+                        <TableCell
+                          as="td"
+                        >
+                          Test artist
+                        </TableCell>
+                        <TableCell
+                          as="td"
+                        >
+                          Test album
+                        </TableCell>
+                        <TableCell
+                          as="td"
+                        >
+                          Test genre
+                        </TableCell>
+                        <TableCell
+                          as="td"
+                        >
+                          4
+                        </TableCell>
+                      </TableRow>
+                    </React.Fragment>,
+                    <React.Fragment>
+                      <Connect(DetailsModal)
+                        onClose={[Function]}
+                        open={false}
+                        song={
+                          Object {
+                            "album": "Test album 2",
+                            "artist": "Test artist 2",
+                            "description": "Test description 2",
+                            "genre": "Test genre 2",
+                            "id": 2,
+                            "rating": 2,
+                            "title": "Test title 2",
+                          }
+                        }
+                      />
+                      <TableRow
+                        as="tr"
+                        cellAs="td"
+                        className="row"
+                        onClick={[Function]}
+                      >
+                        <TableCell
+                          as="td"
+                        >
+                          Test title 2
+                        </TableCell>
+                        <TableCell
+                          as="td"
+                        >
+                          Test artist 2
+                        </TableCell>
+                        <TableCell
+                          as="td"
+                        >
+                          Test album 2
+                        </TableCell>
+                        <TableCell
+                          as="td"
+                        >
+                          Test genre 2
+                        </TableCell>
+                        <TableCell
+                          as="td"
+                        >
+                          2
+                        </TableCell>
+                      </TableRow>
+                    </React.Fragment>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": "1",
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": Array [
+                        <Connect(DetailsModal)
+                          onClose={[Function]}
+                          open={false}
+                          song={
+                            Object {
+                              "album": "Test album",
+                              "artist": "Test artist",
+                              "description": "Test description",
+                              "genre": "Test genre",
+                              "id": 1,
+                              "rating": 4,
+                              "title": "Test title",
+                            }
+                          }
+                        />,
+                        <TableRow
+                          as="tr"
+                          cellAs="td"
+                          className="row"
+                          onClick={[Function]}
+                        >
+                          <TableCell
+                            as="td"
+                          >
+                            Test title
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                          >
+                            Test artist
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                          >
+                            Test album
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                          >
+                            Test genre
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                          >
+                            4
+                          </TableCell>
+                        </TableRow>,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "onClose": [Function],
+                          "open": false,
+                          "song": Object {
+                            "album": "Test album",
+                            "artist": "Test artist",
+                            "description": "Test description",
+                            "genre": "Test genre",
+                            "id": 1,
+                            "rating": 4,
+                            "title": "Test title",
+                          },
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "function",
+                        "props": Object {
+                          "as": "tr",
+                          "cellAs": "td",
+                          "children": Array [
+                            <TableCell
+                              as="td"
+                            >
+                              Test title
+                            </TableCell>,
+                            <TableCell
+                              as="td"
+                            >
+                              Test artist
+                            </TableCell>,
+                            <TableCell
+                              as="td"
+                            >
+                              Test album
+                            </TableCell>,
+                            <TableCell
+                              as="td"
+                            >
+                              Test genre
+                            </TableCell>,
+                            <TableCell
+                              as="td"
+                            >
+                              4
+                            </TableCell>,
+                          ],
+                          "className": "row",
+                          "onClick": [Function],
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "function",
+                            "props": Object {
+                              "as": "td",
+                              "children": "Test title",
+                            },
+                            "ref": null,
+                            "rendered": "Test title",
+                            "type": [Function],
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "function",
+                            "props": Object {
+                              "as": "td",
+                              "children": "Test artist",
+                            },
+                            "ref": null,
+                            "rendered": "Test artist",
+                            "type": [Function],
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "function",
+                            "props": Object {
+                              "as": "td",
+                              "children": "Test album",
+                            },
+                            "ref": null,
+                            "rendered": "Test album",
+                            "type": [Function],
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "function",
+                            "props": Object {
+                              "as": "td",
+                              "children": "Test genre",
+                            },
+                            "ref": null,
+                            "rendered": "Test genre",
+                            "type": [Function],
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "function",
+                            "props": Object {
+                              "as": "td",
+                              "children": 4,
+                            },
+                            "ref": null,
+                            "rendered": 4,
+                            "type": [Function],
+                          },
+                        ],
+                        "type": [Function],
+                      },
+                    ],
+                    "type": Symbol(react.fragment),
+                  },
+                  Object {
+                    "instance": null,
+                    "key": "2",
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": Array [
+                        <Connect(DetailsModal)
+                          onClose={[Function]}
+                          open={false}
+                          song={
+                            Object {
+                              "album": "Test album 2",
+                              "artist": "Test artist 2",
+                              "description": "Test description 2",
+                              "genre": "Test genre 2",
+                              "id": 2,
+                              "rating": 2,
+                              "title": "Test title 2",
+                            }
+                          }
+                        />,
+                        <TableRow
+                          as="tr"
+                          cellAs="td"
+                          className="row"
+                          onClick={[Function]}
+                        >
+                          <TableCell
+                            as="td"
+                          >
+                            Test title 2
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                          >
+                            Test artist 2
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                          >
+                            Test album 2
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                          >
+                            Test genre 2
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                          >
+                            2
+                          </TableCell>
+                        </TableRow>,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "onClose": [Function],
+                          "open": false,
+                          "song": Object {
+                            "album": "Test album 2",
+                            "artist": "Test artist 2",
+                            "description": "Test description 2",
+                            "genre": "Test genre 2",
+                            "id": 2,
+                            "rating": 2,
+                            "title": "Test title 2",
+                          },
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "function",
+                        "props": Object {
+                          "as": "tr",
+                          "cellAs": "td",
+                          "children": Array [
+                            <TableCell
+                              as="td"
+                            >
+                              Test title 2
+                            </TableCell>,
+                            <TableCell
+                              as="td"
+                            >
+                              Test artist 2
+                            </TableCell>,
+                            <TableCell
+                              as="td"
+                            >
+                              Test album 2
+                            </TableCell>,
+                            <TableCell
+                              as="td"
+                            >
+                              Test genre 2
+                            </TableCell>,
+                            <TableCell
+                              as="td"
+                            >
+                              2
+                            </TableCell>,
+                          ],
+                          "className": "row",
+                          "onClick": [Function],
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "function",
+                            "props": Object {
+                              "as": "td",
+                              "children": "Test title 2",
+                            },
+                            "ref": null,
+                            "rendered": "Test title 2",
+                            "type": [Function],
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "function",
+                            "props": Object {
+                              "as": "td",
+                              "children": "Test artist 2",
+                            },
+                            "ref": null,
+                            "rendered": "Test artist 2",
+                            "type": [Function],
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "function",
+                            "props": Object {
+                              "as": "td",
+                              "children": "Test album 2",
+                            },
+                            "ref": null,
+                            "rendered": "Test album 2",
+                            "type": [Function],
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "function",
+                            "props": Object {
+                              "as": "td",
+                              "children": "Test genre 2",
+                            },
+                            "ref": null,
+                            "rendered": "Test genre 2",
+                            "type": [Function],
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "function",
+                            "props": Object {
+                              "as": "td",
+                              "children": 2,
+                            },
+                            "ref": null,
+                            "rendered": 2,
+                            "type": [Function],
+                          },
+                        ],
+                        "type": [Function],
+                      },
+                    ],
+                    "type": Symbol(react.fragment),
+                  },
+                ],
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "host",
       "props": Object {
-        "dispatch": [Function],
-        "songs": undefined,
-        "store": Object {
-          "clearActions": [Function],
-          "dispatch": [Function],
-          "getActions": [Function],
-          "getState": [Function],
-          "replaceReducer": [Function],
-          "subscribe": [Function],
-        },
-        "storeSubscription": Subscription {
-          "listeners": Object {
-            "clear": [Function],
-            "get": [Function],
-            "notify": [Function],
-            "subscribe": [Function],
-          },
-          "onStateChange": [Function],
-          "parentSub": undefined,
-          "store": Object {
-            "clearActions": [Function],
-            "dispatch": [Function],
-            "getActions": [Function],
-            "getState": [Function],
-            "replaceReducer": [Function],
-            "subscribe": [Function],
-          },
-          "unsubscribe": [Function],
-        },
+        "children": Array [
+          <Connect(Pagination) />,
+          <DimmerDimmable>
+            <Dimmer
+              active={false}
+              inverted={true}
+            >
+              <Loader />
+            </Dimmer>
+            <Table
+              as="table"
+              sortable={true}
+            >
+              <TableHeader
+                as="thead"
+                className="tableHeader"
+              >
+                <TableRow
+                  as="tr"
+                  cellAs="td"
+                >
+                  <TableHeaderCell
+                    as="th"
+                    onClick={[Function]}
+                    sorted={null}
+                  >
+                    Song
+                  </TableHeaderCell>
+                  <TableHeaderCell
+                    as="th"
+                    onClick={[Function]}
+                    sorted={null}
+                  >
+                    Artist
+                  </TableHeaderCell>
+                  <TableHeaderCell
+                    as="th"
+                    onClick={[Function]}
+                    sorted={null}
+                  >
+                    Album
+                  </TableHeaderCell>
+                  <TableHeaderCell
+                    as="th"
+                    onClick={[Function]}
+                    sorted={null}
+                  >
+                    Genre
+                  </TableHeaderCell>
+                  <TableHeaderCell
+                    as="th"
+                    onClick={[Function]}
+                    sorted={null}
+                  >
+                    Rating
+                  </TableHeaderCell>
+                </TableRow>
+              </TableHeader>
+              <TableBody
+                as="tbody"
+              >
+                <React.Fragment>
+                  <Connect(DetailsModal)
+                    onClose={[Function]}
+                    open={false}
+                    song={
+                      Object {
+                        "album": "Test album",
+                        "artist": "Test artist",
+                        "description": "Test description",
+                        "genre": "Test genre",
+                        "id": 1,
+                        "rating": 4,
+                        "title": "Test title",
+                      }
+                    }
+                  />
+                  <TableRow
+                    as="tr"
+                    cellAs="td"
+                    className="row"
+                    onClick={[Function]}
+                  >
+                    <TableCell
+                      as="td"
+                    >
+                      Test title
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                    >
+                      Test artist
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                    >
+                      Test album
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                    >
+                      Test genre
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                    >
+                      4
+                    </TableCell>
+                  </TableRow>
+                </React.Fragment>
+                <React.Fragment>
+                  <Connect(DetailsModal)
+                    onClose={[Function]}
+                    open={false}
+                    song={
+                      Object {
+                        "album": "Test album 2",
+                        "artist": "Test artist 2",
+                        "description": "Test description 2",
+                        "genre": "Test genre 2",
+                        "id": 2,
+                        "rating": 2,
+                        "title": "Test title 2",
+                      }
+                    }
+                  />
+                  <TableRow
+                    as="tr"
+                    cellAs="td"
+                    className="row"
+                    onClick={[Function]}
+                  >
+                    <TableCell
+                      as="td"
+                    >
+                      Test title 2
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                    >
+                      Test artist 2
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                    >
+                      Test album 2
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                    >
+                      Test genre 2
+                    </TableCell>
+                    <TableCell
+                      as="td"
+                    >
+                      2
+                    </TableCell>
+                  </TableRow>
+                </React.Fragment>
+              </TableBody>
+            </Table>
+          </DimmerDimmable>,
+        ],
+        "className": "container",
       },
       "ref": null,
-      "rendered": null,
-      "type": [Function],
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": Array [
+              <Dimmer
+                active={false}
+                inverted={true}
+              >
+                <Loader />
+              </Dimmer>,
+              <Table
+                as="table"
+                sortable={true}
+              >
+                <TableHeader
+                  as="thead"
+                  className="tableHeader"
+                >
+                  <TableRow
+                    as="tr"
+                    cellAs="td"
+                  >
+                    <TableHeaderCell
+                      as="th"
+                      onClick={[Function]}
+                      sorted={null}
+                    >
+                      Song
+                    </TableHeaderCell>
+                    <TableHeaderCell
+                      as="th"
+                      onClick={[Function]}
+                      sorted={null}
+                    >
+                      Artist
+                    </TableHeaderCell>
+                    <TableHeaderCell
+                      as="th"
+                      onClick={[Function]}
+                      sorted={null}
+                    >
+                      Album
+                    </TableHeaderCell>
+                    <TableHeaderCell
+                      as="th"
+                      onClick={[Function]}
+                      sorted={null}
+                    >
+                      Genre
+                    </TableHeaderCell>
+                    <TableHeaderCell
+                      as="th"
+                      onClick={[Function]}
+                      sorted={null}
+                    >
+                      Rating
+                    </TableHeaderCell>
+                  </TableRow>
+                </TableHeader>
+                <TableBody
+                  as="tbody"
+                >
+                  <React.Fragment>
+                    <Connect(DetailsModal)
+                      onClose={[Function]}
+                      open={false}
+                      song={
+                        Object {
+                          "album": "Test album",
+                          "artist": "Test artist",
+                          "description": "Test description",
+                          "genre": "Test genre",
+                          "id": 1,
+                          "rating": 4,
+                          "title": "Test title",
+                        }
+                      }
+                    />
+                    <TableRow
+                      as="tr"
+                      cellAs="td"
+                      className="row"
+                      onClick={[Function]}
+                    >
+                      <TableCell
+                        as="td"
+                      >
+                        Test title
+                      </TableCell>
+                      <TableCell
+                        as="td"
+                      >
+                        Test artist
+                      </TableCell>
+                      <TableCell
+                        as="td"
+                      >
+                        Test album
+                      </TableCell>
+                      <TableCell
+                        as="td"
+                      >
+                        Test genre
+                      </TableCell>
+                      <TableCell
+                        as="td"
+                      >
+                        4
+                      </TableCell>
+                    </TableRow>
+                  </React.Fragment>
+                  <React.Fragment>
+                    <Connect(DetailsModal)
+                      onClose={[Function]}
+                      open={false}
+                      song={
+                        Object {
+                          "album": "Test album 2",
+                          "artist": "Test artist 2",
+                          "description": "Test description 2",
+                          "genre": "Test genre 2",
+                          "id": 2,
+                          "rating": 2,
+                          "title": "Test title 2",
+                        }
+                      }
+                    />
+                    <TableRow
+                      as="tr"
+                      cellAs="td"
+                      className="row"
+                      onClick={[Function]}
+                    >
+                      <TableCell
+                        as="td"
+                      >
+                        Test title 2
+                      </TableCell>
+                      <TableCell
+                        as="td"
+                      >
+                        Test artist 2
+                      </TableCell>
+                      <TableCell
+                        as="td"
+                      >
+                        Test album 2
+                      </TableCell>
+                      <TableCell
+                        as="td"
+                      >
+                        Test genre 2
+                      </TableCell>
+                      <TableCell
+                        as="td"
+                      >
+                        2
+                      </TableCell>
+                    </TableRow>
+                  </React.Fragment>
+                </TableBody>
+              </Table>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "active": false,
+                "children": <Loader />,
+                "inverted": true,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "as": "table",
+                "children": Array [
+                  <TableHeader
+                    as="thead"
+                    className="tableHeader"
+                  >
+                    <TableRow
+                      as="tr"
+                      cellAs="td"
+                    >
+                      <TableHeaderCell
+                        as="th"
+                        onClick={[Function]}
+                        sorted={null}
+                      >
+                        Song
+                      </TableHeaderCell>
+                      <TableHeaderCell
+                        as="th"
+                        onClick={[Function]}
+                        sorted={null}
+                      >
+                        Artist
+                      </TableHeaderCell>
+                      <TableHeaderCell
+                        as="th"
+                        onClick={[Function]}
+                        sorted={null}
+                      >
+                        Album
+                      </TableHeaderCell>
+                      <TableHeaderCell
+                        as="th"
+                        onClick={[Function]}
+                        sorted={null}
+                      >
+                        Genre
+                      </TableHeaderCell>
+                      <TableHeaderCell
+                        as="th"
+                        onClick={[Function]}
+                        sorted={null}
+                      >
+                        Rating
+                      </TableHeaderCell>
+                    </TableRow>
+                  </TableHeader>,
+                  <TableBody
+                    as="tbody"
+                  >
+                    <React.Fragment>
+                      <Connect(DetailsModal)
+                        onClose={[Function]}
+                        open={false}
+                        song={
+                          Object {
+                            "album": "Test album",
+                            "artist": "Test artist",
+                            "description": "Test description",
+                            "genre": "Test genre",
+                            "id": 1,
+                            "rating": 4,
+                            "title": "Test title",
+                          }
+                        }
+                      />
+                      <TableRow
+                        as="tr"
+                        cellAs="td"
+                        className="row"
+                        onClick={[Function]}
+                      >
+                        <TableCell
+                          as="td"
+                        >
+                          Test title
+                        </TableCell>
+                        <TableCell
+                          as="td"
+                        >
+                          Test artist
+                        </TableCell>
+                        <TableCell
+                          as="td"
+                        >
+                          Test album
+                        </TableCell>
+                        <TableCell
+                          as="td"
+                        >
+                          Test genre
+                        </TableCell>
+                        <TableCell
+                          as="td"
+                        >
+                          4
+                        </TableCell>
+                      </TableRow>
+                    </React.Fragment>
+                    <React.Fragment>
+                      <Connect(DetailsModal)
+                        onClose={[Function]}
+                        open={false}
+                        song={
+                          Object {
+                            "album": "Test album 2",
+                            "artist": "Test artist 2",
+                            "description": "Test description 2",
+                            "genre": "Test genre 2",
+                            "id": 2,
+                            "rating": 2,
+                            "title": "Test title 2",
+                          }
+                        }
+                      />
+                      <TableRow
+                        as="tr"
+                        cellAs="td"
+                        className="row"
+                        onClick={[Function]}
+                      >
+                        <TableCell
+                          as="td"
+                        >
+                          Test title 2
+                        </TableCell>
+                        <TableCell
+                          as="td"
+                        >
+                          Test artist 2
+                        </TableCell>
+                        <TableCell
+                          as="td"
+                        >
+                          Test album 2
+                        </TableCell>
+                        <TableCell
+                          as="td"
+                        >
+                          Test genre 2
+                        </TableCell>
+                        <TableCell
+                          as="td"
+                        >
+                          2
+                        </TableCell>
+                      </TableRow>
+                    </React.Fragment>
+                  </TableBody>,
+                ],
+                "sortable": true,
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "as": "thead",
+                    "children": <TableRow
+                      as="tr"
+                      cellAs="td"
+                    >
+                      <TableHeaderCell
+                        as="th"
+                        onClick={[Function]}
+                        sorted={null}
+                      >
+                        Song
+                      </TableHeaderCell>
+                      <TableHeaderCell
+                        as="th"
+                        onClick={[Function]}
+                        sorted={null}
+                      >
+                        Artist
+                      </TableHeaderCell>
+                      <TableHeaderCell
+                        as="th"
+                        onClick={[Function]}
+                        sorted={null}
+                      >
+                        Album
+                      </TableHeaderCell>
+                      <TableHeaderCell
+                        as="th"
+                        onClick={[Function]}
+                        sorted={null}
+                      >
+                        Genre
+                      </TableHeaderCell>
+                      <TableHeaderCell
+                        as="th"
+                        onClick={[Function]}
+                        sorted={null}
+                      >
+                        Rating
+                      </TableHeaderCell>
+                    </TableRow>,
+                    "className": "tableHeader",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "as": "tr",
+                      "cellAs": "td",
+                      "children": Array [
+                        <TableHeaderCell
+                          as="th"
+                          onClick={[Function]}
+                          sorted={null}
+                        >
+                          Song
+                        </TableHeaderCell>,
+                        <TableHeaderCell
+                          as="th"
+                          onClick={[Function]}
+                          sorted={null}
+                        >
+                          Artist
+                        </TableHeaderCell>,
+                        <TableHeaderCell
+                          as="th"
+                          onClick={[Function]}
+                          sorted={null}
+                        >
+                          Album
+                        </TableHeaderCell>,
+                        <TableHeaderCell
+                          as="th"
+                          onClick={[Function]}
+                          sorted={null}
+                        >
+                          Genre
+                        </TableHeaderCell>,
+                        <TableHeaderCell
+                          as="th"
+                          onClick={[Function]}
+                          sorted={null}
+                        >
+                          Rating
+                        </TableHeaderCell>,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "function",
+                        "props": Object {
+                          "as": "th",
+                          "children": "Song",
+                          "onClick": [Function],
+                          "sorted": null,
+                        },
+                        "ref": null,
+                        "rendered": "Song",
+                        "type": [Function],
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "function",
+                        "props": Object {
+                          "as": "th",
+                          "children": "Artist",
+                          "onClick": [Function],
+                          "sorted": null,
+                        },
+                        "ref": null,
+                        "rendered": "Artist",
+                        "type": [Function],
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "function",
+                        "props": Object {
+                          "as": "th",
+                          "children": "Album",
+                          "onClick": [Function],
+                          "sorted": null,
+                        },
+                        "ref": null,
+                        "rendered": "Album",
+                        "type": [Function],
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "function",
+                        "props": Object {
+                          "as": "th",
+                          "children": "Genre",
+                          "onClick": [Function],
+                          "sorted": null,
+                        },
+                        "ref": null,
+                        "rendered": "Genre",
+                        "type": [Function],
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "function",
+                        "props": Object {
+                          "as": "th",
+                          "children": "Rating",
+                          "onClick": [Function],
+                          "sorted": null,
+                        },
+                        "ref": null,
+                        "rendered": "Rating",
+                        "type": [Function],
+                      },
+                    ],
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "as": "tbody",
+                    "children": Array [
+                      <React.Fragment>
+                        <Connect(DetailsModal)
+                          onClose={[Function]}
+                          open={false}
+                          song={
+                            Object {
+                              "album": "Test album",
+                              "artist": "Test artist",
+                              "description": "Test description",
+                              "genre": "Test genre",
+                              "id": 1,
+                              "rating": 4,
+                              "title": "Test title",
+                            }
+                          }
+                        />
+                        <TableRow
+                          as="tr"
+                          cellAs="td"
+                          className="row"
+                          onClick={[Function]}
+                        >
+                          <TableCell
+                            as="td"
+                          >
+                            Test title
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                          >
+                            Test artist
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                          >
+                            Test album
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                          >
+                            Test genre
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                          >
+                            4
+                          </TableCell>
+                        </TableRow>
+                      </React.Fragment>,
+                      <React.Fragment>
+                        <Connect(DetailsModal)
+                          onClose={[Function]}
+                          open={false}
+                          song={
+                            Object {
+                              "album": "Test album 2",
+                              "artist": "Test artist 2",
+                              "description": "Test description 2",
+                              "genre": "Test genre 2",
+                              "id": 2,
+                              "rating": 2,
+                              "title": "Test title 2",
+                            }
+                          }
+                        />
+                        <TableRow
+                          as="tr"
+                          cellAs="td"
+                          className="row"
+                          onClick={[Function]}
+                        >
+                          <TableCell
+                            as="td"
+                          >
+                            Test title 2
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                          >
+                            Test artist 2
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                          >
+                            Test album 2
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                          >
+                            Test genre 2
+                          </TableCell>
+                          <TableCell
+                            as="td"
+                          >
+                            2
+                          </TableCell>
+                        </TableRow>
+                      </React.Fragment>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": "1",
+                      "nodeType": "function",
+                      "props": Object {
+                        "children": Array [
+                          <Connect(DetailsModal)
+                            onClose={[Function]}
+                            open={false}
+                            song={
+                              Object {
+                                "album": "Test album",
+                                "artist": "Test artist",
+                                "description": "Test description",
+                                "genre": "Test genre",
+                                "id": 1,
+                                "rating": 4,
+                                "title": "Test title",
+                              }
+                            }
+                          />,
+                          <TableRow
+                            as="tr"
+                            cellAs="td"
+                            className="row"
+                            onClick={[Function]}
+                          >
+                            <TableCell
+                              as="td"
+                            >
+                              Test title
+                            </TableCell>
+                            <TableCell
+                              as="td"
+                            >
+                              Test artist
+                            </TableCell>
+                            <TableCell
+                              as="td"
+                            >
+                              Test album
+                            </TableCell>
+                            <TableCell
+                              as="td"
+                            >
+                              Test genre
+                            </TableCell>
+                            <TableCell
+                              as="td"
+                            >
+                              4
+                            </TableCell>
+                          </TableRow>,
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "class",
+                          "props": Object {
+                            "onClose": [Function],
+                            "open": false,
+                            "song": Object {
+                              "album": "Test album",
+                              "artist": "Test artist",
+                              "description": "Test description",
+                              "genre": "Test genre",
+                              "id": 1,
+                              "rating": 4,
+                              "title": "Test title",
+                            },
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": [Function],
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "function",
+                          "props": Object {
+                            "as": "tr",
+                            "cellAs": "td",
+                            "children": Array [
+                              <TableCell
+                                as="td"
+                              >
+                                Test title
+                              </TableCell>,
+                              <TableCell
+                                as="td"
+                              >
+                                Test artist
+                              </TableCell>,
+                              <TableCell
+                                as="td"
+                              >
+                                Test album
+                              </TableCell>,
+                              <TableCell
+                                as="td"
+                              >
+                                Test genre
+                              </TableCell>,
+                              <TableCell
+                                as="td"
+                              >
+                                4
+                              </TableCell>,
+                            ],
+                            "className": "row",
+                            "onClick": [Function],
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "function",
+                              "props": Object {
+                                "as": "td",
+                                "children": "Test title",
+                              },
+                              "ref": null,
+                              "rendered": "Test title",
+                              "type": [Function],
+                            },
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "function",
+                              "props": Object {
+                                "as": "td",
+                                "children": "Test artist",
+                              },
+                              "ref": null,
+                              "rendered": "Test artist",
+                              "type": [Function],
+                            },
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "function",
+                              "props": Object {
+                                "as": "td",
+                                "children": "Test album",
+                              },
+                              "ref": null,
+                              "rendered": "Test album",
+                              "type": [Function],
+                            },
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "function",
+                              "props": Object {
+                                "as": "td",
+                                "children": "Test genre",
+                              },
+                              "ref": null,
+                              "rendered": "Test genre",
+                              "type": [Function],
+                            },
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "function",
+                              "props": Object {
+                                "as": "td",
+                                "children": 4,
+                              },
+                              "ref": null,
+                              "rendered": 4,
+                              "type": [Function],
+                            },
+                          ],
+                          "type": [Function],
+                        },
+                      ],
+                      "type": Symbol(react.fragment),
+                    },
+                    Object {
+                      "instance": null,
+                      "key": "2",
+                      "nodeType": "function",
+                      "props": Object {
+                        "children": Array [
+                          <Connect(DetailsModal)
+                            onClose={[Function]}
+                            open={false}
+                            song={
+                              Object {
+                                "album": "Test album 2",
+                                "artist": "Test artist 2",
+                                "description": "Test description 2",
+                                "genre": "Test genre 2",
+                                "id": 2,
+                                "rating": 2,
+                                "title": "Test title 2",
+                              }
+                            }
+                          />,
+                          <TableRow
+                            as="tr"
+                            cellAs="td"
+                            className="row"
+                            onClick={[Function]}
+                          >
+                            <TableCell
+                              as="td"
+                            >
+                              Test title 2
+                            </TableCell>
+                            <TableCell
+                              as="td"
+                            >
+                              Test artist 2
+                            </TableCell>
+                            <TableCell
+                              as="td"
+                            >
+                              Test album 2
+                            </TableCell>
+                            <TableCell
+                              as="td"
+                            >
+                              Test genre 2
+                            </TableCell>
+                            <TableCell
+                              as="td"
+                            >
+                              2
+                            </TableCell>
+                          </TableRow>,
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "class",
+                          "props": Object {
+                            "onClose": [Function],
+                            "open": false,
+                            "song": Object {
+                              "album": "Test album 2",
+                              "artist": "Test artist 2",
+                              "description": "Test description 2",
+                              "genre": "Test genre 2",
+                              "id": 2,
+                              "rating": 2,
+                              "title": "Test title 2",
+                            },
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": [Function],
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "function",
+                          "props": Object {
+                            "as": "tr",
+                            "cellAs": "td",
+                            "children": Array [
+                              <TableCell
+                                as="td"
+                              >
+                                Test title 2
+                              </TableCell>,
+                              <TableCell
+                                as="td"
+                              >
+                                Test artist 2
+                              </TableCell>,
+                              <TableCell
+                                as="td"
+                              >
+                                Test album 2
+                              </TableCell>,
+                              <TableCell
+                                as="td"
+                              >
+                                Test genre 2
+                              </TableCell>,
+                              <TableCell
+                                as="td"
+                              >
+                                2
+                              </TableCell>,
+                            ],
+                            "className": "row",
+                            "onClick": [Function],
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "function",
+                              "props": Object {
+                                "as": "td",
+                                "children": "Test title 2",
+                              },
+                              "ref": null,
+                              "rendered": "Test title 2",
+                              "type": [Function],
+                            },
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "function",
+                              "props": Object {
+                                "as": "td",
+                                "children": "Test artist 2",
+                              },
+                              "ref": null,
+                              "rendered": "Test artist 2",
+                              "type": [Function],
+                            },
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "function",
+                              "props": Object {
+                                "as": "td",
+                                "children": "Test album 2",
+                              },
+                              "ref": null,
+                              "rendered": "Test album 2",
+                              "type": [Function],
+                            },
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "function",
+                              "props": Object {
+                                "as": "td",
+                                "children": "Test genre 2",
+                              },
+                              "ref": null,
+                              "rendered": "Test genre 2",
+                              "type": [Function],
+                            },
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "function",
+                              "props": Object {
+                                "as": "td",
+                                "children": 2,
+                              },
+                              "ref": null,
+                              "rendered": 2,
+                              "type": [Function],
+                            },
+                          ],
+                          "type": [Function],
+                        },
+                      ],
+                      "type": Symbol(react.fragment),
+                    },
+                  ],
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {
