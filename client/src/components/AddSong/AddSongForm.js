@@ -19,7 +19,6 @@ const initialState = {
   genre: '',
 
   // The currently entered description.
-
   description: '',
 
   // Whether or not the submit button has been clicked once, so
