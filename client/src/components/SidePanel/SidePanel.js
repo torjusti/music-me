@@ -30,6 +30,7 @@ class SidePanel extends Component {
 
         <div className={styles.controlsCont}>
           <h3 className={styles.filterHeader}>Filter by rating</h3>
+
           <Button
             toggle
             active={this.props.rating.ratingEnabled}
@@ -65,6 +66,7 @@ class SidePanel extends Component {
               const selected = this.props.genres.selectedGenres.includes(
                 elem.genre,
               );
+
               return (
                 <li key={elem.genre}>
                   <div className="ui checkbox">
