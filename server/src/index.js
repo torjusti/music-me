@@ -342,7 +342,7 @@ app.put(
         }
 
         // Add the new genre if not already existing.
-        Genre.findOrCreate({ where: { genre: req.body.genre } });
+        await Genre.findOrCreate({ where: { genre: updated.genre } });
       }
 
       await Song.update(updated, {

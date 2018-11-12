@@ -110,9 +110,9 @@ function* addSongSaga(action) {
   if (response.error) {
     yield put(showToast('An error occurred while sending song information.'));
   } else {
-    yield put(showToast('Song added to database'));
     yield put({ type: 'FETCH_GENRES' });
     yield take('SET_GENRES');
+    yield put(showToast('Song added to database'));
     yield fetchCurrentPage();
   }
 }
@@ -137,9 +137,9 @@ function* updateSongSaga(action) {
       payload: { id, song: previousSong },
     });
   } else {
-    yield put(showToast('Song successfully updated'));
     yield put({ type: 'FETCH_GENRES' });
     yield take('SET_GENRES');
+    yield put(showToast('Song successfully updated'));
     yield refreshOnCloseModal();
   }
 }
