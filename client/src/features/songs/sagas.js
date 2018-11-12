@@ -1,14 +1,20 @@
 import { call, put, takeLatest, select, all, take } from 'redux-saga/effects';
 import { requestSongs, rateSong } from '../../common/api';
 
+/**
+ * Saga which retrieves songs from the server based on the
+ * currently selected filtering data.
+ */
 function* fetchSongsSaga() {
+  // Fetch all relevant fields for the request from the store.
   const page = yield select(state => state.pagination.page);
   const search = yield select(state => state.search);
   const selectedGenres = yield select(state => state.genres.selectedGenres);
   const rating = yield select(state => state.rating);
   const orderBy = yield select(state => state.order.orderBy);
-  const isAsc = yield  select(state => state.order.isAsc);
+  const isAsc = yield select(state => state.order.isAsc);
 
+  // Call the API, providing all the relevant values.
   const response = yield call(
     requestSongs,
     page,
@@ -16,16 +22,19 @@ function* fetchSongsSaga() {
     selectedGenres,
     rating,
     orderBy,
-    isAsc
+    isAsc,
   );
 
   if (response.error) {
+    // Send an action which will eventually notify the user that an error happened.
     yield put({ type: 'FETCH_ERROR' });
   }
 
   if (response.data) {
+    // Send an action to update the songs in the table.
     yield put({ type: 'SET_SONGS', payload: { songs: response.data.songs } });
 
+    // Send an action to update the total number of pages.
     yield put({
       type: 'SET_TOTAL_PAGES',
       payload: { totalPages: response.data.pages },
@@ -33,14 +42,21 @@ function* fetchSongsSaga() {
   }
 }
 
+/**
+ * Saga which handles the rating of a single song.
+ */
 function* rateSongSaga(action) {
+  // Fetch the previous rating, so that we can abort
+  // in case an error happens with our API request.
   const previousRating = yield select(
     state =>
       state.songs.data.filter(song => song.id === action.payload.id).rating,
   );
 
+  // Rate the song locally instantly.
   yield put({ type: 'RATE_SONG', payload: action.payload });
 
+  // Send a rating request to our API.
   const response = yield call(
     rateSong,
     action.payload.id,
@@ -48,6 +64,7 @@ function* rateSongSaga(action) {
   );
 
   if (response.error) {
+    // Undo the rating if an error occurs.
     yield put({
       type: 'RATE_SONG',
       payload: { id: action.payload.id, rating: previousRating },
@@ -79,6 +96,8 @@ function* rateSongSaga(action) {
   const totalPages = pagesAction.payload.totalPages;
   const page = yield select(state => state.pagination.page);
 
+  // If the page disappeared following the rating, set the user on the
+  // last page instead of remainding out of bounds.
   if (page >= totalPages) {
     yield put({
       type: 'SET_PAGE',
@@ -89,6 +108,9 @@ function* rateSongSaga(action) {
 
 function* songsSaga() {
   yield all([
+    // Take all actions which should result in the table being updated.
+    // Later actions will cancel previous ones, so the retrieved data
+    // is always up to date.
     takeLatest(
       [
         'FETCH_SONGS',
@@ -100,12 +122,13 @@ function* songsSaga() {
         'TOGGLE_RATING_ENABLED',
         'SET_COLUMN',
         'TOGGLE_DIRECTION',
-        'CLEAR_ORDER'
+        'CLEAR_ORDER',
       ],
 
       fetchSongsSaga,
     ),
 
+    // Handle the action for rating songs.
     takeLatest('SEND_SONG_RATING', rateSongSaga),
   ]);
 }

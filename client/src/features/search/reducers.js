@@ -1,3 +1,7 @@
+/**
+ * Reducer which handles the query on which we are searching.
+ * The value is null if we are not currently searching.
+ */
 const search = (state = null, action) => {
   switch (action.type) {
     case 'SET_QUERY':

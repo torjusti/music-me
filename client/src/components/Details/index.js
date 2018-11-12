@@ -6,6 +6,10 @@ import { sendSongRating } from '../../features/songs/actions';
 import Badge from './Badge';
 import Rate from './Rate';
 
+/**
+ * A modal window which shows detailed information and controls
+ * for a specific song.
+ */
 const DetailsModal = ({ open, onClose, song, sendSongRating }) => (
   <Modal open={open} onClose={onClose}>
     <Header content="Detailed song information" />

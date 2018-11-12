@@ -10,15 +10,29 @@ import {
   toggleRatingEnabled,
 } from '../../features/rating/actions';
 
+/**
+ * The sidebar component, which handles the client-side part
+ * of the majority of the filtering features.
+ */
 class SidePanel extends Component {
   state = {
+    // The currently selected rating. This also exists
+    // in Redux, however the value stored there does
+    // not update until you drop the cursor, and thus, this
+    // value is required.
     selectedRating: 1,
   };
 
+  /**
+   * Set the currently selected rating.
+   */
   setValue = rating => {
     this.setState({ selectedRating: rating });
   };
 
+  /**
+   * Notify Redux about the updated rating when the cursor is released.
+   */
   update = () => {
     this.props.setRatingSelected(this.state.selectedRating);
   };
