@@ -6,7 +6,6 @@ import { recomputeIndex } from './search';
 
 import { router as genres } from './routes/genres';
 import { router as songs } from './routes/songs';
-import { router as rate } from './routes/rate';
 
 const app = express();
 
@@ -19,7 +18,6 @@ app.use(bodyParser.json());
 // Routes for the application.
 app.use('/genres', genres);
 app.use('/songs', songs);
-app.use('/songs/rate', rate);
 
 // Handle errors. This is a middleware which needs to
 // be added last, after all other middlewares.

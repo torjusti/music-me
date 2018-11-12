@@ -6,6 +6,7 @@ import find from './get';
 import findAll from './getAll';
 import post from './post';
 import put from './put';
+import rate from './rate';
 
 export const router = express.Router();
 
@@ -117,4 +118,23 @@ router.put(
       .optional(),
   ],
   put,
+);
+
+/**
+ * Handle the rating of a song.
+ */
+router.post(
+  '/rate',
+  [
+    check('id').isInt({
+      min: 0,
+      allow_leading_zeroes: false,
+    }),
+    check('rating').isInt({
+      min: 1,
+      max: 5,
+      allow_leading_zeroes: false,
+    }),
+  ],
+  rate,
 );
