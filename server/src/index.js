@@ -50,10 +50,10 @@ initialize().then(() => {
 app.post(
   '/songs',
   [
-    check('title').isString(),
-    check('artist').isString(),
-    check('album').isString(),
-    check('genre').isString(),
+    check('title').isString().isLength({ min: 0, max: 100 }),
+    check('artist').isString().isLength({ min: 0, max: 100 }),
+    check('album').isString().isLength({ min: 0, max: 100 }),
+    check('genre').isString().isLength({ min: 0, max: 100 }),
     check('description').isString(),
     check('rating')
       .isInt()
@@ -275,15 +275,19 @@ app.put(
     }),
     check('title')
       .isString()
+      .isLength({ min: 0, max: 100 })
       .optional(),
     check('artist')
       .isString()
+      .isLength({ min: 0, max: 100 })
       .optional(),
     check('album')
       .isString()
+      .isLength({ min: 0, max: 100 })
       .optional(),
     check('genre')
       .isString()
+      .isLength({ min: 0, max: 100 })
       .optional(),
     check('description')
       .isString()

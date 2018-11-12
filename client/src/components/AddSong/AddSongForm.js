@@ -108,6 +108,7 @@ class AddSongForm extends Component {
               value={this.state.title}
               onChange={e => this.setState({ title: e.target.value })}
               error={this.state.showErrors && !this.state.title}
+              maxLength={100}
             />
 
             <Form.Input
@@ -118,6 +119,7 @@ class AddSongForm extends Component {
               value={this.state.artist}
               onChange={e => this.setState({ artist: e.target.value })}
               error={this.state.showErrors && !this.state.artist}
+              maxLength={100}
             />
 
             <Form.Input
@@ -128,6 +130,7 @@ class AddSongForm extends Component {
               value={this.state.album}
               onChange={e => this.setState({ album: e.target.value })}
               error={this.state.showErrors && !this.state.album}
+              maxLength={100}
             />
 
             <Form.Input
@@ -138,6 +141,7 @@ class AddSongForm extends Component {
               value={this.state.genre}
               onChange={e => this.setState({ genre: e.target.value })}
               error={this.state.showErrors && !this.state.genre}
+              maxLength={100}
             />
 
             <Form.TextArea
