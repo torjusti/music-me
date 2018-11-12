@@ -1,8 +1,10 @@
 import { validationResult } from 'express-validator/check';
 import { Song } from '../../models';
 
-// Get a specific song
-export const find = async (req, res, next) => {
+/**
+ * Handle the retrieval of a specific song.
+ */
+const find = async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(422).json({ errors: errors.array() });
@@ -22,3 +24,5 @@ export const find = async (req, res, next) => {
     res.status(404).json();
   }
 };
+
+export default find;

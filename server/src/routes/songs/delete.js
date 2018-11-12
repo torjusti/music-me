@@ -5,8 +5,10 @@ import Sequelize from 'sequelize';
 
 const Op = Sequelize.Op;
 
-// Delete a specific song
-export const del = async (req, res, next) => {
+/**
+ * Handle the deletion of a specific song. 
+ */
+const del = async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(422).json({ errors: errors.array() });
@@ -41,3 +43,5 @@ export const del = async (req, res, next) => {
 
   res.status(204).json();
 };
+
+export default del;

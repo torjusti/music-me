@@ -6,7 +6,7 @@ import Sequelize from 'sequelize';
 const Op = Sequelize.Op;
 
 // Update a specific song
-export const edit = async (req, res, next) => {
+const put = async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(422).json({ errors: errors.array() });
@@ -67,3 +67,5 @@ export const edit = async (req, res, next) => {
 
   res.status(200).json();
 };
+
+export default put;

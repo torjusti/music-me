@@ -2,7 +2,7 @@ import { validationResult } from 'express-validator/check';
 import { Song, Genre } from '../../models';
 import { recomputeIndex } from '../../search';
 
-export const make = async (req, res, next) => {
+const post = async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(422).json({ errors: errors.array() });
@@ -30,3 +30,5 @@ export const make = async (req, res, next) => {
 
   res.status(201).json(model.dataValues);
 };
+
+export default post;

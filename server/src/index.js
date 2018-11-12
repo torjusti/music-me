@@ -16,7 +16,7 @@ app.use(cors());
 // Used for parsing JSON data using Express.
 app.use(bodyParser.json());
 
-//routes
+// Routes for the application.
 app.use('/genres', genres);
 app.use('/songs', songs);
 app.use('/songs/rate', rate);

@@ -7,6 +7,9 @@ const Op = Sequelize.Op;
 
 export const router = express.Router();
 
+/**
+ * Handle the rating of a song.
+ */
 router.post(
   '/',
   [

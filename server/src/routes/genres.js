@@ -3,7 +3,9 @@ import { Genre } from '../models';
 
 export const router = express.Router();
 
-// Get all genres
+/**
+ * Retrieve all genres from the database.
+ */
 router.get('/', async (req, res, next) => {
   let genres;
   try {

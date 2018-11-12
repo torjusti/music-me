@@ -1,11 +1,11 @@
 import express from 'express';
 import { check } from 'express-validator/check';
 
-import { del } from './delete';
-import { find } from './get';
-import { findAll } from './getAll';
-import { make } from './post';
-import { edit } from './put';
+import del from './delete';
+import find from './get';
+import findAll from './getAll';
+import post from './post';
+import put from './put';
 
 export const router = express.Router();
 
@@ -83,7 +83,7 @@ router.post(
       .isInt()
       .optional(),
   ],
-  make,
+  post,
 );
 
 router.put(
@@ -116,5 +116,5 @@ router.put(
       .isInt()
       .optional(),
   ],
-  edit,
+  put,
 );

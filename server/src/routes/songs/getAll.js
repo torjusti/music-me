@@ -8,8 +8,10 @@ const Op = Sequelize.Op;
 // The number of songs to show on a single page.
 const PAGE_SIZE = 5;
 
-// Get all songs
-export const findAll = async (req, res, next) => {
+/**
+ * Retrieve all songs from the database.
+ */
+const getAll = async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(422).json({ errors: errors.array() });
@@ -79,3 +81,5 @@ export const findAll = async (req, res, next) => {
 
   res.status(200).json(result);
 };
+
+export default getAll;
