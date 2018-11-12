@@ -126,9 +126,9 @@ function* updateSongSaga(action) {
 
   yield put(showToast('Starting to update song'));
 
-  const response = yield call(putSong, id, song);
-
   yield put({ type: 'UPDATE_SONG_LOCALLY', payload: action.payload });
+
+  const response = yield call(putSong, id, song);
 
   if (response.error) {
     yield put(showToast('An error occurred while sending song information.'));
