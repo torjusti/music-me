@@ -112,6 +112,7 @@ function* addSongSaga(action) {
   } else {
     yield put(showToast('Song added to database'));
     yield fetchCurrentPage();
+    yield put({ type: 'FETCH_GENRES' });
   }
 }
 
@@ -137,6 +138,7 @@ function* updateSongSaga(action) {
   } else {
     yield put(showToast('Song successfully updated'));
     yield refreshOnCloseModal();
+    yield put({ type: 'FETCH_GENRES' });
   }
 }
 
