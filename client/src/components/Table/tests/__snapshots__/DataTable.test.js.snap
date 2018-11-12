@@ -237,6 +237,11 @@ ShallowWrapper {
             </TableBody>
           </Table>
         </DimmerDimmable>,
+        <div
+          className="addSong"
+        >
+          <Connect(AddSong) />
+        </div>,
       ],
       "className": "container",
     },
@@ -1254,6 +1259,26 @@ ShallowWrapper {
         ],
         "type": [Function],
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <Connect(AddSong) />,
+          "className": "addSong",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": "div",
+      },
     ],
     "type": "div",
   },
@@ -1425,6 +1450,11 @@ ShallowWrapper {
               </TableBody>
             </Table>
           </DimmerDimmable>,
+          <div
+            className="addSong"
+          >
+            <Connect(AddSong) />
+          </div>,
         ],
         "className": "container",
       },
@@ -2441,6 +2471,26 @@ ShallowWrapper {
             },
           ],
           "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <Connect(AddSong) />,
+            "className": "addSong",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": "div",
         },
       ],
       "type": "div",
