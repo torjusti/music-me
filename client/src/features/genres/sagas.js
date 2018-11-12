@@ -1,5 +1,6 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { requestData } from '../../common/api';
+import { showToast } from '../toasts/actions';
 
 /**
  * Saga which retrieves available genres for filtering from the server..
@@ -11,6 +12,7 @@ function* fetchGenres() {
   if (response.error) {
     // Show an error notification if errros occur.
     yield put({ type: 'FETCH_ERROR' });
+    yield put(showToast('An error occurred while fetching data'));
   }
 
   if (response.data) {

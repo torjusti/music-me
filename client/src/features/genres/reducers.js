@@ -9,7 +9,13 @@ const genres = (state = initialState, action) => {
   switch (action.type) {
     // Set the list of available genres, as provided by the server.
     case 'SET_GENRES':
-      return { ...state, availableGenres: action.payload.genres };
+      return {
+        ...state,
+        availableGenres: action.payload.genres,
+        selectedGenres: state.selectedGenres.filter(genre =>
+          action.payload.genres.some(entry => entry.genre === genre),
+        ),
+      };
 
     // Either removes or adds the specified genre to the list
     // of genres, based on the accompagnying flag.

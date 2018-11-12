@@ -50,10 +50,10 @@ initialize().then(() => {
 app.post(
   '/songs',
   [
-    check('title').isString(),
-    check('artist').isString(),
-    check('album').isString(),
-    check('genre').isString(),
+    check('title').isString().isLength({ min: 1, max: 100 }),
+    check('artist').isString().isLength({ min: 1, max: 100 }),
+    check('album').isString().isLength({ min: 1, max: 100 }),
+    check('genre').isString().isLength({ min: 1, max: 100 }),
     check('description').isString(),
     check('rating')
       .isInt()
@@ -76,11 +76,11 @@ app.post(
         description: req.body.description,
         rating: req.body.rating,
       });
+
+      await Genre.findOrCreate({ where: { genre: req.body.genre } });
     } catch (error) {
       next(error);
     }
-
-    Genre.findOrCreate({ where: { genre: { [Op.eq]: req.body.genre } } });
 
     // Recompute the search index in the background.
     recomputeIndex();
@@ -275,15 +275,19 @@ app.put(
     }),
     check('title')
       .isString()
+      .isLength({ min: 1, max: 100 })
       .optional(),
     check('artist')
       .isString()
+      .isLength({ min: 1, max: 100 })
       .optional(),
     check('album')
       .isString()
+      .isLength({ min: 1, max: 100 })
       .optional(),
     check('genre')
       .isString()
+      .isLength({ min: 1, max: 100 })
       .optional(),
     check('description')
       .isString()
@@ -330,16 +334,15 @@ app.put(
           },
         });
 
-        // If it only exists one song instance with the genre
+        // Remove the genre if this was the only song containing the genre.
         if (countGenre === 1) {
-          // remove the old genre if this was the only song with this genre
           await Genre.destroy({
             where: { genre: { [Op.eq]: song.dataValues.genre } },
           });
         }
 
-        // add the new genre if not already existing
-        Genre.findOrCreate({ where: { genre: { [Op.eq]: req.body.genre } } });
+        // Add the new genre if not already existing.
+        await Genre.findOrCreate({ where: { genre: updated.genre } });
       }
 
       await Song.update(updated, {

@@ -12,6 +12,13 @@ const song = (state = {}, action) => {
 
       return { ...state, rating: action.payload.rating };
 
+    case 'UPDATE_SONG_LOCALLY':
+      if (state.id !== action.payload.id) {
+        return state;
+      }
+
+      return { ...state, ...action.payload.song };
+
     default:
       return state;
   }
@@ -36,6 +43,7 @@ const songs = (state = initialState, action) => {
 
     // Rate a specific song, by feeding the action on to the song reducer.
     case 'RATE_SONG':
+    case 'UPDATE_SONG_LOCALLY':
       return { ...state, data: state.data.map(entry => song(entry, action)) };
 
     // Show the loading icon when loading new data. The actions here

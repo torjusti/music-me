@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Table, Loader, Dimmer } from 'semantic-ui-react';
+import AddSong from '../AddSong';
 import styles from './DataTable.module.css';
 import Pagination from './Pagination';
 import Details from '../Details';
@@ -158,6 +159,10 @@ export class DataTable extends Component {
             </Table.Body>
           </Table>
         </Dimmer.Dimmable>
+
+        <div className={styles.addSong}>
+          <AddSong />
+        </div>
       </div>
     );
   }
