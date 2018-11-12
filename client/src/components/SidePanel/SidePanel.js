@@ -5,6 +5,7 @@ import 'rc-slider/assets/index.css';
 import { Icon, Button } from 'semantic-ui-react';
 import styles from './SidePanel.module.css';
 import { setGenreSelected } from '../../features/genres/actions';
+import sortBy from 'lodash/sortBy';
 import {
   setRatingSelected,
   toggleRatingEnabled,
@@ -38,6 +39,8 @@ class SidePanel extends Component {
   };
 
   render() {
+    const availableGenres = sortBy(this.props.genres.availableGenres, 'genre');
+
     return (
       <div className={styles.controls}>
         <h1 className="ui header">Filter menu</h1>
@@ -76,7 +79,7 @@ class SidePanel extends Component {
           <h3 className={styles.filterHeader}>Filter by genre</h3>
 
           <ul className={styles.noDecoration}>
-            {this.props.genres.availableGenres.map(elem => {
+            {availableGenres.map(elem => {
               const selected = this.props.genres.selectedGenres.includes(
                 elem.genre,
               );
