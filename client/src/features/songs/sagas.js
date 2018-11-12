@@ -1,12 +1,4 @@
-import {
-  call,
-  put,
-  takeLatest,
-  select,
-  all,
-  take,
-  race,
-} from 'redux-saga/effects';
+import { call, put, takeLatest, select, all, take } from 'redux-saga/effects';
 import { requestSongs, rateSong, postSong, putSong } from '../../common/api';
 import { showToast } from '../toasts/actions';
 
