@@ -6,6 +6,7 @@ import genres from './genres/reducers';
 import loadingError from './loadingError/reducers';
 import rating from './rating/reducers';
 import order from './order/reducers';
+import toasts from './toasts/reducers';
 
 const musicApp = combineReducers({
   songs,
@@ -15,6 +16,7 @@ const musicApp = combineReducers({
   loadingError,
   rating,
   order,
+  toasts,
 });
 
 export default musicApp;

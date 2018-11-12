@@ -1,10 +1,15 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Table, Loader, Dimmer } from 'semantic-ui-react';
+import AddSong from '../AddSong';
 import styles from './DataTable.module.css';
 import Pagination from './Pagination';
 import Details from '../Details';
-import { setColumn, toggleDirection, clearOrder } from '../../features/order/actions'
+import {
+  setColumn,
+  toggleDirection,
+  clearOrder,
+} from '../../features/order/actions';
 
 export class DataTable extends Component {
   state = {
@@ -27,26 +32,26 @@ export class DataTable extends Component {
     this.props.dispatch({ type: 'CLOSE_MODAL' });
   };
 
-  handleOrder = (column) => {
+  handleOrder = column => {
     if (this.state.orderBy === column) {
-      if (this.state.ordering === 'ascending' ) {
-          this.props.dispatch(toggleDirection());
-          this.setState({
-              ordering: 'descending'
-          })
+      if (this.state.ordering === 'ascending') {
+        this.props.dispatch(toggleDirection());
+        this.setState({
+          ordering: 'descending',
+        });
       } else {
-          this.props.dispatch(clearOrder());
-          this.setState({
-              orderBy: null,
-              ordering: 'ascending'
-          })
+        this.props.dispatch(clearOrder());
+        this.setState({
+          orderBy: null,
+          ordering: 'ascending',
+        });
       }
     } else {
-        this.props.dispatch(setColumn(column));
-        this.setState({
-            orderBy: column,
-            ordering: 'ascending'
-        })
+      this.props.dispatch(setColumn(column));
+      this.setState({
+        orderBy: column,
+        ordering: 'ascending',
+      });
     }
   };
 
@@ -64,29 +69,49 @@ export class DataTable extends Component {
             <Table.Header className={styles.tableHeader}>
               <Table.Row>
                 <Table.HeaderCell
-                    sorted = {this.state.orderBy === 'title' ? this.state.ordering : null}
-                    onClick={() => this.handleOrder('title')}
-                >Song</Table.HeaderCell>
+                  sorted={
+                    this.state.orderBy === 'title' ? this.state.ordering : null
+                  }
+                  onClick={() => this.handleOrder('title')}
+                >
+                  Song
+                </Table.HeaderCell>
 
                 <Table.HeaderCell
-                    sorted = {this.state.orderBy === 'artist' ? this.state.ordering : null}
-                    onClick={() => this.handleOrder('artist')}
-                >Artist</Table.HeaderCell>
+                  sorted={
+                    this.state.orderBy === 'artist' ? this.state.ordering : null
+                  }
+                  onClick={() => this.handleOrder('artist')}
+                >
+                  Artist
+                </Table.HeaderCell>
 
                 <Table.HeaderCell
-                    sorted = {this.state.orderBy === 'album' ? this.state.ordering : null}
-                    onClick={() => this.handleOrder('album')}
-                >Album</Table.HeaderCell>
+                  sorted={
+                    this.state.orderBy === 'album' ? this.state.ordering : null
+                  }
+                  onClick={() => this.handleOrder('album')}
+                >
+                  Album
+                </Table.HeaderCell>
 
                 <Table.HeaderCell
-                    sorted = {this.state.orderBy === 'genre' ? this.state.ordering : null}
-                    onClick={() => this.handleOrder('genre')}
-                >Genre</Table.HeaderCell>
+                  sorted={
+                    this.state.orderBy === 'genre' ? this.state.ordering : null
+                  }
+                  onClick={() => this.handleOrder('genre')}
+                >
+                  Genre
+                </Table.HeaderCell>
 
                 <Table.HeaderCell
-                    sorted = {this.state.orderBy === 'rating' ? this.state.ordering : null}
-                    onClick={() => this.handleOrder('rating')}
-                >Rating</Table.HeaderCell>
+                  sorted={
+                    this.state.orderBy === 'rating' ? this.state.ordering : null
+                  }
+                  onClick={() => this.handleOrder('rating')}
+                >
+                  Rating
+                </Table.HeaderCell>
               </Table.Row>
             </Table.Header>
 
@@ -114,6 +139,10 @@ export class DataTable extends Component {
             </Table.Body>
           </Table>
         </Dimmer.Dimmable>
+
+        <div className={styles.addSong}>
+          <AddSong />
+        </div>
       </div>
     );
   }

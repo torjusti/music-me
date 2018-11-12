@@ -4,11 +4,13 @@ import Table from './components/Table/DataTable';
 import SearchField from './components/SearchField/SearchField';
 import SidePanel from './components/SidePanel/SidePanel';
 import DataLoader from './components/DataLoader';
+import Toast from './components/Toast';
 import styles from './App.module.css';
 
 const App = () => (
   <div>
     <Header />
+
     <main className={styles.main}>
       <DataLoader />
 
@@ -22,6 +24,8 @@ const App = () => (
         <SidePanel />
       </div>
     </main>
+
+    <Toast />
   </div>
 );
 
