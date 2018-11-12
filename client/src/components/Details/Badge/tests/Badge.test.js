@@ -1,10 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Badge from '../index';
-import configureMockStore from 'redux-mock-store'
+import configureMockStore from 'redux-mock-store';
 
 describe('<Badge />', () => {
-
   // Create the mock store
   const mockStore = configureMockStore();
 
@@ -12,10 +11,8 @@ describe('<Badge />', () => {
 
   beforeEach(() => {
     store = mockStore();
-    // Shallow render the container passing in the mock store
-    wrapper = shallow(
-      <Badge store={store} />
-    );
+
+    wrapper = shallow(<Badge store={store} />);
   });
 
   it('should render Badge snapshot correctly', () => {

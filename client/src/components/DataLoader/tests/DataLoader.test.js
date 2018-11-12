@@ -4,7 +4,7 @@ import DataLoader from '../index';
 import configureMockStore from 'redux-mock-store';
 
 describe('DataLoader', () => {
-  // Create the mock store
+  // Create the mock store.
   const mockStore = configureMockStore();
 
   let wrapper, store;
@@ -18,11 +18,8 @@ describe('DataLoader', () => {
     wrapper = shallow(<DataLoader store={store} />);
   });
 
-  it('should render DataLoader snapshot correctly', () => {
+  it('should render correctly', () => {
     expect(wrapper.dive()).toMatchSnapshot();
-  });
-
-  it('should render DataLoader correctly', () => {
     expect(wrapper.dive().length).toEqual(1);
   });
 });

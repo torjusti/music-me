@@ -5,7 +5,6 @@ import DataTable from '../DataTable';
 import configureMockStore from 'redux-mock-store';
 
 describe('<DataTable />', () => {
-  // Create the mock store.
   const mockStore = configureMockStore();
 
   let wrapper, store;
@@ -69,5 +68,24 @@ describe('<DataTable />', () => {
 
   it('should not be loading', () => {
     expect(wrapper.find('DataTable').props().songs.loading).toBe(false);
+  });
+
+  it('should render Pagination correctly', () => {
+    expect(wrapper.find('Pagination').length).toBe(1);
+  });
+
+  it('should not allow moving when there is only one page', () => {
+    expect(
+      wrapper
+        .find('Pagination Button')
+        .first()
+        .props().disabled,
+    ).toBe(true);
+    expect(
+      wrapper
+        .find('Pagination Button')
+        .last()
+        .props().disabled,
+    ).toBe(true);
   });
 });

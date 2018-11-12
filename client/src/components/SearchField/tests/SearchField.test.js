@@ -4,14 +4,14 @@ import SearchField from '../SearchField';
 import configureMockStore from 'redux-mock-store';
 
 describe('SearchField', () => {
-  // Create the mock store
+  // Create the mock store.
   const mockStore = configureMockStore();
 
   let wrapper, store;
 
   beforeEach(() => {
     store = mockStore();
-    // Shallow render the container passing in the mock store
+    // Shallow render the container passing in the mock store.
     wrapper = shallow(<SearchField store={store} />);
   });
 
