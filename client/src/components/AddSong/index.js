@@ -4,7 +4,7 @@ import { Button } from 'semantic-ui-react';
 import AddSongForm from './AddSongForm';
 import { addSong, updateSong } from '../../features/songs/actions';
 
-class AddSong extends Component {
+export class AddSong extends Component {
   state = {
     modalOpen: false,
   };

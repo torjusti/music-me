@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`songs reducer should rate a song 1`] = `
+Object {
+  "data": Array [],
+  "loading": true,
+}
+`;

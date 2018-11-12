@@ -1,13 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Pagination /> renders pagination 1`] = `
+exports[`Pagination renders pagination 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Pagination
     pagination={
       Object {
-        "page": 1,
+        "page": 0,
         "totalPages": 5,
+      }
+    }
+    setPage={[Function]}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
       }
     }
   />,
@@ -28,7 +60,7 @@ ShallowWrapper {
         <Button
           as="button"
           className="button"
-          disabled={false}
+          disabled={true}
           onClick={[Function]}
           role="button"
         >
@@ -41,7 +73,7 @@ ShallowWrapper {
         <span
           className="label"
         >
-          2 of 5
+          1 of 5
         </span>,
         <Button
           as="button"
@@ -75,7 +107,7 @@ ShallowWrapper {
             "Prev",
           ],
           "className": "button",
-          "disabled": false,
+          "disabled": true,
           "onClick": [Function],
           "role": "button",
         },
@@ -102,11 +134,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "2 of 5",
+          "children": "1 of 5",
           "className": "label",
         },
         "ref": null,
-        "rendered": "2 of 5",
+        "rendered": "1 of 5",
         "type": "span",
       },
       Object {
@@ -158,7 +190,7 @@ ShallowWrapper {
           <Button
             as="button"
             className="button"
-            disabled={false}
+            disabled={true}
             onClick={[Function]}
             role="button"
           >
@@ -171,7 +203,7 @@ ShallowWrapper {
           <span
             className="label"
           >
-            2 of 5
+            1 of 5
           </span>,
           <Button
             as="button"
@@ -205,7 +237,7 @@ ShallowWrapper {
               "Prev",
             ],
             "className": "button",
-            "disabled": false,
+            "disabled": true,
             "onClick": [Function],
             "role": "button",
           },
@@ -232,11 +264,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "2 of 5",
+            "children": "1 of 5",
             "className": "label",
           },
           "ref": null,
-          "rendered": "2 of 5",
+          "rendered": "1 of 5",
           "type": "span",
         },
         Object {
@@ -298,3 +330,16 @@ ShallowWrapper {
   },
 }
 `;
+
+exports[`Pagination should send an action when pressing the next button 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "page": 1,
+    },
+    "type": "SET_PAGE",
+  },
+]
+`;
+
+exports[`Pagination should send an action when pressing the previous button 1`] = `Array []`;

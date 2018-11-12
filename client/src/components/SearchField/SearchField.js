@@ -4,7 +4,7 @@ import { Input, Icon, Button } from 'semantic-ui-react';
 import styles from './SearchField.module.css';
 import { setQuery, clearQuery } from '../../features/search/actions';
 
-class SearchField extends Component {
+export class SearchField extends Component {
   state = {
     // The search query.
     query: '',
