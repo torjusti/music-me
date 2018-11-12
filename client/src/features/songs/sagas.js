@@ -111,8 +111,9 @@ function* addSongSaga(action) {
     yield put(showToast('An error occurred while sending song information.'));
   } else {
     yield put(showToast('Song added to database'));
-    yield fetchCurrentPage();
     yield put({ type: 'FETCH_GENRES' });
+    yield take('SET_GENRES');
+    yield fetchCurrentPage();
   }
 }
 
@@ -137,8 +138,9 @@ function* updateSongSaga(action) {
     });
   } else {
     yield put(showToast('Song successfully updated'));
-    yield refreshOnCloseModal();
     yield put({ type: 'FETCH_GENRES' });
+    yield take('SET_GENRES');
+    yield refreshOnCloseModal();
   }
 }
 
