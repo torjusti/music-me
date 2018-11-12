@@ -154,11 +154,7 @@ class AddSongForm extends Component {
         <Modal.Actions>
           <Button color="red" onClick={this.props.onClose} content="Cancel" />
 
-          <Button
-            color="blue"
-            onClick={this.handleSubmit}
-            content={this.props.song ? 'Edit song' : 'Add song'}
-          />
+          <Button color="blue" onClick={this.handleSubmit} content="Save" />
         </Modal.Actions>
       </Modal>
     );
