@@ -240,22 +240,28 @@ const songs = [
   },
 ];
 
-// Create database tables if they do not already exist, then populate the database.
+// Create database tables if they do not already exist, then populate the database
+// using data from the above list.
 synchronizeDatabase().then(async () => {
+  // Destroy all previous songs.
   await Song.destroy({
     where: {},
     truncate: true,
   });
 
+  // Destroy all previous genres.
   await Genre.destroy({
     where: {},
     truncate: true,
   });
 
+  // Create all songs.
   songs.forEach(song => {
     Song.create(song);
   });
 
+  // Find all unique genres in the list above, and
+  // create genres for each of these.
   unique(songs.map(song => song.genre)).forEach(genre => {
     Genre.create({
       genre,

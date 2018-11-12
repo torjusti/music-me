@@ -61,14 +61,14 @@ function* fetchCurrentPage() {
 
   // Many actions reset the pagination, because the data has changed.
   // However, the FETCH_SONGS action does not trigger this. This is
-  // another hack, due to the fact that we do not want to reset the
+  // a small hack, due to the fact that we do not want to reset the
   // pagination after songs are refreshed for example due to the user
   // rating a from the details modal. It would be weird for the user to
   // jump back to page 0 after this. However, this could create weird edge
   // ases for example where the song being rated is the only one on
   // the page, and the rating causes the song to disappear. The best
   // fix I found for this is to set the page to the last possible page
-  // if this happens. However, this entire saga is a gruesome hack.
+  // if this happens.
   const pagesAction = yield take('SET_TOTAL_PAGES');
   const totalPages = pagesAction.payload.totalPages;
   const page = yield select(state => state.pagination.page);
