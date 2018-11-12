@@ -11,27 +11,47 @@ import {
   clearOrder,
 } from '../../features/order/actions';
 
+/**
+ * The table which shows song information that has been loaded from the server.
+ */
 export class DataTable extends Component {
   state = {
+    // Whether or not the details modal is open.
     openModal: null,
+    // The column on which we are sorting.
     orderBy: null,
+    // The way in which we are sorting.
     ordering: 'ascending',
   };
 
+  /**
+   * Handles opening of the details modal.
+   */
   handleOpen = id => {
     this.setState({
       openModal: id,
     });
   };
 
+  /**
+   * Handles closing of the details modal.
+   */
   handleClose = () => {
     this.setState({
       openModal: null,
     });
 
+    // See the saga file for songs for more information about this action.
+    // This exists to refresh the list of songs on modal closing, as the
+    // songs on the current page may have been updated. However, we can not
+    // refresh in the background, as it could cause the modal to get unmounted.
     this.props.dispatch({ type: 'CLOSE_MODAL' });
   };
 
+  /**
+   * Handles the click on a column header. This should switch to the
+   * next sorting mode on that specific column.
+   */
   handleOrder = column => {
     if (this.state.orderBy === column) {
       if (this.state.ordering === 'ascending') {

@@ -1,6 +1,9 @@
 import Sequelize from 'sequelize';
 import sequelize from './database';
 
+/**
+ * The database model for songs.
+ */
 export const Song = sequelize.define('song', {
   title: Sequelize.STRING,
   artist: Sequelize.STRING,
@@ -10,6 +13,9 @@ export const Song = sequelize.define('song', {
   rating: Sequelize.INTEGER,
 });
 
+/**
+ * The database model for genres.
+ */
 export const Genre = sequelize.define('genre', {
   genre: Sequelize.STRING,
 });

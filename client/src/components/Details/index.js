@@ -8,6 +8,10 @@ import Rate from './Rate';
 import AddSong from '../AddSong';
 import DeleteButton from './DeleteButton';
 
+/**
+ * A modal window which shows detailed information and controls
+ * for a specific song.
+ */
 const DetailsModal = ({ open, onClose, song, sendSongRating }) => (
   <Modal open={open} onClose={onClose}>
     <Header content="Detailed song information" />
