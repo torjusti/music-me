@@ -111,7 +111,7 @@ function* addSongSaga(action) {
     yield put(showToast('An error occurred while sending song information.'));
   } else {
     yield put(showToast('Song added to database'));
-    yield refreshOnCloseModal();
+    yield fetchCurrentPage();
   }
 }
 
