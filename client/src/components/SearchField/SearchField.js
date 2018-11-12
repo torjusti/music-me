@@ -6,9 +6,13 @@ import { setQuery, clearQuery } from '../../features/search/actions';
 
 export class SearchField extends Component {
   state = {
+    // The search query.
     query: '',
   };
 
+  /**
+   * Listen for key presses, in order to treat enter key as a click.
+   */
   handleKeyPress = event => {
     // If the enter key was pressed, treat it as a click.
     if (event.key === 'Enter') {
@@ -16,13 +20,23 @@ export class SearchField extends Component {
     }
   };
 
+  /**
+   * Handle typing in the select box.
+   */
   handleChange = event => {
     this.setState({
       query: event.target.value,
     });
   };
 
+  /**
+   * Handle clicks on the search button.
+   */
   handleClick = () => {
+    // If there is text in the field, we set the query text, causing
+    // the table to update. If the query is empty, we send another
+    // action, which causes the table to not be dependent on the
+    // query any longer.
     if (this.state.query) {
       this.props.setQuery(this.state.query);
     } else {

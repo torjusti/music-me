@@ -4,6 +4,10 @@ import { setPage } from '../../features/pagination/actions';
 import { Icon, Button } from 'semantic-ui-react';
 import styles from './Pagination.module.css';
 
+/**
+ * The two buttons and the display above the table, which
+ * allows the user to change the page to show in the table.
+ */
 export const Pagination = ({ pagination, setPage }) => (
   <div className={styles.header}>
     <Button

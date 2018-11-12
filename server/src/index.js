@@ -50,10 +50,10 @@ initialize().then(() => {
 app.post(
   '/songs',
   [
-    check('title').isString(),
-    check('artist').isString(),
-    check('album').isString(),
-    check('genre').isString(),
+    check('title').isString().isLength({ min: 1, max: 100 }),
+    check('artist').isString().isLength({ min: 1, max: 100 }),
+    check('album').isString().isLength({ min: 1, max: 100 }),
+    check('genre').isString().isLength({ min: 1, max: 100 }),
     check('description').isString(),
     check('rating')
       .isInt()
@@ -76,11 +76,11 @@ app.post(
         description: req.body.description,
         rating: req.body.rating,
       });
+
+      await Genre.findOrCreate({ where: { genre: req.body.genre } });
     } catch (error) {
       next(error);
     }
-
-    Genre.findOrCreate({ where: { genre: { [Op.eq]: req.body.genre } } });
 
     // Recompute the search index in the background.
     recomputeIndex();
@@ -110,6 +110,7 @@ app.post(
 
     let song;
     try {
+      // Check if the song exists, error if it does not exist.
       song = await Song.findByPk(req.body.id);
     } catch (error) {
       next(error);
@@ -120,6 +121,7 @@ app.post(
     }
 
     try {
+      // Update the song with the new rating.
       await Song.update(
         {
           rating: parseInt(req.body.rating, 10),
@@ -176,20 +178,27 @@ app.get(
       return res.status(422).json({ errors: errors.array() });
     }
 
+    // The page in the table to return.
     const page = parseInt(req.query.page, 10);
+    // The current search query, if any.
     const searchQuery = req.query.search;
+    // The selected genres. Can be undefined, a list, or just a single
+    // value, so we need to normalize this before using it.
     let selectedGenres = req.query.selectedGenres;
     selectedGenres = selectedGenres
       ? Array.isArray(selectedGenres)
         ? selectedGenres
         : [selectedGenres]
       : [];
+    // The column to order by.
     const orderBy = req.query.orderBy;
+    // Whether or not we are sorting ascendingly.
     const isAsc = req.query.isAsc === 'true';
 
     let songs;
 
     try {
+      // Construct the objects which will be passed on to Sequelize.
       const where = {};
       const order = [];
 
@@ -227,6 +236,7 @@ app.get(
 
     const result = {
       pages: Math.ceil(songs.length / PAGE_SIZE),
+      // Paginate the results by slicing the array of results.
       songs: songs.slice(PAGE_SIZE * page, PAGE_SIZE * (page + 1)),
     };
 
@@ -275,15 +285,19 @@ app.put(
     }),
     check('title')
       .isString()
+      .isLength({ min: 1, max: 100 })
       .optional(),
     check('artist')
       .isString()
+      .isLength({ min: 1, max: 100 })
       .optional(),
     check('album')
       .isString()
+      .isLength({ min: 1, max: 100 })
       .optional(),
     check('genre')
       .isString()
+      .isLength({ min: 1, max: 100 })
       .optional(),
     check('description')
       .isString()
@@ -330,16 +344,15 @@ app.put(
           },
         });
 
-        // If it only exists one song instance with the genre
+        // Remove the genre if this was the only song containing the genre.
         if (countGenre === 1) {
-          // remove the old genre if this was the only song with this genre
           await Genre.destroy({
             where: { genre: { [Op.eq]: song.dataValues.genre } },
           });
         }
 
-        // add the new genre if not already existing
-        Genre.findOrCreate({ where: { genre: { [Op.eq]: req.body.genre } } });
+        // Add the new genre if not already existing.
+        await Genre.findOrCreate({ where: { genre: updated.genre } });
       }
 
       await Song.update(updated, {

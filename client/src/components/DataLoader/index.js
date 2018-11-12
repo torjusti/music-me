@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ErrorMessage from './ErrorMessage';
 
+/**
+ * Helper component which loads initial data from the server, and shows
+ * an error if at any time, an error occurs while loading data from the server.
+ */
 class DataLoader extends Component {
   loadData = () => {
     this.props.dispatch({ type: 'FETCH_SONGS' });
     this.props.dispatch({ type: 'FETCH_GENRES' });
-    this.props.dispatch({ type: 'FETCH_RATING' });
   };
 
   componentDidMount() {
