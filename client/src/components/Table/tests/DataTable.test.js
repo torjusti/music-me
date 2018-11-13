@@ -41,6 +41,11 @@ describe('<DataTable />', () => {
         page: 0,
         totalPages: 1,
       },
+
+      order: {
+        orderBy: null,
+        isAsc: false,
+      }
     };
 
     store = mockStore(initialState);

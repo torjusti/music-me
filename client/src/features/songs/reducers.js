@@ -47,7 +47,7 @@ const songs = (state = initialState, action) => {
       return { ...state, data: state.data.map(entry => song(entry, action)) };
 
     // Show the loading icon when loading new data. The actions here
-    // are the ones which cause data to get loaded again.
+    // are the ones which cause data to get reloaded.
     case 'FETCH_SONGS':
     case 'SET_PAGE':
     case 'SET_QUERY':
