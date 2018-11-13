@@ -109,7 +109,7 @@ export const postSong = async song => {
     // Wait for the response from the server.
     const response = await fetch(request);
 
-    // Attempt converting the repsonse into JSON.
+    // Attempt converting the response into JSON.
     const data = await response.json();
 
     if (response.ok) {

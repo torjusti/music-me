@@ -14,7 +14,7 @@ const order = (state = initialState, action) => {
       return { ...state, orderBy: action.payload.orderBy, isAsc: true };
 
     case 'TOGGLE_DIRECTION':
-      return { ...state, isAsc: state.isAsc ? false : true };
+      return { ...state, isAsc: !state.isAsc };
 
     case 'CLEAR_ORDER':
       return { ...state, orderBy: null };

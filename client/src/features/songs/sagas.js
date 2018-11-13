@@ -57,7 +57,7 @@ function* fetchCurrentPage() {
   // pagination after songs are refreshed for example due to the user
   // rating a from the details modal. It would be weird for the user to
   // jump back to page 0 after this. However, this could create weird edge
-  // ases for example where the song being rated is the only one on
+  // cases for example where the song being rated is the only one on
   // the page, and the rating causes the song to disappear. The best
   // fix I found for this is to set the page to the last possible page
   // if this happens.

@@ -18,10 +18,6 @@ export class DataTable extends Component {
   state = {
     // Whether or not the details modal is open.
     openModal: null,
-    // The column on which we are sorting.
-    orderBy: null,
-    // The way in which we are sorting.
-    ordering: 'ascending',
   };
 
   /**
@@ -53,26 +49,10 @@ export class DataTable extends Component {
    * next sorting mode on that specific column.
    */
   handleOrder = column => {
-    if (this.state.orderBy === column) {
-      if (this.state.ordering === 'ascending') {
-        this.props.dispatch(toggleDirection());
-        this.setState({
-          ordering: 'descending',
-        });
-      } else {
-        this.props.dispatch(clearOrder());
-        this.setState({
-          orderBy: null,
-          ordering: 'ascending',
-        });
-      }
-    } else {
-      this.props.dispatch(setColumn(column));
-      this.setState({
-        orderBy: column,
-        ordering: 'ascending',
-      });
-    }
+    if (this.props.order.orderBy === column) {
+      if (this.props.order.isAsc) this.props.dispatch(toggleDirection());
+      else this.props.dispatch(clearOrder());
+    } else this.props.dispatch(setColumn(column));
   };
 
   render() {
@@ -90,7 +70,8 @@ export class DataTable extends Component {
               <Table.Row>
                 <Table.HeaderCell
                   sorted={
-                    this.state.orderBy === 'title' ? this.state.ordering : null
+                    this.props.order.orderBy === 'title' &&
+                    (this.props.order.isAsc ? 'ascending' : 'descending')
                   }
                   onClick={() => this.handleOrder('title')}
                 >
@@ -99,7 +80,8 @@ export class DataTable extends Component {
 
                 <Table.HeaderCell
                   sorted={
-                    this.state.orderBy === 'artist' ? this.state.ordering : null
+                    this.props.order.orderBy === 'artist' &&
+                    (this.props.order.isAsc ? 'ascending' : 'descending')
                   }
                   onClick={() => this.handleOrder('artist')}
                 >
@@ -108,7 +90,8 @@ export class DataTable extends Component {
 
                 <Table.HeaderCell
                   sorted={
-                    this.state.orderBy === 'album' ? this.state.ordering : null
+                    this.props.order.orderBy === 'album' &&
+                    (this.props.order.isAsc ? 'ascending' : 'descending')
                   }
                   onClick={() => this.handleOrder('album')}
                 >
@@ -117,7 +100,8 @@ export class DataTable extends Component {
 
                 <Table.HeaderCell
                   sorted={
-                    this.state.orderBy === 'genre' ? this.state.ordering : null
+                    this.props.order.orderBy === 'genre' &&
+                    (this.props.order.isAsc ? 'ascending' : 'descending')
                   }
                   onClick={() => this.handleOrder('genre')}
                 >
@@ -126,7 +110,8 @@ export class DataTable extends Component {
 
                 <Table.HeaderCell
                   sorted={
-                    this.state.orderBy === 'rating' ? this.state.ordering : null
+                    this.props.order.orderBy === 'rating' &&
+                    (this.props.order.isAsc ? 'ascending' : 'descending')
                   }
                   onClick={() => this.handleOrder('rating')}
                 >
@@ -170,6 +155,7 @@ export class DataTable extends Component {
 
 const mapStateToProps = state => ({
   songs: state.songs,
+  order: state.order,
 });
 
 export default connect(mapStateToProps)(DataTable);
