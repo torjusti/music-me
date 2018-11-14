@@ -1,7 +1,8 @@
 import queryString from 'query-string';
 
 // The domain on which the server runs.
-export const DOMAIN = process.env.DOMAIN || 'http://localhost:8000';
+export const DOMAIN =
+  process.env.REACT_APP_API_DOMAIN || 'http://localhost:8000';
 
 /**
  * Load data from the specified path at the server.
