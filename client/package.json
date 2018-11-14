@@ -2,6 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://it2810-45.idi.ntnu.no/prosjekt4/",
   "dependencies": {
     "class-names": "^1.0.0",
     "query-string": "^6.2.0",
