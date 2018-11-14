@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { setPage } from '../../features/pagination/actions';
-import { Icon, Button, Form, Input } from 'semantic-ui-react';
+import { Icon, Button, Input } from 'semantic-ui-react';
 import clamp from 'lodash/clamp';
 import styles from './Pagination.module.css';
 
