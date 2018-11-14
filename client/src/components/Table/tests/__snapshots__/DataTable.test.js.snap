@@ -108,6 +108,10 @@ ShallowWrapper {
                   sorted={false}
                 >
                   Song
+                  <Icon
+                    as="i"
+                    name="sort"
+                  />
                 </TableHeaderCell>
                 <TableHeaderCell
                   as="th"
@@ -115,6 +119,10 @@ ShallowWrapper {
                   sorted={false}
                 >
                   Artist
+                  <Icon
+                    as="i"
+                    name="sort"
+                  />
                 </TableHeaderCell>
                 <TableHeaderCell
                   as="th"
@@ -122,6 +130,10 @@ ShallowWrapper {
                   sorted={false}
                 >
                   Album
+                  <Icon
+                    as="i"
+                    name="sort"
+                  />
                 </TableHeaderCell>
                 <TableHeaderCell
                   as="th"
@@ -129,6 +141,10 @@ ShallowWrapper {
                   sorted={false}
                 >
                   Genre
+                  <Icon
+                    as="i"
+                    name="sort"
+                  />
                 </TableHeaderCell>
                 <TableHeaderCell
                   as="th"
@@ -136,6 +152,10 @@ ShallowWrapper {
                   sorted={false}
                 >
                   Rating
+                  <Icon
+                    as="i"
+                    name="sort"
+                  />
                 </TableHeaderCell>
               </TableRow>
             </TableHeader>
@@ -292,6 +312,10 @@ ShallowWrapper {
                     sorted={false}
                   >
                     Song
+                    <Icon
+                      as="i"
+                      name="sort"
+                    />
                   </TableHeaderCell>
                   <TableHeaderCell
                     as="th"
@@ -299,6 +323,10 @@ ShallowWrapper {
                     sorted={false}
                   >
                     Artist
+                    <Icon
+                      as="i"
+                      name="sort"
+                    />
                   </TableHeaderCell>
                   <TableHeaderCell
                     as="th"
@@ -306,6 +334,10 @@ ShallowWrapper {
                     sorted={false}
                   >
                     Album
+                    <Icon
+                      as="i"
+                      name="sort"
+                    />
                   </TableHeaderCell>
                   <TableHeaderCell
                     as="th"
@@ -313,6 +345,10 @@ ShallowWrapper {
                     sorted={false}
                   >
                     Genre
+                    <Icon
+                      as="i"
+                      name="sort"
+                    />
                   </TableHeaderCell>
                   <TableHeaderCell
                     as="th"
@@ -320,6 +356,10 @@ ShallowWrapper {
                     sorted={false}
                   >
                     Rating
+                    <Icon
+                      as="i"
+                      name="sort"
+                    />
                   </TableHeaderCell>
                 </TableRow>
               </TableHeader>
@@ -472,6 +512,10 @@ ShallowWrapper {
                       sorted={false}
                     >
                       Song
+                      <Icon
+                        as="i"
+                        name="sort"
+                      />
                     </TableHeaderCell>
                     <TableHeaderCell
                       as="th"
@@ -479,6 +523,10 @@ ShallowWrapper {
                       sorted={false}
                     >
                       Artist
+                      <Icon
+                        as="i"
+                        name="sort"
+                      />
                     </TableHeaderCell>
                     <TableHeaderCell
                       as="th"
@@ -486,6 +534,10 @@ ShallowWrapper {
                       sorted={false}
                     >
                       Album
+                      <Icon
+                        as="i"
+                        name="sort"
+                      />
                     </TableHeaderCell>
                     <TableHeaderCell
                       as="th"
@@ -493,6 +545,10 @@ ShallowWrapper {
                       sorted={false}
                     >
                       Genre
+                      <Icon
+                        as="i"
+                        name="sort"
+                      />
                     </TableHeaderCell>
                     <TableHeaderCell
                       as="th"
@@ -500,6 +556,10 @@ ShallowWrapper {
                       sorted={false}
                     >
                       Rating
+                      <Icon
+                        as="i"
+                        name="sort"
+                      />
                     </TableHeaderCell>
                   </TableRow>
                 </TableHeader>,
@@ -626,6 +686,10 @@ ShallowWrapper {
                       sorted={false}
                     >
                       Song
+                      <Icon
+                        as="i"
+                        name="sort"
+                      />
                     </TableHeaderCell>
                     <TableHeaderCell
                       as="th"
@@ -633,6 +697,10 @@ ShallowWrapper {
                       sorted={false}
                     >
                       Artist
+                      <Icon
+                        as="i"
+                        name="sort"
+                      />
                     </TableHeaderCell>
                     <TableHeaderCell
                       as="th"
@@ -640,6 +708,10 @@ ShallowWrapper {
                       sorted={false}
                     >
                       Album
+                      <Icon
+                        as="i"
+                        name="sort"
+                      />
                     </TableHeaderCell>
                     <TableHeaderCell
                       as="th"
@@ -647,6 +719,10 @@ ShallowWrapper {
                       sorted={false}
                     >
                       Genre
+                      <Icon
+                        as="i"
+                        name="sort"
+                      />
                     </TableHeaderCell>
                     <TableHeaderCell
                       as="th"
@@ -654,6 +730,10 @@ ShallowWrapper {
                       sorted={false}
                     >
                       Rating
+                      <Icon
+                        as="i"
+                        name="sort"
+                      />
                     </TableHeaderCell>
                   </TableRow>,
                   "className": "tableHeader",
@@ -673,6 +753,10 @@ ShallowWrapper {
                         sorted={false}
                       >
                         Song
+                        <Icon
+                          as="i"
+                          name="sort"
+                        />
                       </TableHeaderCell>,
                       <TableHeaderCell
                         as="th"
@@ -680,6 +764,10 @@ ShallowWrapper {
                         sorted={false}
                       >
                         Artist
+                        <Icon
+                          as="i"
+                          name="sort"
+                        />
                       </TableHeaderCell>,
                       <TableHeaderCell
                         as="th"
@@ -687,6 +775,10 @@ ShallowWrapper {
                         sorted={false}
                       >
                         Album
+                        <Icon
+                          as="i"
+                          name="sort"
+                        />
                       </TableHeaderCell>,
                       <TableHeaderCell
                         as="th"
@@ -694,6 +786,10 @@ ShallowWrapper {
                         sorted={false}
                       >
                         Genre
+                        <Icon
+                          as="i"
+                          name="sort"
+                        />
                       </TableHeaderCell>,
                       <TableHeaderCell
                         as="th"
@@ -701,6 +797,10 @@ ShallowWrapper {
                         sorted={false}
                       >
                         Rating
+                        <Icon
+                          as="i"
+                          name="sort"
+                        />
                       </TableHeaderCell>,
                     ],
                   },
@@ -712,12 +812,32 @@ ShallowWrapper {
                       "nodeType": "function",
                       "props": Object {
                         "as": "th",
-                        "children": "Song",
+                        "children": Array [
+                          "Song",
+                          <Icon
+                            as="i"
+                            name="sort"
+                          />,
+                        ],
                         "onClick": [Function],
                         "sorted": false,
                       },
                       "ref": null,
-                      "rendered": "Song",
+                      "rendered": Array [
+                        "Song",
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "class",
+                          "props": Object {
+                            "as": "i",
+                            "name": "sort",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": [Function],
+                        },
+                      ],
                       "type": [Function],
                     },
                     Object {
@@ -726,12 +846,32 @@ ShallowWrapper {
                       "nodeType": "function",
                       "props": Object {
                         "as": "th",
-                        "children": "Artist",
+                        "children": Array [
+                          "Artist",
+                          <Icon
+                            as="i"
+                            name="sort"
+                          />,
+                        ],
                         "onClick": [Function],
                         "sorted": false,
                       },
                       "ref": null,
-                      "rendered": "Artist",
+                      "rendered": Array [
+                        "Artist",
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "class",
+                          "props": Object {
+                            "as": "i",
+                            "name": "sort",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": [Function],
+                        },
+                      ],
                       "type": [Function],
                     },
                     Object {
@@ -740,12 +880,32 @@ ShallowWrapper {
                       "nodeType": "function",
                       "props": Object {
                         "as": "th",
-                        "children": "Album",
+                        "children": Array [
+                          "Album",
+                          <Icon
+                            as="i"
+                            name="sort"
+                          />,
+                        ],
                         "onClick": [Function],
                         "sorted": false,
                       },
                       "ref": null,
-                      "rendered": "Album",
+                      "rendered": Array [
+                        "Album",
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "class",
+                          "props": Object {
+                            "as": "i",
+                            "name": "sort",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": [Function],
+                        },
+                      ],
                       "type": [Function],
                     },
                     Object {
@@ -754,12 +914,32 @@ ShallowWrapper {
                       "nodeType": "function",
                       "props": Object {
                         "as": "th",
-                        "children": "Genre",
+                        "children": Array [
+                          "Genre",
+                          <Icon
+                            as="i"
+                            name="sort"
+                          />,
+                        ],
                         "onClick": [Function],
                         "sorted": false,
                       },
                       "ref": null,
-                      "rendered": "Genre",
+                      "rendered": Array [
+                        "Genre",
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "class",
+                          "props": Object {
+                            "as": "i",
+                            "name": "sort",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": [Function],
+                        },
+                      ],
                       "type": [Function],
                     },
                     Object {
@@ -768,12 +948,32 @@ ShallowWrapper {
                       "nodeType": "function",
                       "props": Object {
                         "as": "th",
-                        "children": "Rating",
+                        "children": Array [
+                          "Rating",
+                          <Icon
+                            as="i"
+                            name="sort"
+                          />,
+                        ],
                         "onClick": [Function],
                         "sorted": false,
                       },
                       "ref": null,
-                      "rendered": "Rating",
+                      "rendered": Array [
+                        "Rating",
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "class",
+                          "props": Object {
+                            "as": "i",
+                            "name": "sort",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": [Function],
+                        },
+                      ],
                       "type": [Function],
                     },
                   ],
@@ -1321,6 +1521,10 @@ ShallowWrapper {
                     sorted={false}
                   >
                     Song
+                    <Icon
+                      as="i"
+                      name="sort"
+                    />
                   </TableHeaderCell>
                   <TableHeaderCell
                     as="th"
@@ -1328,6 +1532,10 @@ ShallowWrapper {
                     sorted={false}
                   >
                     Artist
+                    <Icon
+                      as="i"
+                      name="sort"
+                    />
                   </TableHeaderCell>
                   <TableHeaderCell
                     as="th"
@@ -1335,6 +1543,10 @@ ShallowWrapper {
                     sorted={false}
                   >
                     Album
+                    <Icon
+                      as="i"
+                      name="sort"
+                    />
                   </TableHeaderCell>
                   <TableHeaderCell
                     as="th"
@@ -1342,6 +1554,10 @@ ShallowWrapper {
                     sorted={false}
                   >
                     Genre
+                    <Icon
+                      as="i"
+                      name="sort"
+                    />
                   </TableHeaderCell>
                   <TableHeaderCell
                     as="th"
@@ -1349,6 +1565,10 @@ ShallowWrapper {
                     sorted={false}
                   >
                     Rating
+                    <Icon
+                      as="i"
+                      name="sort"
+                    />
                   </TableHeaderCell>
                 </TableRow>
               </TableHeader>
@@ -1505,6 +1725,10 @@ ShallowWrapper {
                       sorted={false}
                     >
                       Song
+                      <Icon
+                        as="i"
+                        name="sort"
+                      />
                     </TableHeaderCell>
                     <TableHeaderCell
                       as="th"
@@ -1512,6 +1736,10 @@ ShallowWrapper {
                       sorted={false}
                     >
                       Artist
+                      <Icon
+                        as="i"
+                        name="sort"
+                      />
                     </TableHeaderCell>
                     <TableHeaderCell
                       as="th"
@@ -1519,6 +1747,10 @@ ShallowWrapper {
                       sorted={false}
                     >
                       Album
+                      <Icon
+                        as="i"
+                        name="sort"
+                      />
                     </TableHeaderCell>
                     <TableHeaderCell
                       as="th"
@@ -1526,6 +1758,10 @@ ShallowWrapper {
                       sorted={false}
                     >
                       Genre
+                      <Icon
+                        as="i"
+                        name="sort"
+                      />
                     </TableHeaderCell>
                     <TableHeaderCell
                       as="th"
@@ -1533,6 +1769,10 @@ ShallowWrapper {
                       sorted={false}
                     >
                       Rating
+                      <Icon
+                        as="i"
+                        name="sort"
+                      />
                     </TableHeaderCell>
                   </TableRow>
                 </TableHeader>
@@ -1685,6 +1925,10 @@ ShallowWrapper {
                         sorted={false}
                       >
                         Song
+                        <Icon
+                          as="i"
+                          name="sort"
+                        />
                       </TableHeaderCell>
                       <TableHeaderCell
                         as="th"
@@ -1692,6 +1936,10 @@ ShallowWrapper {
                         sorted={false}
                       >
                         Artist
+                        <Icon
+                          as="i"
+                          name="sort"
+                        />
                       </TableHeaderCell>
                       <TableHeaderCell
                         as="th"
@@ -1699,6 +1947,10 @@ ShallowWrapper {
                         sorted={false}
                       >
                         Album
+                        <Icon
+                          as="i"
+                          name="sort"
+                        />
                       </TableHeaderCell>
                       <TableHeaderCell
                         as="th"
@@ -1706,6 +1958,10 @@ ShallowWrapper {
                         sorted={false}
                       >
                         Genre
+                        <Icon
+                          as="i"
+                          name="sort"
+                        />
                       </TableHeaderCell>
                       <TableHeaderCell
                         as="th"
@@ -1713,6 +1969,10 @@ ShallowWrapper {
                         sorted={false}
                       >
                         Rating
+                        <Icon
+                          as="i"
+                          name="sort"
+                        />
                       </TableHeaderCell>
                     </TableRow>
                   </TableHeader>,
@@ -1839,6 +2099,10 @@ ShallowWrapper {
                         sorted={false}
                       >
                         Song
+                        <Icon
+                          as="i"
+                          name="sort"
+                        />
                       </TableHeaderCell>
                       <TableHeaderCell
                         as="th"
@@ -1846,6 +2110,10 @@ ShallowWrapper {
                         sorted={false}
                       >
                         Artist
+                        <Icon
+                          as="i"
+                          name="sort"
+                        />
                       </TableHeaderCell>
                       <TableHeaderCell
                         as="th"
@@ -1853,6 +2121,10 @@ ShallowWrapper {
                         sorted={false}
                       >
                         Album
+                        <Icon
+                          as="i"
+                          name="sort"
+                        />
                       </TableHeaderCell>
                       <TableHeaderCell
                         as="th"
@@ -1860,6 +2132,10 @@ ShallowWrapper {
                         sorted={false}
                       >
                         Genre
+                        <Icon
+                          as="i"
+                          name="sort"
+                        />
                       </TableHeaderCell>
                       <TableHeaderCell
                         as="th"
@@ -1867,6 +2143,10 @@ ShallowWrapper {
                         sorted={false}
                       >
                         Rating
+                        <Icon
+                          as="i"
+                          name="sort"
+                        />
                       </TableHeaderCell>
                     </TableRow>,
                     "className": "tableHeader",
@@ -1886,6 +2166,10 @@ ShallowWrapper {
                           sorted={false}
                         >
                           Song
+                          <Icon
+                            as="i"
+                            name="sort"
+                          />
                         </TableHeaderCell>,
                         <TableHeaderCell
                           as="th"
@@ -1893,6 +2177,10 @@ ShallowWrapper {
                           sorted={false}
                         >
                           Artist
+                          <Icon
+                            as="i"
+                            name="sort"
+                          />
                         </TableHeaderCell>,
                         <TableHeaderCell
                           as="th"
@@ -1900,6 +2188,10 @@ ShallowWrapper {
                           sorted={false}
                         >
                           Album
+                          <Icon
+                            as="i"
+                            name="sort"
+                          />
                         </TableHeaderCell>,
                         <TableHeaderCell
                           as="th"
@@ -1907,6 +2199,10 @@ ShallowWrapper {
                           sorted={false}
                         >
                           Genre
+                          <Icon
+                            as="i"
+                            name="sort"
+                          />
                         </TableHeaderCell>,
                         <TableHeaderCell
                           as="th"
@@ -1914,6 +2210,10 @@ ShallowWrapper {
                           sorted={false}
                         >
                           Rating
+                          <Icon
+                            as="i"
+                            name="sort"
+                          />
                         </TableHeaderCell>,
                       ],
                     },
@@ -1925,12 +2225,32 @@ ShallowWrapper {
                         "nodeType": "function",
                         "props": Object {
                           "as": "th",
-                          "children": "Song",
+                          "children": Array [
+                            "Song",
+                            <Icon
+                              as="i"
+                              name="sort"
+                            />,
+                          ],
                           "onClick": [Function],
                           "sorted": false,
                         },
                         "ref": null,
-                        "rendered": "Song",
+                        "rendered": Array [
+                          "Song",
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "class",
+                            "props": Object {
+                              "as": "i",
+                              "name": "sort",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": [Function],
+                          },
+                        ],
                         "type": [Function],
                       },
                       Object {
@@ -1939,12 +2259,32 @@ ShallowWrapper {
                         "nodeType": "function",
                         "props": Object {
                           "as": "th",
-                          "children": "Artist",
+                          "children": Array [
+                            "Artist",
+                            <Icon
+                              as="i"
+                              name="sort"
+                            />,
+                          ],
                           "onClick": [Function],
                           "sorted": false,
                         },
                         "ref": null,
-                        "rendered": "Artist",
+                        "rendered": Array [
+                          "Artist",
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "class",
+                            "props": Object {
+                              "as": "i",
+                              "name": "sort",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": [Function],
+                          },
+                        ],
                         "type": [Function],
                       },
                       Object {
@@ -1953,12 +2293,32 @@ ShallowWrapper {
                         "nodeType": "function",
                         "props": Object {
                           "as": "th",
-                          "children": "Album",
+                          "children": Array [
+                            "Album",
+                            <Icon
+                              as="i"
+                              name="sort"
+                            />,
+                          ],
                           "onClick": [Function],
                           "sorted": false,
                         },
                         "ref": null,
-                        "rendered": "Album",
+                        "rendered": Array [
+                          "Album",
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "class",
+                            "props": Object {
+                              "as": "i",
+                              "name": "sort",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": [Function],
+                          },
+                        ],
                         "type": [Function],
                       },
                       Object {
@@ -1967,12 +2327,32 @@ ShallowWrapper {
                         "nodeType": "function",
                         "props": Object {
                           "as": "th",
-                          "children": "Genre",
+                          "children": Array [
+                            "Genre",
+                            <Icon
+                              as="i"
+                              name="sort"
+                            />,
+                          ],
                           "onClick": [Function],
                           "sorted": false,
                         },
                         "ref": null,
-                        "rendered": "Genre",
+                        "rendered": Array [
+                          "Genre",
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "class",
+                            "props": Object {
+                              "as": "i",
+                              "name": "sort",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": [Function],
+                          },
+                        ],
                         "type": [Function],
                       },
                       Object {
@@ -1981,12 +2361,32 @@ ShallowWrapper {
                         "nodeType": "function",
                         "props": Object {
                           "as": "th",
-                          "children": "Rating",
+                          "children": Array [
+                            "Rating",
+                            <Icon
+                              as="i"
+                              name="sort"
+                            />,
+                          ],
                           "onClick": [Function],
                           "sorted": false,
                         },
                         "ref": null,
-                        "rendered": "Rating",
+                        "rendered": Array [
+                          "Rating",
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "class",
+                            "props": Object {
+                              "as": "i",
+                              "name": "sort",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": [Function],
+                          },
+                        ],
                         "type": [Function],
                       },
                     ],
