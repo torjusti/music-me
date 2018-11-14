@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { setPage } from '../../features/pagination/actions';
-import { Icon, Button, Form } from 'semantic-ui-react';
+import { Icon, Button, Form, Input } from 'semantic-ui-react';
 import clamp from 'lodash/clamp';
 import styles from './Pagination.module.css';
 
@@ -49,7 +49,7 @@ class PageInput extends Component {
 
   render() {
     return (
-      <input
+      <Input
         value={this.state.page}
         onChange={this.handleChange}
         onKeyPress={this.handlePress}
@@ -70,7 +70,6 @@ export const Pagination = props => {
   return (
     <div className={styles.header}>
       <Button
-        className={styles.button}
         onClick={() => setPage(pagination.page - 1)}
         disabled={pagination.page === 0}
       >
@@ -89,7 +88,6 @@ export const Pagination = props => {
       </span>
 
       <Button
-        className={styles.button}
         onClick={() => setPage(pagination.page + 1)}
         disabled={
           pagination.page === pagination.totalPages - 1 ||
