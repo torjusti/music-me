@@ -102,44 +102,6 @@ ShallowWrapper {
             />
             Enable filter by rating
           </Button>
-          <ComponentEnhancer(undefined)
-            activeDotStyle={Object {}}
-            className="slider"
-            disabled={true}
-            dotStyle={Object {}}
-            dots={false}
-            handle={[Function]}
-            handleStyle={
-              Array [
-                Object {},
-              ]
-            }
-            included={true}
-            marks={
-              Object {
-                "1": "1",
-                "2": "2",
-                "3": "3",
-                "4": "4",
-                "5": "5",
-              }
-            }
-            max={5}
-            min={1}
-            onAfterChange={[Function]}
-            onBeforeChange={[Function]}
-            onChange={[Function]}
-            prefixCls="rc-slider"
-            railStyle={Object {}}
-            step={1}
-            trackStyle={
-              Array [
-                Object {},
-              ]
-            }
-            value={1}
-            vertical={false}
-          />
         </div>,
         <div
           className="controlsCont"
@@ -229,44 +191,7 @@ ShallowWrapper {
               />
               Enable filter by rating
             </Button>,
-            <ComponentEnhancer(undefined)
-              activeDotStyle={Object {}}
-              className="slider"
-              disabled={true}
-              dotStyle={Object {}}
-              dots={false}
-              handle={[Function]}
-              handleStyle={
-                Array [
-                  Object {},
-                ]
-              }
-              included={true}
-              marks={
-                Object {
-                  "1": "1",
-                  "2": "2",
-                  "3": "3",
-                  "4": "4",
-                  "5": "5",
-                }
-              }
-              max={5}
-              min={1}
-              onAfterChange={[Function]}
-              onBeforeChange={[Function]}
-              onChange={[Function]}
-              prefixCls="rc-slider"
-              railStyle={Object {}}
-              step={1}
-              trackStyle={
-                Array [
-                  Object {},
-                ]
-              }
-              value={1}
-              vertical={false}
-            />,
+            false,
           ],
           "className": "controlsCont",
         },
@@ -320,46 +245,7 @@ ShallowWrapper {
             ],
             "type": [Function],
           },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "activeDotStyle": Object {},
-              "className": "slider",
-              "disabled": true,
-              "dotStyle": Object {},
-              "dots": false,
-              "handle": [Function],
-              "handleStyle": Array [
-                Object {},
-              ],
-              "included": true,
-              "marks": Object {
-                "1": "1",
-                "2": "2",
-                "3": "3",
-                "4": "4",
-                "5": "5",
-              },
-              "max": 5,
-              "min": 1,
-              "onAfterChange": [Function],
-              "onBeforeChange": [Function],
-              "onChange": [Function],
-              "prefixCls": "rc-slider",
-              "railStyle": Object {},
-              "step": 1,
-              "trackStyle": Array [
-                Object {},
-              ],
-              "value": 1,
-              "vertical": false,
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
+          false,
         ],
         "type": "div",
       },
@@ -666,44 +552,6 @@ ShallowWrapper {
               />
               Enable filter by rating
             </Button>
-            <ComponentEnhancer(undefined)
-              activeDotStyle={Object {}}
-              className="slider"
-              disabled={true}
-              dotStyle={Object {}}
-              dots={false}
-              handle={[Function]}
-              handleStyle={
-                Array [
-                  Object {},
-                ]
-              }
-              included={true}
-              marks={
-                Object {
-                  "1": "1",
-                  "2": "2",
-                  "3": "3",
-                  "4": "4",
-                  "5": "5",
-                }
-              }
-              max={5}
-              min={1}
-              onAfterChange={[Function]}
-              onBeforeChange={[Function]}
-              onChange={[Function]}
-              prefixCls="rc-slider"
-              railStyle={Object {}}
-              step={1}
-              trackStyle={
-                Array [
-                  Object {},
-                ]
-              }
-              value={1}
-              vertical={false}
-            />
           </div>,
           <div
             className="controlsCont"
@@ -793,44 +641,7 @@ ShallowWrapper {
                 />
                 Enable filter by rating
               </Button>,
-              <ComponentEnhancer(undefined)
-                activeDotStyle={Object {}}
-                className="slider"
-                disabled={true}
-                dotStyle={Object {}}
-                dots={false}
-                handle={[Function]}
-                handleStyle={
-                  Array [
-                    Object {},
-                  ]
-                }
-                included={true}
-                marks={
-                  Object {
-                    "1": "1",
-                    "2": "2",
-                    "3": "3",
-                    "4": "4",
-                    "5": "5",
-                  }
-                }
-                max={5}
-                min={1}
-                onAfterChange={[Function]}
-                onBeforeChange={[Function]}
-                onChange={[Function]}
-                prefixCls="rc-slider"
-                railStyle={Object {}}
-                step={1}
-                trackStyle={
-                  Array [
-                    Object {},
-                  ]
-                }
-                value={1}
-                vertical={false}
-              />,
+              false,
             ],
             "className": "controlsCont",
           },
@@ -884,46 +695,7 @@ ShallowWrapper {
               ],
               "type": [Function],
             },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "activeDotStyle": Object {},
-                "className": "slider",
-                "disabled": true,
-                "dotStyle": Object {},
-                "dots": false,
-                "handle": [Function],
-                "handleStyle": Array [
-                  Object {},
-                ],
-                "included": true,
-                "marks": Object {
-                  "1": "1",
-                  "2": "2",
-                  "3": "3",
-                  "4": "4",
-                  "5": "5",
-                },
-                "max": 5,
-                "min": 1,
-                "onAfterChange": [Function],
-                "onBeforeChange": [Function],
-                "onChange": [Function],
-                "prefixCls": "rc-slider",
-                "railStyle": Object {},
-                "step": 1,
-                "trackStyle": Array [
-                  Object {},
-                ],
-                "value": 1,
-                "vertical": false,
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
+            false,
           ],
           "type": "div",
         },

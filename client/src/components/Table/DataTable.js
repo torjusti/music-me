@@ -70,8 +70,11 @@ export class DataTable extends Component {
               <Table.Row>
                 <Table.HeaderCell
                   sorted={
-                    this.props.order.orderBy === 'title' &&
-                    (this.props.order.isAsc ? 'ascending' : 'descending')
+                    this.props.order.orderBy === 'title'
+                      ? this.props.order.isAsc
+                        ? 'ascending'
+                        : 'descending'
+                      : null
                   }
                   onClick={() => this.handleOrder('title')}
                 >
@@ -80,8 +83,11 @@ export class DataTable extends Component {
 
                 <Table.HeaderCell
                   sorted={
-                    this.props.order.orderBy === 'artist' &&
-                    (this.props.order.isAsc ? 'ascending' : 'descending')
+                    this.props.order.orderBy === 'artist'
+                      ? this.props.order.isAsc
+                        ? 'ascending'
+                        : 'descending'
+                      : null
                   }
                   onClick={() => this.handleOrder('artist')}
                 >
@@ -90,8 +96,11 @@ export class DataTable extends Component {
 
                 <Table.HeaderCell
                   sorted={
-                    this.props.order.orderBy === 'album' &&
-                    (this.props.order.isAsc ? 'ascending' : 'descending')
+                    this.props.order.orderBy === 'album'
+                      ? this.props.order.isAsc
+                        ? 'ascending'
+                        : 'descending'
+                      : null
                   }
                   onClick={() => this.handleOrder('album')}
                 >
@@ -100,8 +109,11 @@ export class DataTable extends Component {
 
                 <Table.HeaderCell
                   sorted={
-                    this.props.order.orderBy === 'genre' &&
-                    (this.props.order.isAsc ? 'ascending' : 'descending')
+                    this.props.order.orderBy === 'genre'
+                      ? this.props.order.isAsc
+                        ? 'ascending'
+                        : 'descending'
+                      : null
                   }
                   onClick={() => this.handleOrder('genre')}
                 >
@@ -110,8 +122,11 @@ export class DataTable extends Component {
 
                 <Table.HeaderCell
                   sorted={
-                    this.props.order.orderBy === 'rating' &&
-                    (this.props.order.isAsc ? 'ascending' : 'descending')
+                    this.props.order.orderBy === 'rating'
+                      ? this.props.order.isAsc
+                        ? 'ascending'
+                        : 'descending'
+                      : null
                   }
                   onClick={() => this.handleOrder('rating')}
                 >
