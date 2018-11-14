@@ -59,7 +59,6 @@ ShallowWrapper {
       "children": Array [
         <Button
           as="button"
-          className="button"
           disabled={true}
           onClick={[Function]}
           role="button"
@@ -121,7 +120,6 @@ ShallowWrapper {
         </span>,
         <Button
           as="button"
-          className="button"
           disabled={false}
           onClick={[Function]}
           role="button"
@@ -150,7 +148,6 @@ ShallowWrapper {
             />,
             "Prev",
           ],
-          "className": "button",
           "disabled": true,
           "onClick": [Function],
           "role": "button",
@@ -342,7 +339,6 @@ ShallowWrapper {
               name="angle right"
             />,
           ],
-          "className": "button",
           "disabled": false,
           "onClick": [Function],
           "role": "button",
@@ -377,7 +373,6 @@ ShallowWrapper {
         "children": Array [
           <Button
             as="button"
-            className="button"
             disabled={true}
             onClick={[Function]}
             role="button"
@@ -439,7 +434,6 @@ ShallowWrapper {
           </span>,
           <Button
             as="button"
-            className="button"
             disabled={false}
             onClick={[Function]}
             role="button"
@@ -468,7 +462,6 @@ ShallowWrapper {
               />,
               "Prev",
             ],
-            "className": "button",
             "disabled": true,
             "onClick": [Function],
             "role": "button",
@@ -660,7 +653,6 @@ ShallowWrapper {
                 name="angle right"
               />,
             ],
-            "className": "button",
             "disabled": false,
             "onClick": [Function],
             "role": "button",
