@@ -57,22 +57,23 @@ class SidePanel extends Component {
             Enable filter by rating
           </Button>
 
-          <Slider
-            min={1}
-            max={5}
-            className={styles.slider}
-            value={this.state.selectedRating}
-            onChange={this.setValue}
-            onAfterChange={this.update}
-            disabled={!this.props.rating.ratingEnabled}
-            marks={{
-              1: '1',
-              2: '2',
-              3: '3',
-              4: '4',
-              5: '5',
-            }}
-          />
+          {this.props.rating.ratingEnabled && (
+            <Slider
+              min={1}
+              max={5}
+              className={styles.slider}
+              value={this.state.selectedRating}
+              onChange={this.setValue}
+              onAfterChange={this.update}
+              marks={{
+                1: '1',
+                2: '2',
+                3: '3',
+                4: '4',
+                5: '5',
+              }}
+            />
+          )}
         </div>
 
         <div className={styles.controlsCont}>
