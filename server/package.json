@@ -2,7 +2,6 @@
   "name": "server",
   "version": "1.0.0",
   "main": "./src/index.js",
-  "homepage": "http://it2810-45.idi.ntnu.no/prosjekt4/",
   "scripts": {
     "build": "rimraf dist/ && babel ./src --out-dir dist/",
     "start": "npm run build && node dist/index.js",
