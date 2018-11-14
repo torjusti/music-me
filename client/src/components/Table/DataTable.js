@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { Table, Loader, Dimmer } from 'semantic-ui-react';
+import { Table, Loader, Dimmer, Icon } from 'semantic-ui-react';
 import AddSong from '../AddSong';
 import styles from './DataTable.module.css';
 import Pagination from './Pagination';
@@ -76,6 +76,11 @@ export class DataTable extends Component {
                   onClick={() => this.handleOrder('title')}
                 >
                   Song
+
+                  { this.props.order.orderBy !== 'title' &&
+                  <Icon
+                    name={'sort'}
+                  /> }
                 </Table.HeaderCell>
 
                 <Table.HeaderCell
@@ -86,6 +91,10 @@ export class DataTable extends Component {
                   onClick={() => this.handleOrder('artist')}
                 >
                   Artist
+                  { this.props.order.orderBy !== 'artist' &&
+                  <Icon
+                    name='sort'
+                    /> }
                 </Table.HeaderCell>
 
                 <Table.HeaderCell
@@ -96,6 +105,10 @@ export class DataTable extends Component {
                   onClick={() => this.handleOrder('album')}
                 >
                   Album
+                  { this.props.order.orderBy !== 'album' &&
+                  <Icon
+                    name='sort'
+                  /> }
                 </Table.HeaderCell>
 
                 <Table.HeaderCell
@@ -106,6 +119,10 @@ export class DataTable extends Component {
                   onClick={() => this.handleOrder('genre')}
                 >
                   Genre
+                  { this.props.order.orderBy !== 'genre' &&
+                  <Icon
+                    name='sort'
+                  /> }
                 </Table.HeaderCell>
 
                 <Table.HeaderCell
@@ -116,6 +133,12 @@ export class DataTable extends Component {
                   onClick={() => this.handleOrder('rating')}
                 >
                   Rating
+
+                  { this.props.order.orderBy !== 'artist' &&
+                  <Icon
+                    name='sort'
+                  />
+                  }
                 </Table.HeaderCell>
               </Table.Row>
             </Table.Header>
