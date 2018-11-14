@@ -55,6 +55,7 @@ class PageInput extends Component {
         onKeyPress={this.handlePress}
         className={styles.pageInput}
         type="number"
+        min={1}
       />
     );
   }
