@@ -28,7 +28,7 @@ npm run build
 forever start dist/index.js
 cd ../client
 npm install
-export DOMAIN=http://it2810-45.idi.ntnu.no:8000
+export REACT_APP_API_DOMAIN=http://it2810-45.idi.ntnu.no:8000
 npm run build
 cp -r build/* /var/www/html/prosjekt4
 ```
