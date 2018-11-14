@@ -25,7 +25,7 @@ cd gruppe45/server
 npm install
 npm run populate
 npm run build
-forever start build/index.js
+forever start dist/index.js
 cd ../client
 npm install
 export DOMAIN=http://it2810-45.idi.ntnu.no:8000
