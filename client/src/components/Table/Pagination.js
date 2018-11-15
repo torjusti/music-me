@@ -1,43 +1,106 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { setPage } from '../../features/pagination/actions';
-import { Icon, Button } from 'semantic-ui-react';
+import { Icon, Button, Input } from 'semantic-ui-react';
+import clamp from 'lodash/clamp';
 import styles from './Pagination.module.css';
+
+/**
+ * Input box for setting the pagination page manually.
+ */
+class PageInput extends Component {
+  state = {
+    page: 1,
+  };
+
+  componentDidMount() {
+    this.setState({
+      page: this.props.pagination.page + 1,
+    });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props !== prevProps) {
+      this.setState({
+        page: this.props.pagination.page + 1,
+      });
+    }
+  }
+
+  handleChange = event => {
+    this.setState({
+      page: event.target.value,
+    });
+  };
+
+  updatePage = () => {
+    const current = this.props.pagination.page;
+
+    const page = parseInt(this.state.page, 10) - 1 || current;
+
+    this.props.setPage(clamp(page, 0, this.props.pagination.totalPages - 1));
+  };
+
+  handlePress = event => {
+    if (event.key === 'Enter') {
+      this.updatePage();
+    }
+  };
+
+  render() {
+    return (
+      <Input
+        value={this.state.page}
+        onChange={this.handleChange}
+        onKeyPress={this.handlePress}
+        className={styles.pageInput}
+        type="number"
+        min={1}
+      />
+    );
+  }
+}
 
 /**
  * The two buttons and the display above the table, which
  * allows the user to change the page to show in the table.
  */
-export const Pagination = ({ pagination, setPage }) => (
-  <div className={styles.header}>
-    <Button
-      className={styles.button}
-      onClick={() => setPage(pagination.page - 1)}
-      disabled={pagination.page === 0}
-    >
-      <Icon name="angle left" />
-      Prev
-    </Button>
+export const Pagination = props => {
+  const { pagination, setPage } = props;
 
-    <span className={styles.label}>
-      {pagination.totalPages === 0
-        ? 'No results'
-        : `${pagination.page + 1} of ${pagination.totalPages}`}
-    </span>
+  return (
+    <div className={styles.header}>
+      <Button
+        onClick={() => setPage(pagination.page - 1)}
+        disabled={pagination.page === 0}
+      >
+        <Icon name="angle left" />
+        Prev
+      </Button>
 
-    <Button
-      className={styles.button}
-      onClick={() => setPage(pagination.page + 1)}
-      disabled={
-        pagination.page === pagination.totalPages - 1 ||
-        pagination.totalPages === 0
-      }
-    >
-      Next
-      <Icon name="angle right" />
-    </Button>
-  </div>
-);
+      <span className={styles.label}>
+        {pagination.totalPages === 0 ? (
+          <Fragment>No results</Fragment>
+        ) : (
+          <Fragment>
+            Page <PageInput {...props} /> of {pagination.totalPages}
+          </Fragment>
+        )}
+      </span>
+
+      <Button
+        onClick={() => setPage(pagination.page + 1)}
+        disabled={
+          pagination.page === pagination.totalPages - 1 ||
+          pagination.totalPages === 0
+        }
+      >
+        Next
+        <Icon name="angle right" />
+      </Button>
+    </div>
+  );
+};
 
 const mapStateToProps = state => ({
   pagination: state.pagination,

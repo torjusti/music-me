@@ -105,7 +105,7 @@ ShallowWrapper {
                 <TableHeaderCell
                   as="th"
                   onClick={[Function]}
-                  sorted={false}
+                  sorted={null}
                 >
                   Song
                   <Icon
@@ -116,7 +116,7 @@ ShallowWrapper {
                 <TableHeaderCell
                   as="th"
                   onClick={[Function]}
-                  sorted={false}
+                  sorted={null}
                 >
                   Artist
                   <Icon
@@ -127,7 +127,7 @@ ShallowWrapper {
                 <TableHeaderCell
                   as="th"
                   onClick={[Function]}
-                  sorted={false}
+                  sorted={null}
                 >
                   Album
                   <Icon
@@ -138,7 +138,7 @@ ShallowWrapper {
                 <TableHeaderCell
                   as="th"
                   onClick={[Function]}
-                  sorted={false}
+                  sorted={null}
                 >
                   Genre
                   <Icon
@@ -149,7 +149,7 @@ ShallowWrapper {
                 <TableHeaderCell
                   as="th"
                   onClick={[Function]}
-                  sorted={false}
+                  sorted={null}
                 >
                   Rating
                   <Icon
@@ -309,7 +309,7 @@ ShallowWrapper {
                   <TableHeaderCell
                     as="th"
                     onClick={[Function]}
-                    sorted={false}
+                    sorted={null}
                   >
                     Song
                     <Icon
@@ -320,7 +320,7 @@ ShallowWrapper {
                   <TableHeaderCell
                     as="th"
                     onClick={[Function]}
-                    sorted={false}
+                    sorted={null}
                   >
                     Artist
                     <Icon
@@ -331,7 +331,7 @@ ShallowWrapper {
                   <TableHeaderCell
                     as="th"
                     onClick={[Function]}
-                    sorted={false}
+                    sorted={null}
                   >
                     Album
                     <Icon
@@ -342,7 +342,7 @@ ShallowWrapper {
                   <TableHeaderCell
                     as="th"
                     onClick={[Function]}
-                    sorted={false}
+                    sorted={null}
                   >
                     Genre
                     <Icon
@@ -353,7 +353,7 @@ ShallowWrapper {
                   <TableHeaderCell
                     as="th"
                     onClick={[Function]}
-                    sorted={false}
+                    sorted={null}
                   >
                     Rating
                     <Icon
@@ -509,7 +509,7 @@ ShallowWrapper {
                     <TableHeaderCell
                       as="th"
                       onClick={[Function]}
-                      sorted={false}
+                      sorted={null}
                     >
                       Song
                       <Icon
@@ -520,7 +520,7 @@ ShallowWrapper {
                     <TableHeaderCell
                       as="th"
                       onClick={[Function]}
-                      sorted={false}
+                      sorted={null}
                     >
                       Artist
                       <Icon
@@ -531,7 +531,7 @@ ShallowWrapper {
                     <TableHeaderCell
                       as="th"
                       onClick={[Function]}
-                      sorted={false}
+                      sorted={null}
                     >
                       Album
                       <Icon
@@ -542,7 +542,7 @@ ShallowWrapper {
                     <TableHeaderCell
                       as="th"
                       onClick={[Function]}
-                      sorted={false}
+                      sorted={null}
                     >
                       Genre
                       <Icon
@@ -553,7 +553,7 @@ ShallowWrapper {
                     <TableHeaderCell
                       as="th"
                       onClick={[Function]}
-                      sorted={false}
+                      sorted={null}
                     >
                       Rating
                       <Icon
@@ -683,7 +683,7 @@ ShallowWrapper {
                     <TableHeaderCell
                       as="th"
                       onClick={[Function]}
-                      sorted={false}
+                      sorted={null}
                     >
                       Song
                       <Icon
@@ -694,7 +694,7 @@ ShallowWrapper {
                     <TableHeaderCell
                       as="th"
                       onClick={[Function]}
-                      sorted={false}
+                      sorted={null}
                     >
                       Artist
                       <Icon
@@ -705,7 +705,7 @@ ShallowWrapper {
                     <TableHeaderCell
                       as="th"
                       onClick={[Function]}
-                      sorted={false}
+                      sorted={null}
                     >
                       Album
                       <Icon
@@ -716,7 +716,7 @@ ShallowWrapper {
                     <TableHeaderCell
                       as="th"
                       onClick={[Function]}
-                      sorted={false}
+                      sorted={null}
                     >
                       Genre
                       <Icon
@@ -727,7 +727,7 @@ ShallowWrapper {
                     <TableHeaderCell
                       as="th"
                       onClick={[Function]}
-                      sorted={false}
+                      sorted={null}
                     >
                       Rating
                       <Icon
@@ -750,7 +750,7 @@ ShallowWrapper {
                       <TableHeaderCell
                         as="th"
                         onClick={[Function]}
-                        sorted={false}
+                        sorted={null}
                       >
                         Song
                         <Icon
@@ -761,7 +761,7 @@ ShallowWrapper {
                       <TableHeaderCell
                         as="th"
                         onClick={[Function]}
-                        sorted={false}
+                        sorted={null}
                       >
                         Artist
                         <Icon
@@ -772,7 +772,7 @@ ShallowWrapper {
                       <TableHeaderCell
                         as="th"
                         onClick={[Function]}
-                        sorted={false}
+                        sorted={null}
                       >
                         Album
                         <Icon
@@ -783,7 +783,7 @@ ShallowWrapper {
                       <TableHeaderCell
                         as="th"
                         onClick={[Function]}
-                        sorted={false}
+                        sorted={null}
                       >
                         Genre
                         <Icon
@@ -794,7 +794,7 @@ ShallowWrapper {
                       <TableHeaderCell
                         as="th"
                         onClick={[Function]}
-                        sorted={false}
+                        sorted={null}
                       >
                         Rating
                         <Icon
@@ -820,7 +820,7 @@ ShallowWrapper {
                           />,
                         ],
                         "onClick": [Function],
-                        "sorted": false,
+                        "sorted": null,
                       },
                       "ref": null,
                       "rendered": Array [
@@ -854,7 +854,7 @@ ShallowWrapper {
                           />,
                         ],
                         "onClick": [Function],
-                        "sorted": false,
+                        "sorted": null,
                       },
                       "ref": null,
                       "rendered": Array [
@@ -888,7 +888,7 @@ ShallowWrapper {
                           />,
                         ],
                         "onClick": [Function],
-                        "sorted": false,
+                        "sorted": null,
                       },
                       "ref": null,
                       "rendered": Array [
@@ -922,7 +922,7 @@ ShallowWrapper {
                           />,
                         ],
                         "onClick": [Function],
-                        "sorted": false,
+                        "sorted": null,
                       },
                       "ref": null,
                       "rendered": Array [
@@ -956,7 +956,7 @@ ShallowWrapper {
                           />,
                         ],
                         "onClick": [Function],
-                        "sorted": false,
+                        "sorted": null,
                       },
                       "ref": null,
                       "rendered": Array [
@@ -1518,7 +1518,7 @@ ShallowWrapper {
                   <TableHeaderCell
                     as="th"
                     onClick={[Function]}
-                    sorted={false}
+                    sorted={null}
                   >
                     Song
                     <Icon
@@ -1529,7 +1529,7 @@ ShallowWrapper {
                   <TableHeaderCell
                     as="th"
                     onClick={[Function]}
-                    sorted={false}
+                    sorted={null}
                   >
                     Artist
                     <Icon
@@ -1540,7 +1540,7 @@ ShallowWrapper {
                   <TableHeaderCell
                     as="th"
                     onClick={[Function]}
-                    sorted={false}
+                    sorted={null}
                   >
                     Album
                     <Icon
@@ -1551,7 +1551,7 @@ ShallowWrapper {
                   <TableHeaderCell
                     as="th"
                     onClick={[Function]}
-                    sorted={false}
+                    sorted={null}
                   >
                     Genre
                     <Icon
@@ -1562,7 +1562,7 @@ ShallowWrapper {
                   <TableHeaderCell
                     as="th"
                     onClick={[Function]}
-                    sorted={false}
+                    sorted={null}
                   >
                     Rating
                     <Icon
@@ -1722,7 +1722,7 @@ ShallowWrapper {
                     <TableHeaderCell
                       as="th"
                       onClick={[Function]}
-                      sorted={false}
+                      sorted={null}
                     >
                       Song
                       <Icon
@@ -1733,7 +1733,7 @@ ShallowWrapper {
                     <TableHeaderCell
                       as="th"
                       onClick={[Function]}
-                      sorted={false}
+                      sorted={null}
                     >
                       Artist
                       <Icon
@@ -1744,7 +1744,7 @@ ShallowWrapper {
                     <TableHeaderCell
                       as="th"
                       onClick={[Function]}
-                      sorted={false}
+                      sorted={null}
                     >
                       Album
                       <Icon
@@ -1755,7 +1755,7 @@ ShallowWrapper {
                     <TableHeaderCell
                       as="th"
                       onClick={[Function]}
-                      sorted={false}
+                      sorted={null}
                     >
                       Genre
                       <Icon
@@ -1766,7 +1766,7 @@ ShallowWrapper {
                     <TableHeaderCell
                       as="th"
                       onClick={[Function]}
-                      sorted={false}
+                      sorted={null}
                     >
                       Rating
                       <Icon
@@ -1922,7 +1922,7 @@ ShallowWrapper {
                       <TableHeaderCell
                         as="th"
                         onClick={[Function]}
-                        sorted={false}
+                        sorted={null}
                       >
                         Song
                         <Icon
@@ -1933,7 +1933,7 @@ ShallowWrapper {
                       <TableHeaderCell
                         as="th"
                         onClick={[Function]}
-                        sorted={false}
+                        sorted={null}
                       >
                         Artist
                         <Icon
@@ -1944,7 +1944,7 @@ ShallowWrapper {
                       <TableHeaderCell
                         as="th"
                         onClick={[Function]}
-                        sorted={false}
+                        sorted={null}
                       >
                         Album
                         <Icon
@@ -1955,7 +1955,7 @@ ShallowWrapper {
                       <TableHeaderCell
                         as="th"
                         onClick={[Function]}
-                        sorted={false}
+                        sorted={null}
                       >
                         Genre
                         <Icon
@@ -1966,7 +1966,7 @@ ShallowWrapper {
                       <TableHeaderCell
                         as="th"
                         onClick={[Function]}
-                        sorted={false}
+                        sorted={null}
                       >
                         Rating
                         <Icon
@@ -2096,7 +2096,7 @@ ShallowWrapper {
                       <TableHeaderCell
                         as="th"
                         onClick={[Function]}
-                        sorted={false}
+                        sorted={null}
                       >
                         Song
                         <Icon
@@ -2107,7 +2107,7 @@ ShallowWrapper {
                       <TableHeaderCell
                         as="th"
                         onClick={[Function]}
-                        sorted={false}
+                        sorted={null}
                       >
                         Artist
                         <Icon
@@ -2118,7 +2118,7 @@ ShallowWrapper {
                       <TableHeaderCell
                         as="th"
                         onClick={[Function]}
-                        sorted={false}
+                        sorted={null}
                       >
                         Album
                         <Icon
@@ -2129,7 +2129,7 @@ ShallowWrapper {
                       <TableHeaderCell
                         as="th"
                         onClick={[Function]}
-                        sorted={false}
+                        sorted={null}
                       >
                         Genre
                         <Icon
@@ -2140,7 +2140,7 @@ ShallowWrapper {
                       <TableHeaderCell
                         as="th"
                         onClick={[Function]}
-                        sorted={false}
+                        sorted={null}
                       >
                         Rating
                         <Icon
@@ -2163,7 +2163,7 @@ ShallowWrapper {
                         <TableHeaderCell
                           as="th"
                           onClick={[Function]}
-                          sorted={false}
+                          sorted={null}
                         >
                           Song
                           <Icon
@@ -2174,7 +2174,7 @@ ShallowWrapper {
                         <TableHeaderCell
                           as="th"
                           onClick={[Function]}
-                          sorted={false}
+                          sorted={null}
                         >
                           Artist
                           <Icon
@@ -2185,7 +2185,7 @@ ShallowWrapper {
                         <TableHeaderCell
                           as="th"
                           onClick={[Function]}
-                          sorted={false}
+                          sorted={null}
                         >
                           Album
                           <Icon
@@ -2196,7 +2196,7 @@ ShallowWrapper {
                         <TableHeaderCell
                           as="th"
                           onClick={[Function]}
-                          sorted={false}
+                          sorted={null}
                         >
                           Genre
                           <Icon
@@ -2207,7 +2207,7 @@ ShallowWrapper {
                         <TableHeaderCell
                           as="th"
                           onClick={[Function]}
-                          sorted={false}
+                          sorted={null}
                         >
                           Rating
                           <Icon
@@ -2233,7 +2233,7 @@ ShallowWrapper {
                             />,
                           ],
                           "onClick": [Function],
-                          "sorted": false,
+                          "sorted": null,
                         },
                         "ref": null,
                         "rendered": Array [
@@ -2267,7 +2267,7 @@ ShallowWrapper {
                             />,
                           ],
                           "onClick": [Function],
-                          "sorted": false,
+                          "sorted": null,
                         },
                         "ref": null,
                         "rendered": Array [
@@ -2301,7 +2301,7 @@ ShallowWrapper {
                             />,
                           ],
                           "onClick": [Function],
-                          "sorted": false,
+                          "sorted": null,
                         },
                         "ref": null,
                         "rendered": Array [
@@ -2335,7 +2335,7 @@ ShallowWrapper {
                             />,
                           ],
                           "onClick": [Function],
-                          "sorted": false,
+                          "sorted": null,
                         },
                         "ref": null,
                         "rendered": Array [
@@ -2369,7 +2369,7 @@ ShallowWrapper {
                             />,
                           ],
                           "onClick": [Function],
-                          "sorted": false,
+                          "sorted": null,
                         },
                         "ref": null,
                         "rendered": Array [

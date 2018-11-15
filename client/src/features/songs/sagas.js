@@ -76,6 +76,24 @@ function* fetchCurrentPage() {
 }
 
 /**
+ * Jump to the last page and fetch data from the server.
+ * Used when  adding songs.
+ */
+function* fetchLastPage() {
+  yield put({ type: 'FETCH_SONGS' });
+  const action = yield take('SET_TOTAL_PAGES');
+  const totalPages = action.payload.totalPages;
+  const page = yield select(state => state.pagination.page);
+
+  if (totalPages - 1 > page) {
+    yield put({
+      type: 'SET_PAGE',
+      payload: { page: totalPages - 1 },
+    });
+  }
+}
+
+/**
  * Saga which refreshes the current page when the modal is closed.
  */
 function* refreshOnCloseModal() {
@@ -154,7 +172,7 @@ function* addSongSaga(action) {
     yield put({ type: 'FETCH_GENRES' });
     yield take('SET_GENRES');
     yield put(showToast('Song added to database'));
-    yield fetchCurrentPage();
+    yield fetchLastPage();
   }
 }
 

@@ -1,9 +1,9 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import compression from 'compression';
 import { synchronizeDatabase } from './models';
 import { recomputeIndex } from './search';
-
 import { router as genres } from './routes/genres';
 import { router as songs } from './routes/songs';
 
@@ -11,6 +11,9 @@ const app = express();
 
 // Allow cross-origin resource sharing.
 app.use(cors());
+
+// Use gzip compression for all requests.
+app.use(compression());
 
 // Used for parsing JSON data using Express.
 app.use(bodyParser.json());
