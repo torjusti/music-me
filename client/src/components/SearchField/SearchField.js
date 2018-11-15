@@ -54,6 +54,7 @@ export class SearchField extends Component {
             onChange={this.handleChange}
             onKeyPress={this.handleKeyPress}
             className={styles.searchField}
+            placeholder={"Search ..."}
           />
         </div>
 
