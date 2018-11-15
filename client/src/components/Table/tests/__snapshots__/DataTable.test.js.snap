@@ -265,6 +265,7 @@ ShallowWrapper {
         </div>,
       ],
       "className": "container",
+      "data-component": "DataTable",
     },
     "ref": null,
     "rendered": Array [
@@ -1563,6 +1564,7 @@ ShallowWrapper {
           </div>,
         ],
         "className": "container",
+        "data-component": "DataTable",
       },
       "ref": null,
       "rendered": Array [

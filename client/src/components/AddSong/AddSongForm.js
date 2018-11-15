@@ -82,7 +82,7 @@ class AddSongForm extends Component {
 
   render() {
     return (
-      <Modal open={this.props.open} onClose={this.props.onClose}>
+      <Modal open={this.props.open} onClose={this.props.onClose} data-component="AddEditForm">
         <Header content={this.props.song ? 'Edit song' : 'Add song'} />
 
         <Modal.Content>

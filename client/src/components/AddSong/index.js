@@ -43,6 +43,7 @@ export class AddSong extends Component {
           onClick={this.handleOpen}
           content={this.props.song ? 'Edit song' : 'Add song'}
           inverted={this.props.inverted}
+          data-component="AddEditButton"
         />
 
         <AddSongForm

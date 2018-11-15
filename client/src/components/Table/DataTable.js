@@ -78,7 +78,7 @@ export class DataTable extends Component {
 
   render() {
     return (
-      <div className={styles.container}>
+      <div className={styles.container} data-component="DataTable">
         <Pagination />
 
         <Dimmer.Dimmable>
