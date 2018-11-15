@@ -102,41 +102,56 @@ ShallowWrapper {
                 as="tr"
                 cellAs="td"
               >
-                <TableHeaderCell
-                  as="th"
-                  onClick={[Function]}
-                  sorted={null}
-                >
-                  Song
-                </TableHeaderCell>
-                <TableHeaderCell
-                  as="th"
-                  onClick={[Function]}
-                  sorted={null}
-                >
-                  Artist
-                </TableHeaderCell>
-                <TableHeaderCell
-                  as="th"
-                  onClick={[Function]}
-                  sorted={null}
-                >
-                  Album
-                </TableHeaderCell>
-                <TableHeaderCell
-                  as="th"
-                  onClick={[Function]}
-                  sorted={null}
-                >
-                  Genre
-                </TableHeaderCell>
-                <TableHeaderCell
-                  as="th"
-                  onClick={[Function]}
-                  sorted={null}
-                >
-                  Rating
-                </TableHeaderCell>
+                <TableHeader
+                  handleOrder={[Function]}
+                  order={
+                    Object {
+                      "isAsc": false,
+                      "orderBy": null,
+                    }
+                  }
+                  title="Title"
+                />
+                <TableHeader
+                  handleOrder={[Function]}
+                  order={
+                    Object {
+                      "isAsc": false,
+                      "orderBy": null,
+                    }
+                  }
+                  title="Artist"
+                />
+                <TableHeader
+                  handleOrder={[Function]}
+                  order={
+                    Object {
+                      "isAsc": false,
+                      "orderBy": null,
+                    }
+                  }
+                  title="Album"
+                />
+                <TableHeader
+                  handleOrder={[Function]}
+                  order={
+                    Object {
+                      "isAsc": false,
+                      "orderBy": null,
+                    }
+                  }
+                  title="Genre"
+                />
+                <TableHeader
+                  handleOrder={[Function]}
+                  order={
+                    Object {
+                      "isAsc": false,
+                      "orderBy": null,
+                    }
+                  }
+                  title="Rating"
+                />
               </TableRow>
             </TableHeader>
             <TableBody
@@ -286,41 +301,56 @@ ShallowWrapper {
                   as="tr"
                   cellAs="td"
                 >
-                  <TableHeaderCell
-                    as="th"
-                    onClick={[Function]}
-                    sorted={null}
-                  >
-                    Song
-                  </TableHeaderCell>
-                  <TableHeaderCell
-                    as="th"
-                    onClick={[Function]}
-                    sorted={null}
-                  >
-                    Artist
-                  </TableHeaderCell>
-                  <TableHeaderCell
-                    as="th"
-                    onClick={[Function]}
-                    sorted={null}
-                  >
-                    Album
-                  </TableHeaderCell>
-                  <TableHeaderCell
-                    as="th"
-                    onClick={[Function]}
-                    sorted={null}
-                  >
-                    Genre
-                  </TableHeaderCell>
-                  <TableHeaderCell
-                    as="th"
-                    onClick={[Function]}
-                    sorted={null}
-                  >
-                    Rating
-                  </TableHeaderCell>
+                  <TableHeader
+                    handleOrder={[Function]}
+                    order={
+                      Object {
+                        "isAsc": false,
+                        "orderBy": null,
+                      }
+                    }
+                    title="Title"
+                  />
+                  <TableHeader
+                    handleOrder={[Function]}
+                    order={
+                      Object {
+                        "isAsc": false,
+                        "orderBy": null,
+                      }
+                    }
+                    title="Artist"
+                  />
+                  <TableHeader
+                    handleOrder={[Function]}
+                    order={
+                      Object {
+                        "isAsc": false,
+                        "orderBy": null,
+                      }
+                    }
+                    title="Album"
+                  />
+                  <TableHeader
+                    handleOrder={[Function]}
+                    order={
+                      Object {
+                        "isAsc": false,
+                        "orderBy": null,
+                      }
+                    }
+                    title="Genre"
+                  />
+                  <TableHeader
+                    handleOrder={[Function]}
+                    order={
+                      Object {
+                        "isAsc": false,
+                        "orderBy": null,
+                      }
+                    }
+                    title="Rating"
+                  />
                 </TableRow>
               </TableHeader>
               <TableBody
@@ -466,41 +496,56 @@ ShallowWrapper {
                     as="tr"
                     cellAs="td"
                   >
-                    <TableHeaderCell
-                      as="th"
-                      onClick={[Function]}
-                      sorted={null}
-                    >
-                      Song
-                    </TableHeaderCell>
-                    <TableHeaderCell
-                      as="th"
-                      onClick={[Function]}
-                      sorted={null}
-                    >
-                      Artist
-                    </TableHeaderCell>
-                    <TableHeaderCell
-                      as="th"
-                      onClick={[Function]}
-                      sorted={null}
-                    >
-                      Album
-                    </TableHeaderCell>
-                    <TableHeaderCell
-                      as="th"
-                      onClick={[Function]}
-                      sorted={null}
-                    >
-                      Genre
-                    </TableHeaderCell>
-                    <TableHeaderCell
-                      as="th"
-                      onClick={[Function]}
-                      sorted={null}
-                    >
-                      Rating
-                    </TableHeaderCell>
+                    <TableHeader
+                      handleOrder={[Function]}
+                      order={
+                        Object {
+                          "isAsc": false,
+                          "orderBy": null,
+                        }
+                      }
+                      title="Title"
+                    />
+                    <TableHeader
+                      handleOrder={[Function]}
+                      order={
+                        Object {
+                          "isAsc": false,
+                          "orderBy": null,
+                        }
+                      }
+                      title="Artist"
+                    />
+                    <TableHeader
+                      handleOrder={[Function]}
+                      order={
+                        Object {
+                          "isAsc": false,
+                          "orderBy": null,
+                        }
+                      }
+                      title="Album"
+                    />
+                    <TableHeader
+                      handleOrder={[Function]}
+                      order={
+                        Object {
+                          "isAsc": false,
+                          "orderBy": null,
+                        }
+                      }
+                      title="Genre"
+                    />
+                    <TableHeader
+                      handleOrder={[Function]}
+                      order={
+                        Object {
+                          "isAsc": false,
+                          "orderBy": null,
+                        }
+                      }
+                      title="Rating"
+                    />
                   </TableRow>
                 </TableHeader>,
                 <TableBody
@@ -620,41 +665,56 @@ ShallowWrapper {
                     as="tr"
                     cellAs="td"
                   >
-                    <TableHeaderCell
-                      as="th"
-                      onClick={[Function]}
-                      sorted={null}
-                    >
-                      Song
-                    </TableHeaderCell>
-                    <TableHeaderCell
-                      as="th"
-                      onClick={[Function]}
-                      sorted={null}
-                    >
-                      Artist
-                    </TableHeaderCell>
-                    <TableHeaderCell
-                      as="th"
-                      onClick={[Function]}
-                      sorted={null}
-                    >
-                      Album
-                    </TableHeaderCell>
-                    <TableHeaderCell
-                      as="th"
-                      onClick={[Function]}
-                      sorted={null}
-                    >
-                      Genre
-                    </TableHeaderCell>
-                    <TableHeaderCell
-                      as="th"
-                      onClick={[Function]}
-                      sorted={null}
-                    >
-                      Rating
-                    </TableHeaderCell>
+                    <TableHeader
+                      handleOrder={[Function]}
+                      order={
+                        Object {
+                          "isAsc": false,
+                          "orderBy": null,
+                        }
+                      }
+                      title="Title"
+                    />
+                    <TableHeader
+                      handleOrder={[Function]}
+                      order={
+                        Object {
+                          "isAsc": false,
+                          "orderBy": null,
+                        }
+                      }
+                      title="Artist"
+                    />
+                    <TableHeader
+                      handleOrder={[Function]}
+                      order={
+                        Object {
+                          "isAsc": false,
+                          "orderBy": null,
+                        }
+                      }
+                      title="Album"
+                    />
+                    <TableHeader
+                      handleOrder={[Function]}
+                      order={
+                        Object {
+                          "isAsc": false,
+                          "orderBy": null,
+                        }
+                      }
+                      title="Genre"
+                    />
+                    <TableHeader
+                      handleOrder={[Function]}
+                      order={
+                        Object {
+                          "isAsc": false,
+                          "orderBy": null,
+                        }
+                      }
+                      title="Rating"
+                    />
                   </TableRow>,
                   "className": "tableHeader",
                 },
@@ -667,41 +727,56 @@ ShallowWrapper {
                     "as": "tr",
                     "cellAs": "td",
                     "children": Array [
-                      <TableHeaderCell
-                        as="th"
-                        onClick={[Function]}
-                        sorted={null}
-                      >
-                        Song
-                      </TableHeaderCell>,
-                      <TableHeaderCell
-                        as="th"
-                        onClick={[Function]}
-                        sorted={null}
-                      >
-                        Artist
-                      </TableHeaderCell>,
-                      <TableHeaderCell
-                        as="th"
-                        onClick={[Function]}
-                        sorted={null}
-                      >
-                        Album
-                      </TableHeaderCell>,
-                      <TableHeaderCell
-                        as="th"
-                        onClick={[Function]}
-                        sorted={null}
-                      >
-                        Genre
-                      </TableHeaderCell>,
-                      <TableHeaderCell
-                        as="th"
-                        onClick={[Function]}
-                        sorted={null}
-                      >
-                        Rating
-                      </TableHeaderCell>,
+                      <TableHeader
+                        handleOrder={[Function]}
+                        order={
+                          Object {
+                            "isAsc": false,
+                            "orderBy": null,
+                          }
+                        }
+                        title="Title"
+                      />,
+                      <TableHeader
+                        handleOrder={[Function]}
+                        order={
+                          Object {
+                            "isAsc": false,
+                            "orderBy": null,
+                          }
+                        }
+                        title="Artist"
+                      />,
+                      <TableHeader
+                        handleOrder={[Function]}
+                        order={
+                          Object {
+                            "isAsc": false,
+                            "orderBy": null,
+                          }
+                        }
+                        title="Album"
+                      />,
+                      <TableHeader
+                        handleOrder={[Function]}
+                        order={
+                          Object {
+                            "isAsc": false,
+                            "orderBy": null,
+                          }
+                        }
+                        title="Genre"
+                      />,
+                      <TableHeader
+                        handleOrder={[Function]}
+                        order={
+                          Object {
+                            "isAsc": false,
+                            "orderBy": null,
+                          }
+                        }
+                        title="Rating"
+                      />,
                     ],
                   },
                   "ref": null,
@@ -711,13 +786,15 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "function",
                       "props": Object {
-                        "as": "th",
-                        "children": "Song",
-                        "onClick": [Function],
-                        "sorted": null,
+                        "handleOrder": [Function],
+                        "order": Object {
+                          "isAsc": false,
+                          "orderBy": null,
+                        },
+                        "title": "Title",
                       },
                       "ref": null,
-                      "rendered": "Song",
+                      "rendered": null,
                       "type": [Function],
                     },
                     Object {
@@ -725,13 +802,15 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "function",
                       "props": Object {
-                        "as": "th",
-                        "children": "Artist",
-                        "onClick": [Function],
-                        "sorted": null,
+                        "handleOrder": [Function],
+                        "order": Object {
+                          "isAsc": false,
+                          "orderBy": null,
+                        },
+                        "title": "Artist",
                       },
                       "ref": null,
-                      "rendered": "Artist",
+                      "rendered": null,
                       "type": [Function],
                     },
                     Object {
@@ -739,13 +818,15 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "function",
                       "props": Object {
-                        "as": "th",
-                        "children": "Album",
-                        "onClick": [Function],
-                        "sorted": null,
+                        "handleOrder": [Function],
+                        "order": Object {
+                          "isAsc": false,
+                          "orderBy": null,
+                        },
+                        "title": "Album",
                       },
                       "ref": null,
-                      "rendered": "Album",
+                      "rendered": null,
                       "type": [Function],
                     },
                     Object {
@@ -753,13 +834,15 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "function",
                       "props": Object {
-                        "as": "th",
-                        "children": "Genre",
-                        "onClick": [Function],
-                        "sorted": null,
+                        "handleOrder": [Function],
+                        "order": Object {
+                          "isAsc": false,
+                          "orderBy": null,
+                        },
+                        "title": "Genre",
                       },
                       "ref": null,
-                      "rendered": "Genre",
+                      "rendered": null,
                       "type": [Function],
                     },
                     Object {
@@ -767,13 +850,15 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "function",
                       "props": Object {
-                        "as": "th",
-                        "children": "Rating",
-                        "onClick": [Function],
-                        "sorted": null,
+                        "handleOrder": [Function],
+                        "order": Object {
+                          "isAsc": false,
+                          "orderBy": null,
+                        },
+                        "title": "Rating",
                       },
                       "ref": null,
-                      "rendered": "Rating",
+                      "rendered": null,
                       "type": [Function],
                     },
                   ],
@@ -1315,41 +1400,56 @@ ShallowWrapper {
                   as="tr"
                   cellAs="td"
                 >
-                  <TableHeaderCell
-                    as="th"
-                    onClick={[Function]}
-                    sorted={null}
-                  >
-                    Song
-                  </TableHeaderCell>
-                  <TableHeaderCell
-                    as="th"
-                    onClick={[Function]}
-                    sorted={null}
-                  >
-                    Artist
-                  </TableHeaderCell>
-                  <TableHeaderCell
-                    as="th"
-                    onClick={[Function]}
-                    sorted={null}
-                  >
-                    Album
-                  </TableHeaderCell>
-                  <TableHeaderCell
-                    as="th"
-                    onClick={[Function]}
-                    sorted={null}
-                  >
-                    Genre
-                  </TableHeaderCell>
-                  <TableHeaderCell
-                    as="th"
-                    onClick={[Function]}
-                    sorted={null}
-                  >
-                    Rating
-                  </TableHeaderCell>
+                  <TableHeader
+                    handleOrder={[Function]}
+                    order={
+                      Object {
+                        "isAsc": false,
+                        "orderBy": null,
+                      }
+                    }
+                    title="Title"
+                  />
+                  <TableHeader
+                    handleOrder={[Function]}
+                    order={
+                      Object {
+                        "isAsc": false,
+                        "orderBy": null,
+                      }
+                    }
+                    title="Artist"
+                  />
+                  <TableHeader
+                    handleOrder={[Function]}
+                    order={
+                      Object {
+                        "isAsc": false,
+                        "orderBy": null,
+                      }
+                    }
+                    title="Album"
+                  />
+                  <TableHeader
+                    handleOrder={[Function]}
+                    order={
+                      Object {
+                        "isAsc": false,
+                        "orderBy": null,
+                      }
+                    }
+                    title="Genre"
+                  />
+                  <TableHeader
+                    handleOrder={[Function]}
+                    order={
+                      Object {
+                        "isAsc": false,
+                        "orderBy": null,
+                      }
+                    }
+                    title="Rating"
+                  />
                 </TableRow>
               </TableHeader>
               <TableBody
@@ -1499,41 +1599,56 @@ ShallowWrapper {
                     as="tr"
                     cellAs="td"
                   >
-                    <TableHeaderCell
-                      as="th"
-                      onClick={[Function]}
-                      sorted={null}
-                    >
-                      Song
-                    </TableHeaderCell>
-                    <TableHeaderCell
-                      as="th"
-                      onClick={[Function]}
-                      sorted={null}
-                    >
-                      Artist
-                    </TableHeaderCell>
-                    <TableHeaderCell
-                      as="th"
-                      onClick={[Function]}
-                      sorted={null}
-                    >
-                      Album
-                    </TableHeaderCell>
-                    <TableHeaderCell
-                      as="th"
-                      onClick={[Function]}
-                      sorted={null}
-                    >
-                      Genre
-                    </TableHeaderCell>
-                    <TableHeaderCell
-                      as="th"
-                      onClick={[Function]}
-                      sorted={null}
-                    >
-                      Rating
-                    </TableHeaderCell>
+                    <TableHeader
+                      handleOrder={[Function]}
+                      order={
+                        Object {
+                          "isAsc": false,
+                          "orderBy": null,
+                        }
+                      }
+                      title="Title"
+                    />
+                    <TableHeader
+                      handleOrder={[Function]}
+                      order={
+                        Object {
+                          "isAsc": false,
+                          "orderBy": null,
+                        }
+                      }
+                      title="Artist"
+                    />
+                    <TableHeader
+                      handleOrder={[Function]}
+                      order={
+                        Object {
+                          "isAsc": false,
+                          "orderBy": null,
+                        }
+                      }
+                      title="Album"
+                    />
+                    <TableHeader
+                      handleOrder={[Function]}
+                      order={
+                        Object {
+                          "isAsc": false,
+                          "orderBy": null,
+                        }
+                      }
+                      title="Genre"
+                    />
+                    <TableHeader
+                      handleOrder={[Function]}
+                      order={
+                        Object {
+                          "isAsc": false,
+                          "orderBy": null,
+                        }
+                      }
+                      title="Rating"
+                    />
                   </TableRow>
                 </TableHeader>
                 <TableBody
@@ -1679,41 +1794,56 @@ ShallowWrapper {
                       as="tr"
                       cellAs="td"
                     >
-                      <TableHeaderCell
-                        as="th"
-                        onClick={[Function]}
-                        sorted={null}
-                      >
-                        Song
-                      </TableHeaderCell>
-                      <TableHeaderCell
-                        as="th"
-                        onClick={[Function]}
-                        sorted={null}
-                      >
-                        Artist
-                      </TableHeaderCell>
-                      <TableHeaderCell
-                        as="th"
-                        onClick={[Function]}
-                        sorted={null}
-                      >
-                        Album
-                      </TableHeaderCell>
-                      <TableHeaderCell
-                        as="th"
-                        onClick={[Function]}
-                        sorted={null}
-                      >
-                        Genre
-                      </TableHeaderCell>
-                      <TableHeaderCell
-                        as="th"
-                        onClick={[Function]}
-                        sorted={null}
-                      >
-                        Rating
-                      </TableHeaderCell>
+                      <TableHeader
+                        handleOrder={[Function]}
+                        order={
+                          Object {
+                            "isAsc": false,
+                            "orderBy": null,
+                          }
+                        }
+                        title="Title"
+                      />
+                      <TableHeader
+                        handleOrder={[Function]}
+                        order={
+                          Object {
+                            "isAsc": false,
+                            "orderBy": null,
+                          }
+                        }
+                        title="Artist"
+                      />
+                      <TableHeader
+                        handleOrder={[Function]}
+                        order={
+                          Object {
+                            "isAsc": false,
+                            "orderBy": null,
+                          }
+                        }
+                        title="Album"
+                      />
+                      <TableHeader
+                        handleOrder={[Function]}
+                        order={
+                          Object {
+                            "isAsc": false,
+                            "orderBy": null,
+                          }
+                        }
+                        title="Genre"
+                      />
+                      <TableHeader
+                        handleOrder={[Function]}
+                        order={
+                          Object {
+                            "isAsc": false,
+                            "orderBy": null,
+                          }
+                        }
+                        title="Rating"
+                      />
                     </TableRow>
                   </TableHeader>,
                   <TableBody
@@ -1833,41 +1963,56 @@ ShallowWrapper {
                       as="tr"
                       cellAs="td"
                     >
-                      <TableHeaderCell
-                        as="th"
-                        onClick={[Function]}
-                        sorted={null}
-                      >
-                        Song
-                      </TableHeaderCell>
-                      <TableHeaderCell
-                        as="th"
-                        onClick={[Function]}
-                        sorted={null}
-                      >
-                        Artist
-                      </TableHeaderCell>
-                      <TableHeaderCell
-                        as="th"
-                        onClick={[Function]}
-                        sorted={null}
-                      >
-                        Album
-                      </TableHeaderCell>
-                      <TableHeaderCell
-                        as="th"
-                        onClick={[Function]}
-                        sorted={null}
-                      >
-                        Genre
-                      </TableHeaderCell>
-                      <TableHeaderCell
-                        as="th"
-                        onClick={[Function]}
-                        sorted={null}
-                      >
-                        Rating
-                      </TableHeaderCell>
+                      <TableHeader
+                        handleOrder={[Function]}
+                        order={
+                          Object {
+                            "isAsc": false,
+                            "orderBy": null,
+                          }
+                        }
+                        title="Title"
+                      />
+                      <TableHeader
+                        handleOrder={[Function]}
+                        order={
+                          Object {
+                            "isAsc": false,
+                            "orderBy": null,
+                          }
+                        }
+                        title="Artist"
+                      />
+                      <TableHeader
+                        handleOrder={[Function]}
+                        order={
+                          Object {
+                            "isAsc": false,
+                            "orderBy": null,
+                          }
+                        }
+                        title="Album"
+                      />
+                      <TableHeader
+                        handleOrder={[Function]}
+                        order={
+                          Object {
+                            "isAsc": false,
+                            "orderBy": null,
+                          }
+                        }
+                        title="Genre"
+                      />
+                      <TableHeader
+                        handleOrder={[Function]}
+                        order={
+                          Object {
+                            "isAsc": false,
+                            "orderBy": null,
+                          }
+                        }
+                        title="Rating"
+                      />
                     </TableRow>,
                     "className": "tableHeader",
                   },
@@ -1880,41 +2025,56 @@ ShallowWrapper {
                       "as": "tr",
                       "cellAs": "td",
                       "children": Array [
-                        <TableHeaderCell
-                          as="th"
-                          onClick={[Function]}
-                          sorted={null}
-                        >
-                          Song
-                        </TableHeaderCell>,
-                        <TableHeaderCell
-                          as="th"
-                          onClick={[Function]}
-                          sorted={null}
-                        >
-                          Artist
-                        </TableHeaderCell>,
-                        <TableHeaderCell
-                          as="th"
-                          onClick={[Function]}
-                          sorted={null}
-                        >
-                          Album
-                        </TableHeaderCell>,
-                        <TableHeaderCell
-                          as="th"
-                          onClick={[Function]}
-                          sorted={null}
-                        >
-                          Genre
-                        </TableHeaderCell>,
-                        <TableHeaderCell
-                          as="th"
-                          onClick={[Function]}
-                          sorted={null}
-                        >
-                          Rating
-                        </TableHeaderCell>,
+                        <TableHeader
+                          handleOrder={[Function]}
+                          order={
+                            Object {
+                              "isAsc": false,
+                              "orderBy": null,
+                            }
+                          }
+                          title="Title"
+                        />,
+                        <TableHeader
+                          handleOrder={[Function]}
+                          order={
+                            Object {
+                              "isAsc": false,
+                              "orderBy": null,
+                            }
+                          }
+                          title="Artist"
+                        />,
+                        <TableHeader
+                          handleOrder={[Function]}
+                          order={
+                            Object {
+                              "isAsc": false,
+                              "orderBy": null,
+                            }
+                          }
+                          title="Album"
+                        />,
+                        <TableHeader
+                          handleOrder={[Function]}
+                          order={
+                            Object {
+                              "isAsc": false,
+                              "orderBy": null,
+                            }
+                          }
+                          title="Genre"
+                        />,
+                        <TableHeader
+                          handleOrder={[Function]}
+                          order={
+                            Object {
+                              "isAsc": false,
+                              "orderBy": null,
+                            }
+                          }
+                          title="Rating"
+                        />,
                       ],
                     },
                     "ref": null,
@@ -1924,13 +2084,15 @@ ShallowWrapper {
                         "key": undefined,
                         "nodeType": "function",
                         "props": Object {
-                          "as": "th",
-                          "children": "Song",
-                          "onClick": [Function],
-                          "sorted": null,
+                          "handleOrder": [Function],
+                          "order": Object {
+                            "isAsc": false,
+                            "orderBy": null,
+                          },
+                          "title": "Title",
                         },
                         "ref": null,
-                        "rendered": "Song",
+                        "rendered": null,
                         "type": [Function],
                       },
                       Object {
@@ -1938,13 +2100,15 @@ ShallowWrapper {
                         "key": undefined,
                         "nodeType": "function",
                         "props": Object {
-                          "as": "th",
-                          "children": "Artist",
-                          "onClick": [Function],
-                          "sorted": null,
+                          "handleOrder": [Function],
+                          "order": Object {
+                            "isAsc": false,
+                            "orderBy": null,
+                          },
+                          "title": "Artist",
                         },
                         "ref": null,
-                        "rendered": "Artist",
+                        "rendered": null,
                         "type": [Function],
                       },
                       Object {
@@ -1952,13 +2116,15 @@ ShallowWrapper {
                         "key": undefined,
                         "nodeType": "function",
                         "props": Object {
-                          "as": "th",
-                          "children": "Album",
-                          "onClick": [Function],
-                          "sorted": null,
+                          "handleOrder": [Function],
+                          "order": Object {
+                            "isAsc": false,
+                            "orderBy": null,
+                          },
+                          "title": "Album",
                         },
                         "ref": null,
-                        "rendered": "Album",
+                        "rendered": null,
                         "type": [Function],
                       },
                       Object {
@@ -1966,13 +2132,15 @@ ShallowWrapper {
                         "key": undefined,
                         "nodeType": "function",
                         "props": Object {
-                          "as": "th",
-                          "children": "Genre",
-                          "onClick": [Function],
-                          "sorted": null,
+                          "handleOrder": [Function],
+                          "order": Object {
+                            "isAsc": false,
+                            "orderBy": null,
+                          },
+                          "title": "Genre",
                         },
                         "ref": null,
-                        "rendered": "Genre",
+                        "rendered": null,
                         "type": [Function],
                       },
                       Object {
@@ -1980,13 +2148,15 @@ ShallowWrapper {
                         "key": undefined,
                         "nodeType": "function",
                         "props": Object {
-                          "as": "th",
-                          "children": "Rating",
-                          "onClick": [Function],
-                          "sorted": null,
+                          "handleOrder": [Function],
+                          "order": Object {
+                            "isAsc": false,
+                            "orderBy": null,
+                          },
+                          "title": "Rating",
                         },
                         "ref": null,
-                        "rendered": "Rating",
+                        "rendered": null,
                         "type": [Function],
                       },
                     ],
