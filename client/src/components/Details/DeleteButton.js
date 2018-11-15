@@ -60,6 +60,7 @@ class DeleteButton extends Component {
           content="Delete song"
           onClick={this.handleClick}
           loading={this.state.loading}
+          inverted
         />
 
         <Confirm
