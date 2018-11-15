@@ -24,7 +24,10 @@ const TableHeader = ({ order, handleOrder, title }) => (
   >
     Song
     {order.orderBy !== title.toLowerCase() && (
-      <Icon name="sort" style={{ color: 'rgba(0, 0, 0, 0.95)' }} />
+      <Icon
+        name="sort"
+        style={{ color: 'rgba(0, 0, 0, 0.95)', opacity: 0.8 }}
+      />
     )}
   </Table.HeaderCell>
 );
