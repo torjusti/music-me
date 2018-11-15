@@ -8,10 +8,27 @@
 .label {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .pageInput {
-  width: 8rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+  text-align: right;
+  border: 1px solid rgba(34,36,38,.15);
+  border-radius: 0.2rem;
+  padding: 0.5rem;
+  width: 8rem;
+}
+
+.paginationHeader {
+  margin: 0 1rem 0 1rem;
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 450px) {
+  .pageInput {
+    width:50%;
+  }
 }

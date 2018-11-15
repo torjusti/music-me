@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { setPage } from '../../features/pagination/actions';
-import { Icon, Button, Input } from 'semantic-ui-react';
+import { Icon, Button } from 'semantic-ui-react';
 import clamp from 'lodash/clamp';
 import styles from './Pagination.module.css';
 
@@ -49,7 +49,7 @@ class PageInput extends Component {
 
   render() {
     return (
-      <Input
+      <input
         value={this.state.page}
         onChange={this.handleChange}
         onKeyPress={this.handlePress}
@@ -78,15 +78,21 @@ export const Pagination = props => {
         Prev
       </Button>
 
-      <span className={styles.label}>
-        {pagination.totalPages === 0 ? (
-          <Fragment>No results</Fragment>
-        ) : (
-          <Fragment>
-            Page <PageInput {...props} /> of {pagination.totalPages}
-          </Fragment>
-        )}
-      </span>
+      <div className={styles.paginationHeader}>
+        <span className={styles.label}>
+          {pagination.totalPages === 0 ? (
+            <Fragment>No results</Fragment>
+          ) : (
+            <Fragment>
+                Page
+              <PageInput {...props} />
+              <p>
+                of {pagination.totalPages}
+              </p>
+            </Fragment>
+          )}
+        </span>
+      </div>
 
       <Button
         onClick={() => setPage(pagination.page + 1)}
