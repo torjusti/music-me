@@ -69,55 +69,61 @@ ShallowWrapper {
           />
           Prev
         </Button>,
-        <span
-          className="label"
+        <div
+          className="paginationHeader"
         >
-          <React.Fragment>
-            Page 
-            <PageInput
-              pagination={
-                Object {
-                  "page": 0,
-                  "totalPages": 5,
+          <span
+            className="label"
+          >
+            <React.Fragment>
+              Page
+              <PageInput
+                pagination={
+                  Object {
+                    "page": 0,
+                    "totalPages": 5,
+                  }
                 }
-              }
-              setPage={[Function]}
-              store={
-                Object {
-                  "clearActions": [Function],
-                  "dispatch": [Function],
-                  "getActions": [Function],
-                  "getState": [Function],
-                  "replaceReducer": [Function],
-                  "subscribe": [Function],
-                }
-              }
-              storeSubscription={
-                Subscription {
-                  "listeners": Object {
-                    "clear": [Function],
-                    "get": [Function],
-                    "notify": [Function],
-                    "subscribe": [Function],
-                  },
-                  "onStateChange": [Function],
-                  "parentSub": undefined,
-                  "store": Object {
+                setPage={[Function]}
+                store={
+                  Object {
                     "clearActions": [Function],
                     "dispatch": [Function],
                     "getActions": [Function],
                     "getState": [Function],
                     "replaceReducer": [Function],
                     "subscribe": [Function],
-                  },
-                  "unsubscribe": [Function],
+                  }
                 }
-              }
-            />
-             of 
-            5
-          </React.Fragment>
-        </span>,
+                storeSubscription={
+                  Subscription {
+                    "listeners": Object {
+                      "clear": [Function],
+                      "get": [Function],
+                      "notify": [Function],
+                      "subscribe": [Function],
+                    },
+                    "onStateChange": [Function],
+                    "parentSub": undefined,
+                    "store": Object {
+                      "clearActions": [Function],
+                      "dispatch": [Function],
+                      "getActions": [Function],
+                      "getState": [Function],
+                      "replaceReducer": [Function],
+                      "subscribe": [Function],
+                    },
+                    "unsubscribe": [Function],
+                  }
+                }
+              />
+              <p>
+                of 
+                5
+              </p>
+            </React.Fragment>
+          </span>
+        </div>,
         <Button
           as="button"
           disabled={false}
@@ -175,61 +181,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <React.Fragment>
-            Page 
-            <PageInput
-              pagination={
-                Object {
-                  "page": 0,
-                  "totalPages": 5,
-                }
-              }
-              setPage={[Function]}
-              store={
-                Object {
-                  "clearActions": [Function],
-                  "dispatch": [Function],
-                  "getActions": [Function],
-                  "getState": [Function],
-                  "replaceReducer": [Function],
-                  "subscribe": [Function],
-                }
-              }
-              storeSubscription={
-                Subscription {
-                  "listeners": Object {
-                    "clear": [Function],
-                    "get": [Function],
-                    "notify": [Function],
-                    "subscribe": [Function],
-                  },
-                  "onStateChange": [Function],
-                  "parentSub": undefined,
-                  "store": Object {
-                    "clearActions": [Function],
-                    "dispatch": [Function],
-                    "getActions": [Function],
-                    "getState": [Function],
-                    "replaceReducer": [Function],
-                    "subscribe": [Function],
-                  },
-                  "unsubscribe": [Function],
-                }
-              }
-            />
-             of 
-            5
-          </React.Fragment>,
-          "className": "label",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "children": Array [
-              "Page ",
+          "children": <span
+            className="label"
+          >
+            <React.Fragment>
+              Page
               <PageInput
                 pagination={
                   Object {
@@ -269,41 +225,137 @@ ShallowWrapper {
                     "unsubscribe": [Function],
                   }
                 }
-              />,
-              " of ",
-              5,
-            ],
+              />
+              <p>
+                of 
+                5
+              </p>
+            </React.Fragment>
+          </span>,
+          "className": "paginationHeader",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <React.Fragment>
+              Page
+              <PageInput
+                pagination={
+                  Object {
+                    "page": 0,
+                    "totalPages": 5,
+                  }
+                }
+                setPage={[Function]}
+                store={
+                  Object {
+                    "clearActions": [Function],
+                    "dispatch": [Function],
+                    "getActions": [Function],
+                    "getState": [Function],
+                    "replaceReducer": [Function],
+                    "subscribe": [Function],
+                  }
+                }
+                storeSubscription={
+                  Subscription {
+                    "listeners": Object {
+                      "clear": [Function],
+                      "get": [Function],
+                      "notify": [Function],
+                      "subscribe": [Function],
+                    },
+                    "onStateChange": [Function],
+                    "parentSub": undefined,
+                    "store": Object {
+                      "clearActions": [Function],
+                      "dispatch": [Function],
+                      "getActions": [Function],
+                      "getState": [Function],
+                      "replaceReducer": [Function],
+                      "subscribe": [Function],
+                    },
+                    "unsubscribe": [Function],
+                  }
+                }
+              />
+              <p>
+                of 
+                5
+              </p>
+            </React.Fragment>,
+            "className": "label",
           },
           "ref": null,
-          "rendered": Array [
-            "Page ",
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "pagination": Object {
-                  "page": 0,
-                  "totalPages": 5,
-                },
-                "setPage": [Function],
-                "store": Object {
-                  "clearActions": [Function],
-                  "dispatch": [Function],
-                  "getActions": [Function],
-                  "getState": [Function],
-                  "replaceReducer": [Function],
-                  "subscribe": [Function],
-                },
-                "storeSubscription": Subscription {
-                  "listeners": Object {
-                    "clear": [Function],
-                    "get": [Function],
-                    "notify": [Function],
-                    "subscribe": [Function],
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": Array [
+                "Page",
+                <PageInput
+                  pagination={
+                    Object {
+                      "page": 0,
+                      "totalPages": 5,
+                    }
+                  }
+                  setPage={[Function]}
+                  store={
+                    Object {
+                      "clearActions": [Function],
+                      "dispatch": [Function],
+                      "getActions": [Function],
+                      "getState": [Function],
+                      "replaceReducer": [Function],
+                      "subscribe": [Function],
+                    }
+                  }
+                  storeSubscription={
+                    Subscription {
+                      "listeners": Object {
+                        "clear": [Function],
+                        "get": [Function],
+                        "notify": [Function],
+                        "subscribe": [Function],
+                      },
+                      "onStateChange": [Function],
+                      "parentSub": undefined,
+                      "store": Object {
+                        "clearActions": [Function],
+                        "dispatch": [Function],
+                        "getActions": [Function],
+                        "getState": [Function],
+                        "replaceReducer": [Function],
+                        "subscribe": [Function],
+                      },
+                      "unsubscribe": [Function],
+                    }
+                  }
+                />,
+                <p>
+                  of 
+                  5
+                </p>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Page",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "pagination": Object {
+                    "page": 0,
+                    "totalPages": 5,
                   },
-                  "onStateChange": [Function],
-                  "parentSub": undefined,
+                  "setPage": [Function],
                   "store": Object {
                     "clearActions": [Function],
                     "dispatch": [Function],
@@ -312,19 +364,53 @@ ShallowWrapper {
                     "replaceReducer": [Function],
                     "subscribe": [Function],
                   },
-                  "unsubscribe": [Function],
+                  "storeSubscription": Subscription {
+                    "listeners": Object {
+                      "clear": [Function],
+                      "get": [Function],
+                      "notify": [Function],
+                      "subscribe": [Function],
+                    },
+                    "onStateChange": [Function],
+                    "parentSub": undefined,
+                    "store": Object {
+                      "clearActions": [Function],
+                      "dispatch": [Function],
+                      "getActions": [Function],
+                      "getState": [Function],
+                      "replaceReducer": [Function],
+                      "subscribe": [Function],
+                    },
+                    "unsubscribe": [Function],
+                  },
                 },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
               },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            " of ",
-            5,
-          ],
-          "type": Symbol(react.fragment),
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "of ",
+                    5,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "of ",
+                  5,
+                ],
+                "type": "p",
+              },
+            ],
+            "type": Symbol(react.fragment),
+          },
+          "type": "span",
         },
-        "type": "span",
+        "type": "div",
       },
       Object {
         "instance": null,
@@ -383,55 +469,61 @@ ShallowWrapper {
             />
             Prev
           </Button>,
-          <span
-            className="label"
+          <div
+            className="paginationHeader"
           >
-            <React.Fragment>
-              Page 
-              <PageInput
-                pagination={
-                  Object {
-                    "page": 0,
-                    "totalPages": 5,
+            <span
+              className="label"
+            >
+              <React.Fragment>
+                Page
+                <PageInput
+                  pagination={
+                    Object {
+                      "page": 0,
+                      "totalPages": 5,
+                    }
                   }
-                }
-                setPage={[Function]}
-                store={
-                  Object {
-                    "clearActions": [Function],
-                    "dispatch": [Function],
-                    "getActions": [Function],
-                    "getState": [Function],
-                    "replaceReducer": [Function],
-                    "subscribe": [Function],
-                  }
-                }
-                storeSubscription={
-                  Subscription {
-                    "listeners": Object {
-                      "clear": [Function],
-                      "get": [Function],
-                      "notify": [Function],
-                      "subscribe": [Function],
-                    },
-                    "onStateChange": [Function],
-                    "parentSub": undefined,
-                    "store": Object {
+                  setPage={[Function]}
+                  store={
+                    Object {
                       "clearActions": [Function],
                       "dispatch": [Function],
                       "getActions": [Function],
                       "getState": [Function],
                       "replaceReducer": [Function],
                       "subscribe": [Function],
-                    },
-                    "unsubscribe": [Function],
+                    }
                   }
-                }
-              />
-               of 
-              5
-            </React.Fragment>
-          </span>,
+                  storeSubscription={
+                    Subscription {
+                      "listeners": Object {
+                        "clear": [Function],
+                        "get": [Function],
+                        "notify": [Function],
+                        "subscribe": [Function],
+                      },
+                      "onStateChange": [Function],
+                      "parentSub": undefined,
+                      "store": Object {
+                        "clearActions": [Function],
+                        "dispatch": [Function],
+                        "getActions": [Function],
+                        "getState": [Function],
+                        "replaceReducer": [Function],
+                        "subscribe": [Function],
+                      },
+                      "unsubscribe": [Function],
+                    }
+                  }
+                />
+                <p>
+                  of 
+                  5
+                </p>
+              </React.Fragment>
+            </span>
+          </div>,
           <Button
             as="button"
             disabled={false}
@@ -489,61 +581,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <React.Fragment>
-              Page 
-              <PageInput
-                pagination={
-                  Object {
-                    "page": 0,
-                    "totalPages": 5,
-                  }
-                }
-                setPage={[Function]}
-                store={
-                  Object {
-                    "clearActions": [Function],
-                    "dispatch": [Function],
-                    "getActions": [Function],
-                    "getState": [Function],
-                    "replaceReducer": [Function],
-                    "subscribe": [Function],
-                  }
-                }
-                storeSubscription={
-                  Subscription {
-                    "listeners": Object {
-                      "clear": [Function],
-                      "get": [Function],
-                      "notify": [Function],
-                      "subscribe": [Function],
-                    },
-                    "onStateChange": [Function],
-                    "parentSub": undefined,
-                    "store": Object {
-                      "clearActions": [Function],
-                      "dispatch": [Function],
-                      "getActions": [Function],
-                      "getState": [Function],
-                      "replaceReducer": [Function],
-                      "subscribe": [Function],
-                    },
-                    "unsubscribe": [Function],
-                  }
-                }
-              />
-               of 
-              5
-            </React.Fragment>,
-            "className": "label",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "children": Array [
-                "Page ",
+            "children": <span
+              className="label"
+            >
+              <React.Fragment>
+                Page
                 <PageInput
                   pagination={
                     Object {
@@ -583,41 +625,137 @@ ShallowWrapper {
                       "unsubscribe": [Function],
                     }
                   }
-                />,
-                " of ",
-                5,
-              ],
+                />
+                <p>
+                  of 
+                  5
+                </p>
+              </React.Fragment>
+            </span>,
+            "className": "paginationHeader",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <React.Fragment>
+                Page
+                <PageInput
+                  pagination={
+                    Object {
+                      "page": 0,
+                      "totalPages": 5,
+                    }
+                  }
+                  setPage={[Function]}
+                  store={
+                    Object {
+                      "clearActions": [Function],
+                      "dispatch": [Function],
+                      "getActions": [Function],
+                      "getState": [Function],
+                      "replaceReducer": [Function],
+                      "subscribe": [Function],
+                    }
+                  }
+                  storeSubscription={
+                    Subscription {
+                      "listeners": Object {
+                        "clear": [Function],
+                        "get": [Function],
+                        "notify": [Function],
+                        "subscribe": [Function],
+                      },
+                      "onStateChange": [Function],
+                      "parentSub": undefined,
+                      "store": Object {
+                        "clearActions": [Function],
+                        "dispatch": [Function],
+                        "getActions": [Function],
+                        "getState": [Function],
+                        "replaceReducer": [Function],
+                        "subscribe": [Function],
+                      },
+                      "unsubscribe": [Function],
+                    }
+                  }
+                />
+                <p>
+                  of 
+                  5
+                </p>
+              </React.Fragment>,
+              "className": "label",
             },
             "ref": null,
-            "rendered": Array [
-              "Page ",
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "pagination": Object {
-                    "page": 0,
-                    "totalPages": 5,
-                  },
-                  "setPage": [Function],
-                  "store": Object {
-                    "clearActions": [Function],
-                    "dispatch": [Function],
-                    "getActions": [Function],
-                    "getState": [Function],
-                    "replaceReducer": [Function],
-                    "subscribe": [Function],
-                  },
-                  "storeSubscription": Subscription {
-                    "listeners": Object {
-                      "clear": [Function],
-                      "get": [Function],
-                      "notify": [Function],
-                      "subscribe": [Function],
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": Array [
+                  "Page",
+                  <PageInput
+                    pagination={
+                      Object {
+                        "page": 0,
+                        "totalPages": 5,
+                      }
+                    }
+                    setPage={[Function]}
+                    store={
+                      Object {
+                        "clearActions": [Function],
+                        "dispatch": [Function],
+                        "getActions": [Function],
+                        "getState": [Function],
+                        "replaceReducer": [Function],
+                        "subscribe": [Function],
+                      }
+                    }
+                    storeSubscription={
+                      Subscription {
+                        "listeners": Object {
+                          "clear": [Function],
+                          "get": [Function],
+                          "notify": [Function],
+                          "subscribe": [Function],
+                        },
+                        "onStateChange": [Function],
+                        "parentSub": undefined,
+                        "store": Object {
+                          "clearActions": [Function],
+                          "dispatch": [Function],
+                          "getActions": [Function],
+                          "getState": [Function],
+                          "replaceReducer": [Function],
+                          "subscribe": [Function],
+                        },
+                        "unsubscribe": [Function],
+                      }
+                    }
+                  />,
+                  <p>
+                    of 
+                    5
+                  </p>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Page",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "pagination": Object {
+                      "page": 0,
+                      "totalPages": 5,
                     },
-                    "onStateChange": [Function],
-                    "parentSub": undefined,
+                    "setPage": [Function],
                     "store": Object {
                       "clearActions": [Function],
                       "dispatch": [Function],
@@ -626,19 +764,53 @@ ShallowWrapper {
                       "replaceReducer": [Function],
                       "subscribe": [Function],
                     },
-                    "unsubscribe": [Function],
+                    "storeSubscription": Subscription {
+                      "listeners": Object {
+                        "clear": [Function],
+                        "get": [Function],
+                        "notify": [Function],
+                        "subscribe": [Function],
+                      },
+                      "onStateChange": [Function],
+                      "parentSub": undefined,
+                      "store": Object {
+                        "clearActions": [Function],
+                        "dispatch": [Function],
+                        "getActions": [Function],
+                        "getState": [Function],
+                        "replaceReducer": [Function],
+                        "subscribe": [Function],
+                      },
+                      "unsubscribe": [Function],
+                    },
                   },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
                 },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              " of ",
-              5,
-            ],
-            "type": Symbol(react.fragment),
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "of ",
+                      5,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "of ",
+                    5,
+                  ],
+                  "type": "p",
+                },
+              ],
+              "type": Symbol(react.fragment),
+            },
+            "type": "span",
           },
-          "type": "span",
+          "type": "div",
         },
         Object {
           "instance": null,

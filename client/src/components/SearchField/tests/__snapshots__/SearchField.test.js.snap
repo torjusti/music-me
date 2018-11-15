@@ -39,18 +39,25 @@ ShallowWrapper {
             icon="search"
             onChange={[Function]}
             onKeyPress={[Function]}
-            placeholder="Type a value to search for"
+            placeholder="Search ..."
             type="text"
             value=""
           />
         </div>,
         <div
-          className="searchButton"
+          className="searchButtonContainer"
         >
           <Button
             as="button"
+            classname="searchButton"
             onClick={[Function]}
             role="button"
+            style={
+              Object {
+                "marginRight": 0,
+                "width": "100%",
+              }
+            }
           >
             Search
             <Icon
@@ -75,7 +82,7 @@ ShallowWrapper {
             icon="search"
             onChange={[Function]}
             onKeyPress={[Function]}
-            placeholder="Type a value to search for"
+            placeholder="Search ..."
             type="text"
             value=""
           />,
@@ -91,7 +98,7 @@ ShallowWrapper {
             "icon": "search",
             "onChange": [Function],
             "onKeyPress": [Function],
-            "placeholder": "Type a value to search for",
+            "placeholder": "Search ...",
             "type": "text",
             "value": "",
           },
@@ -108,8 +115,15 @@ ShallowWrapper {
         "props": Object {
           "children": <Button
             as="button"
+            classname="searchButton"
             onClick={[Function]}
             role="button"
+            style={
+              Object {
+                "marginRight": 0,
+                "width": "100%",
+              }
+            }
           >
             Search
             <Icon
@@ -117,7 +131,7 @@ ShallowWrapper {
               name="angle right"
             />
           </Button>,
-          "className": "searchButton",
+          "className": "searchButtonContainer",
         },
         "ref": null,
         "rendered": Object {
@@ -133,8 +147,13 @@ ShallowWrapper {
                 name="angle right"
               />,
             ],
+            "classname": "searchButton",
             "onClick": [Function],
             "role": "button",
+            "style": Object {
+              "marginRight": 0,
+              "width": "100%",
+            },
           },
           "ref": null,
           "rendered": Array [
@@ -174,18 +193,25 @@ ShallowWrapper {
               icon="search"
               onChange={[Function]}
               onKeyPress={[Function]}
-              placeholder="Type a value to search for"
+              placeholder="Search ..."
               type="text"
               value=""
             />
           </div>,
           <div
-            className="searchButton"
+            className="searchButtonContainer"
           >
             <Button
               as="button"
+              classname="searchButton"
               onClick={[Function]}
               role="button"
+              style={
+                Object {
+                  "marginRight": 0,
+                  "width": "100%",
+                }
+              }
             >
               Search
               <Icon
@@ -210,7 +236,7 @@ ShallowWrapper {
               icon="search"
               onChange={[Function]}
               onKeyPress={[Function]}
-              placeholder="Type a value to search for"
+              placeholder="Search ..."
               type="text"
               value=""
             />,
@@ -226,7 +252,7 @@ ShallowWrapper {
               "icon": "search",
               "onChange": [Function],
               "onKeyPress": [Function],
-              "placeholder": "Type a value to search for",
+              "placeholder": "Search ...",
               "type": "text",
               "value": "",
             },
@@ -243,8 +269,15 @@ ShallowWrapper {
           "props": Object {
             "children": <Button
               as="button"
+              classname="searchButton"
               onClick={[Function]}
               role="button"
+              style={
+                Object {
+                  "marginRight": 0,
+                  "width": "100%",
+                }
+              }
             >
               Search
               <Icon
@@ -252,7 +285,7 @@ ShallowWrapper {
                 name="angle right"
               />
             </Button>,
-            "className": "searchButton",
+            "className": "searchButtonContainer",
           },
           "ref": null,
           "rendered": Object {
@@ -268,8 +301,13 @@ ShallowWrapper {
                   name="angle right"
                 />,
               ],
+              "classname": "searchButton",
               "onClick": [Function],
               "role": "button",
+              "style": Object {
+                "marginRight": 0,
+                "width": "100%",
+              },
             },
             "ref": null,
             "rendered": Array [
