@@ -134,7 +134,7 @@ export class DataTable extends Component {
                 >
                   Rating
 
-                  { this.props.order.orderBy !== 'artist' &&
+                  { this.props.order.orderBy !== 'rating' &&
                   <Icon
                     name='sort'
                   />
