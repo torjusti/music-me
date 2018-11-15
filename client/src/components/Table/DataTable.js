@@ -11,6 +11,24 @@ import {
   clearOrder,
 } from '../../features/order/actions';
 
+const TableHeader = ({ order, handleOrder, title }) => (
+  <Table.HeaderCell
+    sorted={
+      order.orderBy === title.toLowerCase()
+        ? order.isAsc
+          ? 'ascending'
+          : 'descending'
+        : null
+    }
+    onClick={() => handleOrder(title.toLowerCase())}
+  >
+    Song
+    {order.orderBy !== title.toLowerCase() && (
+      <Icon name="sort" style={{ color: 'rgba(0, 0, 0, 0.95)' }} />
+    )}
+  </Table.HeaderCell>
+);
+
 /**
  * The table which shows song information that has been loaded from the server.
  */
@@ -68,93 +86,35 @@ export class DataTable extends Component {
           <Table sortable>
             <Table.Header className={styles.tableHeader}>
               <Table.Row>
-                <Table.HeaderCell
-                  sorted={
-                    this.props.order.orderBy === 'title'
-                      ? this.props.order.isAsc
-                        ? 'ascending'
-                        : 'descending'
-                      : null
-                  }
-                  onClick={() => this.handleOrder('title')}
-                >
-                  Song
+                <TableHeader
+                  order={this.props.order}
+                  handleOrder={this.handleOrder}
+                  title="Title"
+                />
 
-                  { this.props.order.orderBy !== 'title' &&
-                  <Icon
-                    name={'sort'}
-                  /> }
-                </Table.HeaderCell>
+                <TableHeader
+                  order={this.props.order}
+                  handleOrder={this.handleOrder}
+                  title="Artist"
+                />
 
-                <Table.HeaderCell
-                  sorted={
-                    this.props.order.orderBy === 'artist'
-                      ? this.props.order.isAsc
-                        ? 'ascending'
-                        : 'descending'
-                      : null
-                  }
-                  onClick={() => this.handleOrder('artist')}
-                >
-                  Artist
-                  { this.props.order.orderBy !== 'artist' &&
-                  <Icon
-                    name='sort'
-                    /> }
-                </Table.HeaderCell>
+                <TableHeader
+                  order={this.props.order}
+                  handleOrder={this.handleOrder}
+                  title="Album"
+                />
 
-                <Table.HeaderCell
-                  sorted={
-                    this.props.order.orderBy === 'album'
-                      ? this.props.order.isAsc
-                        ? 'ascending'
-                        : 'descending'
-                      : null
-                  }
-                  onClick={() => this.handleOrder('album')}
-                >
-                  Album
-                  { this.props.order.orderBy !== 'album' &&
-                  <Icon
-                    name='sort'
-                  /> }
-                </Table.HeaderCell>
+                <TableHeader
+                  order={this.props.order}
+                  handleOrder={this.handleOrder}
+                  title="Genre"
+                />
 
-                <Table.HeaderCell
-                  sorted={
-                    this.props.order.orderBy === 'genre'
-                      ? this.props.order.isAsc
-                        ? 'ascending'
-                        : 'descending'
-                      : null
-                  }
-                  onClick={() => this.handleOrder('genre')}
-                >
-                  Genre
-                  { this.props.order.orderBy !== 'genre' &&
-                  <Icon
-                    name='sort'
-                  /> }
-                </Table.HeaderCell>
-
-                <Table.HeaderCell
-                  sorted={
-                    this.props.order.orderBy === 'rating'
-                      ? this.props.order.isAsc
-                        ? 'ascending'
-                        : 'descending'
-                      : null
-                  }
-                  onClick={() => this.handleOrder('rating')}
-                >
-                  Rating
-
-                  { this.props.order.orderBy !== 'rating' &&
-                  <Icon
-                    name='sort'
-                  />
-                  }
-                </Table.HeaderCell>
+                <TableHeader
+                  order={this.props.order}
+                  handleOrder={this.handleOrder}
+                  title="Rating"
+                />
               </Table.Row>
             </Table.Header>
 
