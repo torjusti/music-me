@@ -50,16 +50,20 @@ export class SearchField extends Component {
         <div className={styles.searchContainer}>
           <Input
             icon="search"
-            placeholder="Type a value to search for"
             value={this.state.query}
             onChange={this.handleChange}
             onKeyPress={this.handleKeyPress}
             className={styles.searchField}
+            placeholder={"Search ..."}
           />
         </div>
 
-        <div className={styles.searchButton}>
-          <Button onClick={this.handleClick}>
+        <div className={styles.searchButtonContainer}>
+          <Button
+            onClick={this.handleClick}
+            style={{ marginRight: 0, width: '100%' }}
+            classname={styles.searchButton}
+          >
             Search
             <Icon name="angle right" />
           </Button>
