@@ -6,11 +6,26 @@
   width: 100%;
 }
 
-.searchContainer {
-  flex: 1;
+.searchButton {
+  width: 100%;
 }
 
-.searchButton {
+.searchButtonContainer {
   margin-left: 1rem;
-  display: inline-block;
+}
+
+@media (max-width: 400px) {
+  .searchContainer {
+    width: 50%;
+  }
+
+  .searchButtonContainer {
+    width: 50%;
+  }
+}
+
+@media (min-width: 400px) {
+  .searchContainer {
+    flex-grow: 1;
+  }
 }
