@@ -42,7 +42,7 @@ class SidePanel extends Component {
     const availableGenres = sortBy(this.props.genres.availableGenres, 'genre');
 
     return (
-      <div className={styles.controls}>
+      <div className={styles.controls} data-component="SidePanel">
         <h1 className="ui header">Filter menu</h1>
 
         <div className={styles.controlsCont}>

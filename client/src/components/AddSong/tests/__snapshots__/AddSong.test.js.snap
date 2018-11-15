@@ -22,6 +22,7 @@ ShallowWrapper {
           as="button"
           color="blue"
           content="Add song"
+          data-component="AddEditButton"
           onClick={[Function]}
           role="button"
         />,
@@ -42,6 +43,7 @@ ShallowWrapper {
           "as": "button",
           "color": "blue",
           "content": "Add song",
+          "data-component": "AddEditButton",
           "inverted": undefined,
           "onClick": [Function],
           "role": "button",
@@ -78,6 +80,7 @@ ShallowWrapper {
             as="button"
             color="blue"
             content="Add song"
+            data-component="AddEditButton"
             onClick={[Function]}
             role="button"
           />,
@@ -98,6 +101,7 @@ ShallowWrapper {
             "as": "button",
             "color": "blue",
             "content": "Add song",
+            "data-component": "AddEditButton",
             "inverted": undefined,
             "onClick": [Function],
             "role": "button",

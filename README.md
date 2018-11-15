@@ -10,7 +10,7 @@ Serveren lever i mappen `server`. Etter å ha navigert til denne mappen, må du 
 
 Prosjektet vårt har også en god del enhetstester med Jest og Enzyme, samt end-to-end testing via Cypress. Disse testene befinner seg i mappen `client`. Etter å ha navigert til denne mappen, kan enhetstestene kjøres ved å skrive `npm test`. 
 
-For å kjøre end-to-end testene våre, kan du kjøre `npm run cytest`, som kjører testene i konsollen. Du kan også kjøre `npm run cy` for å åpne det fullstendige Cypress-kontrollpanelet. Merk at for å kunne kjøre Cypress, må klienten være tilgjengelig på `localhost:3000` og serveren på `localhost:8000`, som er standardportene når du starter prosjektet med mindre de er opptatte. Vi anbefaler også å kjøre `npm run populate` før start i server-mappen. Cypress bruker din lokale database under testingen.
+For å kjøre end-to-end testene våre, kan du kjøre `npm run cytest`, som kjører testene i konsollen. Du kan også kjøre `npm run cy` for å åpne det fullstendige Cypress-kontrollpanelet. Merk at for å kunne kjøre Cypress, må klienten være tilgjengelig på `localhost:3000` og serveren på `localhost:8000`, som er standardportene når du starter prosjektet med mindre de er opptatte. Cypress bruker din lokale database under testingen, derfor vil avbrytning av testene kunne føre til endringer i databasen. Vi anbefaler å la testene kjøre helt ferdig, samt å kjøre `npm run populate` før start i server-mappen.
 
 Enhetstestene våre ligger i undermapper kalt `tests` ved siden av komponentene de tester.  Testene som bruker Cypress angår generelt sett mange flere komponenter samtidig, så disse ligger i en egen mappe, `client/integration`.
 

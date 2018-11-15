@@ -152,6 +152,7 @@ ShallowWrapper {
         </div>,
       ],
       "className": "controls",
+      "data-component": "SidePanel",
     },
     "ref": null,
     "rendered": Array [
@@ -602,6 +603,7 @@ ShallowWrapper {
           </div>,
         ],
         "className": "controls",
+        "data-component": "SidePanel",
       },
       "ref": null,
       "rendered": Array [
